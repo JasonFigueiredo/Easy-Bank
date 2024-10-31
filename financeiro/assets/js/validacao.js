@@ -133,15 +133,6 @@ function ValidarCadastro() {
         $("#email").focus();
         return false;
     }
-    if (email.trim() != 0) {
-        Swal.fire({
-            title: "E-mail já está sendo usado",
-            text: "Por favor escolha outro email",
-            icon: "error"
-        });
-        $("#email").focus();
-        return false;
-    }
     if (senha1.trim() == "") {
         Swal.fire({
             title: "Sua Senha",
@@ -242,7 +233,7 @@ function ValidarMovimento() {
         return false;
     }
 }
-function ValidarConsulta($movs) {
+function ValidarConsulta() {
     var datainicial = document.getElementById("datainicialconsulta").value;
     var datafinal = document.getElementById("datafinalconsulta").value;
     if (datainicial.trim() == "") {

@@ -23,8 +23,8 @@ if (isset($_POST["btn_pesquisar"])) {
 } else if (isset($_POST["btn_excluir"])) {
     $id_movimento = $_POST["idMov"];
     $id_conta = $_POST["idConta"];
-    $valor = $_POST["valor"];
     $tipo_movimento = $_POST["tipo"];
+    $valor = $_POST["valor"];
     $dao = new MovimentoDAO();
     $ret = $dao->ExcluirMovimento($id_movimento, $id_conta, $valor, $tipo_movimento);
 }

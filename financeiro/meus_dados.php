@@ -5,30 +5,31 @@ UtilDAO::VerificarLogado();
 require_once '../DAO/UsuarioDAO.php';
 
 $nome = "";
-$email= "";
+$email = "";
+$objdao = new UsuarioDAO();
 
-if(isset($_POST["btn_Gravar"])){
+if (isset($_POST["btn_Gravar"])) {
     $nome = $_POST["nome"];
     $email = $_POST["email"];
-
-    $objdao = new UsuarioDAO();
-
-    $ret = $objdao->GravarMeusDados($nome,$email);
+    
+    $ret = $objdao->GravarMeusDados($nome, $email);
 }
+
+$dados = $objdao->CarregarMeusDados();
 
 ?>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <?php
-include_once '_head.php' ;
+include_once '_head.php';
 ?>
 
 <body>
     <div id="wrapper">
         <?php
-        include_once '_topo.php' ;
-        include_once '_menu.php' ;
+        include_once '_topo.php';
+        include_once '_menu.php';
         ?>
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
@@ -44,11 +45,11 @@ include_once '_head.php' ;
                 <form action="meus_dados.php" method="post">
                     <div class="form-group">
                         <label>Nome:</label>
-                        <input class="form-control" placeholder="Digite o seu nome" name="nome" value="<?= $nome ?>" id="nome" />
+                        <input class="form-control" placeholder="Digite o seu nome" name="nome" value="<?= $dados[0]['nome_usuario'] ?>" id="nome" />
                     </div>
                     <div class="form-group">
                         <label>E-mail:</label>
-                        <input class="form-control" placeholder="Digite seu e-mail" name="email" value="<?= $email ?>" id="email"
+                        <input class="form-control" placeholder="Digite seu e-mail" name="email" value="<?= $dados[0]['email_usuario'] ?>" id="email"
                             type="email" />
                     </div>
                     <button type="submit" onclick="return ValidarMeusDados()" class="btn btn-success"

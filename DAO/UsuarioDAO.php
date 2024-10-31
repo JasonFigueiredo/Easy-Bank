@@ -5,11 +5,8 @@ require_once 'UtilDAO.php';
 
 class UsuarioDAO extends Conexao
 {
-    public function CarregarMeusDados($nome, $email)
+    public function CarregarMeusDados()
     {
-        if (trim($nome) == '' || trim($email) == '') {
-            return FLAG_VAZIO;
-        }
         $conexao = parent::retornarConexao();
 
         $comando_sql = 'SELECT nome_usuario,
