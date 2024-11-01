@@ -115,7 +115,7 @@ class ContaDAO extends Conexao
     }
 
     public function ExcluirConta($idConta)
-    // esse METODO SE CHAMA "Excluir COnta " busca somente o valor que precisa deletar por isso chama comente o $IDconta = PARAMETRO
+    // esse METODO SE CHAMA "Excluir Conta " busca somente o valor que precisa deletar por isso chama comente o $IDconta = PARAMETRO
     {
         if ($idConta == "") 
             return 0;
