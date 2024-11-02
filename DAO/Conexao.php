@@ -1,6 +1,6 @@
 <?php
 
-//configuração do site
+//site configuration
 define('HOST', 'localhost'); //ip
 define('USER', 'root'); //usuario
 define('PASS', null); //senha
