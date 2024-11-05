@@ -1,12 +1,15 @@
 <?php
 require_once "../DAO/UsuarioDAO.php";
 
+$objdao = new UsuarioDAO();
+
 if (isset($_POST["btn_entrar"])) {
     $email = $_POST["email"];
     $senha = $_POST["senha"];
-
-    $objdao = new UsuarioDAO();
     $ret = $objdao->ValidarLogin($email, $senha);
+} 
+if (isset($_POST["btn_recuperar"])) {
+    $ret = $objdao->RecuperarSenha();
 }
 ?>
 <!DOCTYPE html>
@@ -47,6 +50,9 @@ include_once '_head.php';
                                 <input id="senha" name="senha" type="password" class="form-control" placeholder="Sua Senha" />
                             </div>
                             <center>
+                                <center>Esqueçeu a sua senha?
+                                <button class="btn-primary2" name="btn_recuperar">Redefinir senha</button>
+                                </center>
                                 <br>
                                 <button onclick="return ValidarLogin()" class="btn btn-primary" name="btn_entrar">Entrar</button>
                                 <hr />Não tem cadastro ?

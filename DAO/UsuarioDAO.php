@@ -176,4 +176,8 @@ class UsuarioDAO extends Conexao
             return FLAG_ERRO;
         }
     }
+    public function RecuperarSenha()
+    {
+        return -8;
+    }
 }

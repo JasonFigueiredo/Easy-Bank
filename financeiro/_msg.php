@@ -55,5 +55,20 @@ if (isset($ret)) {
            Nenhuma movimentação encontrada.
            </div>';
             break;
+        case -8:
+            echo '<script> Swal.fire({
+                title: "<strong>Redefinir senha</strong>",
+                icon: "info",
+                html: `
+                    Para alterar sua senha, por favor entre em contato com o nosso suporte técnico. Seguindo o link abaixo:
+                    <a href="mailto:jasonlopes132@gmail.com?subject=Redefinição de senha. &body=Conteúdo do email que será preenchido automaticamente"" autofocus> -- Solicitar redefinição de senha - </a>
+                `,
+                focusConfirm: false,
+                confirmButtonText: `
+                    <i class="fa fa-thumbs-up"></i> OK!
+                `,
+                confirmButtonAriaLabel: "Thumbs up, great!"
+                });</script>';
+            break;
     }
 }

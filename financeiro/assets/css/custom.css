@@ -47,9 +47,8 @@ body {
 }
 
 h2 {
-    color: #2cad64;
-    /* efeitos do textos sombras e margens */
-    text-shadow: 3px 5px 5px rgb(26, 26, 26);
+    color: #00c053;
+
 }
 
 h4 {
@@ -112,8 +111,8 @@ p {
 }
 
 .bg-color-green {
-    background-color: #00CE6F;
-    color: #fff;
+    background-color: #146135;
+    color: #ffffff;
 }
 
 .bg-color-blue {
@@ -122,7 +121,7 @@ p {
 }
 
 .bg-color-red {
-    background-color: #DB0630;
+    background-color: #ff0000a0;
     color: #fff;
 }
 
@@ -183,7 +182,7 @@ p {
 }
 
 .back-footer-red {
-    background-color: #AF0000;
+    background-color: #fd1818;
     border-top: 0px solid #fff;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
