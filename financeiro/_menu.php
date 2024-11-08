@@ -1,9 +1,9 @@
 <?php
-    require_once "../DAO/UtilDAO.php";
+require_once "../DAO/UtilDAO.php";
 
-    if(isset($_GET["close"]) && $_GET['close'] == "1"){
-        UtilDAO::Deslogar();
-    }
+if (isset($_GET["close"]) && $_GET['close'] == "1") {
+    UtilDAO::Deslogar();
+}
 ?>
 
 <nav class="navbar-default navbar-side" role="navigation">
@@ -16,10 +16,10 @@
                 <a href="meus_dados.php"><img src="./assets/img/user.png" width=40 height=40> Meus Dados</a>
             </li>
             <li>
-                <a href="#"><img src="./assets/img/menu.png" width=35 height=35 > Categorias <span class="fa arrow"></span></a>
+                <a href="#"><img src="./assets/img/menu.png" width=35 height=35> Categorias <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                    <a href="nova_categoria.php"><img src="./assets/img/post.png" width=20 height=20> Nova Categoria</a>
+                        <a href="nova_categoria.php"><img src="./assets/img/post.png" width=20 height=20> Nova Categoria</a>
                     </li>
                     <li>
                         <a href="consultar_categoria.php"><img src="./assets/img/search1.png" width=20 height=20=> Consultar Categoria</a>

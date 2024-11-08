@@ -2,7 +2,6 @@
 require_once "Conexao.php";
 require_once "../financeiro/_constante.php";
 require_once "UtilDAO.php";
-
 class CategoriaDAO extends Conexao
 {
     public function ConsultarCategoria()
@@ -21,7 +20,6 @@ class CategoriaDAO extends Conexao
         $sql->execute();
         return $sql->fetchAll();
     }
-
     public function DetalharCategoria($idCategoria)
     {
         $conexao = parent::retornarConexao();
@@ -42,7 +40,6 @@ class CategoriaDAO extends Conexao
 
         return $sql->fetchAll();
     }
-
     public function AlterarCategoria($idCategoria, $nome)
     {
         if (trim($idCategoria) == "" || $nome == "") {
@@ -53,7 +50,8 @@ class CategoriaDAO extends Conexao
         $comando_sql = 'UPDATE tb_categoria
                             SET nome_categoria = ?
                             WHERE id_categoria = ?
-                            AND id_usuario = ?';  //AND Usado para garantir que sempre seja o mesmo ususario logado para atualizar os dados
+                            AND id_usuario = ?';  
+        //AND Usado para garantir que sempre seja o mesmo ususario logado para atualizar os dados
         $sql = new PDOStatement();
         $sql = $conexao->prepare($comando_sql);
 
@@ -69,7 +67,6 @@ class CategoriaDAO extends Conexao
             return -1;
         }
     }
-
     public function ExcluirCategoria($idCategoria)
     {
         if ($idCategoria == "") {
@@ -94,7 +91,6 @@ class CategoriaDAO extends Conexao
             return -4;
         }
     }
-
     public function CadastrarCategoria($nome)
     {
         if (trim($nome) == "") {

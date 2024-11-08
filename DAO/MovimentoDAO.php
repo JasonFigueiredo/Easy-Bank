@@ -5,9 +5,11 @@ require_once 'UtilDAO.php';
 
 class MovimentoDAO extends Conexao
 {
-    public function RealizarMovimento($movimento, $data, $valor, $obs, $categoria, $empresa, $conta)
+    public function RealizarMovimento(
+        $movimento, $data, $valor, $obs, $categoria, $empresa, $conta)
     {
-        if (trim($movimento) == "" || trim($data) == "" || trim($valor) == "" || trim($categoria) == "" || trim($empresa) == "" || trim($conta) == "") {
+        if (trim($movimento) == "" || trim($data) == "" || trim($valor) == "" || 
+        trim($categoria) == "" || trim($empresa) == "" || trim($conta) == "") {
             return FLAG_VAZIO;
         }
         $conexao = parent::retornarConexao();
@@ -58,7 +60,6 @@ class MovimentoDAO extends Conexao
             return FLAG_ERRO;
         }
     }
-
     public function FiltrarMovimento($tipo, $dt_inicial, $dt_final)
     {
         if (trim($dt_inicial) == "" || trim($dt_final) == "") {
@@ -107,7 +108,6 @@ class MovimentoDAO extends Conexao
 
         return $sql->fetchAll();
     }
-
     public function MostrarUltimosLancamentos()
     {
         $conexao = parent::retornarConexao();
@@ -141,7 +141,6 @@ class MovimentoDAO extends Conexao
 
         return $sql->fetchAll();
     }
-    
     public function ExcluirMovimento($id_movimento, $id_conta, $valor, $tipo_movimento)
     {
         if ($id_movimento == "" || $id_conta == "" || $valor == "" || $tipo_movimento == "") {
@@ -182,7 +181,6 @@ class MovimentoDAO extends Conexao
             return FLAG_ERRO;
         }
     }
-
     public function TotalEntrada()
     {
 
@@ -192,7 +190,7 @@ class MovimentoDAO extends Conexao
                             FROM tb_movimento
                             WHERE tipo_movimento = 1 
                             AND id_usuario = ?';
-        
+
         $sql = new PDOStatement();
         $sql = $conexao->prepare($comando_sql);
         $sql->bindValue(1, UtilDAO::CodigoLogado());
@@ -202,17 +200,15 @@ class MovimentoDAO extends Conexao
 
         return $sql->fetchAll();
     }
-    
     public function TotalSaida()
     {
-
         $conexao = parent::retornarConexao();
         $comando_sql = ' SELECT sum(valor_movimento)
                             AS total
                             FROM tb_movimento
                             WHERE tipo_movimento = 2 
                             AND id_usuario = ?';
-        
+
         $sql = new PDOStatement();
         $sql = $conexao->prepare($comando_sql);
         $sql->bindValue(1, UtilDAO::CodigoLogado());

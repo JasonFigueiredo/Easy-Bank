@@ -30,7 +30,6 @@ class EmpresaDAO extends Conexao
             return -1;
         }
     }
-
     public function ConsultarEmpresa()
     {
         $conexao = parent::retornarConexao();
@@ -50,7 +49,6 @@ class EmpresaDAO extends Conexao
         $sql->execute();
         return $sql->fetchAll();
     }
-
     public function DetalharEmpresa($idEmpresa)
     {
         $conexao  = parent::retornarConexao();
@@ -70,7 +68,6 @@ class EmpresaDAO extends Conexao
         $sql->execute();
         return $sql->fetchAll();
     }
-
     public function AlterarEmpresa($idEmpresa, $nomeempresa, $telefoneempresa, $enderecoempresa)
     {
         if (trim($nomeempresa) == '' || $idEmpresa == "") {
@@ -101,7 +98,6 @@ class EmpresaDAO extends Conexao
             return -1;
         }
     }
-
     public function ExcluirEmpresa($idEmpresa)
     {
         if ($idEmpresa == '') {
