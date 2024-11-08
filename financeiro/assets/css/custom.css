@@ -47,8 +47,8 @@ body {
 }
 
 h2 {
-    color: #00c053;
-
+    color: #00863a;
+    text-shadow: 1px 1px 0.5px rgb(0, 0, 0);
 }
 
 h4 {

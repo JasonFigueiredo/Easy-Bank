@@ -25,9 +25,9 @@ class EmpresaDAO extends Conexao
 
         try {
             $sql->execute();
-            return 1;
+            return FLAG_SUCESSO;
         } catch (Exception $ex) {
-            return -1;
+            return FLAG_ERRO;
         }
     }
     public function ConsultarEmpresa()
@@ -71,7 +71,7 @@ class EmpresaDAO extends Conexao
     public function AlterarEmpresa($idEmpresa, $nomeempresa, $telefoneempresa, $enderecoempresa)
     {
         if (trim($nomeempresa) == '' || $idEmpresa == "") {
-            return 0;
+            return FLAG_VAZIO;
         }
 
         $conexao = parent::retornarConexao();
@@ -92,16 +92,16 @@ class EmpresaDAO extends Conexao
 
         try {
             $sql->execute();
-            return 1;
+            return FLAG_SUCESSO;
         } catch (Exception $ex) {
             echo $ex->getMessage();
-            return -1;
+            return FLAG_ERRO;
         }
     }
     public function ExcluirEmpresa($idEmpresa)
     {
         if ($idEmpresa == '') {
-            return 0;
+            return FLAG_VAZIO;
         }
 
         $conexao = parent::retornarConexao();
@@ -116,9 +116,9 @@ class EmpresaDAO extends Conexao
 
         try {
             $sql->execute();
-            return 1;
+            return FLAG_SUCESSO;
         } catch (Exception $ex) {
-            return -4;
+            return FLAG_USO;
         }
     }
 }

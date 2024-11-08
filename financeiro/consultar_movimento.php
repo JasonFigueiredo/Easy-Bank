@@ -18,7 +18,7 @@ if (isset($_POST["btn_pesquisar"])) {
     if (!is_array($movs)) {
         $ret = FLAG_VAZIO;
     } else if (count($movs) == 0) {
-        $ret = -7;
+        $ret = FLAG_MOVIMENTACAO;
     }
 } else if (isset($_POST["btn_excluir"])) {
     $id_movimento = $_POST["idMov"];

@@ -312,12 +312,12 @@ div:where(.swal2-container) div:where(.swal2-popup) {
     max-width: 100%;
     padding: 0 0 1.25em;
     border: none;
-    border-radius: 50px;
+    border-radius: 10px;
     box-shadow: 5px 5px 5px black;
     background: #494949;
     color: #ffffff;
     font-family: inherit;
-    font-size: 1rem
+    font-size: 12px;
 }
 
 div:where(.swal2-container) div:where(.swal2-popup):focus {
@@ -395,13 +395,13 @@ div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm) {
     border: 0;
     border-radius: .25em;
     background: initial;
-    background-color: #ffffff;
-    color: #0a0a0a;
-    font-size: 1em
+    background-color: #009c44;
+    color: #ffffff;
+    font-size: 14px
 }
 
 div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm):focus-visible {
-    box-shadow: 0 0 0 3px rgba(112, 102, 224, .5)
+    box-shadow: 1px 1px 1px 3px rgba(255, 255, 255, 0)
 }
 
 div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-deny) {
@@ -745,8 +745,8 @@ div:where(.swal2-icon) .swal2-icon-content {
 }
 
 div:where(.swal2-icon).swal2-error {
-    border-color: #f27474;
-    color: #f27474
+    border-color: #ff2c2c;
+    color: #ff2c2c
 }
 
 div:where(.swal2-icon).swal2-error .swal2-x-mark {
@@ -761,7 +761,7 @@ div:where(.swal2-icon).swal2-error [class^=swal2-x-mark-line] {
     width: 2.9375em;
     height: .3125em;
     border-radius: .125em;
-    background-color: #f27474
+    background-color: #ff2c2c
 }
 
 div:where(.swal2-icon).swal2-error [class^=swal2-x-mark-line][class$=left] {
@@ -796,8 +796,8 @@ div:where(.swal2-icon).swal2-warning.swal2-icon-show .swal2-icon-content {
 }
 
 div:where(.swal2-icon).swal2-info {
-    border-color: rgb(156.7033492823, 224.2822966507, 246.2966507177);
-    color: #3fc3ee
+    border-color: rgb(0, 191, 255);
+    color: #00bfff
 }
 
 div:where(.swal2-icon).swal2-info.swal2-icon-show {
@@ -809,8 +809,8 @@ div:where(.swal2-icon).swal2-info.swal2-icon-show .swal2-icon-content {
 }
 
 div:where(.swal2-icon).swal2-question {
-    border-color: rgb(200.8064516129, 217.9677419355, 225.1935483871);
-    color: #87adbd
+    border-color: #c0ad00;
+    color: #c0ad00;
 }
 
 div:where(.swal2-icon).swal2-question.swal2-icon-show {

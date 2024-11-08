@@ -2,9 +2,6 @@
 
 require_once "../DAO/UsuarioDAO.php";
 
-$nome = "";
-$email = "";
-
 if (isset($_POST["btn_enviar"])) {
     $nome = $_POST["nome"];
     $email = $_POST["email"];
@@ -23,7 +20,7 @@ include_once '_head.php';
 ?>
 
 <body>
-<div class="banner">
+    <div class="banner">
         <img src="./assets/img/moedas2.gif" type="gif">
     </div>
     <div class="container">
@@ -44,11 +41,11 @@ include_once '_head.php';
                                     <?php include_once "_msg.php" ?>
                                     <div class="form-group input-group">
                                         <span class="input-group-addon"><img src="./assets/img/user.png" width=15 height=15><i class="fa fa-circle-o-notch"></i></span>
-                                        <input id="nome" type="text" class="form-control" placeholder="Seu nome" name="nome" value="<?= $nome ?>" />
+                                        <input id="nome" type="text" class="form-control" placeholder="Seu nome" name="nome" />
                                     </div>
                                     <div class="form-group input-group">
                                         <span class="input-group-addon"><img src="./assets/img/email.png" width=15 height=15></span>
-                                        <input id="email" type="text" class="form-control" placeholder="Seu melhor e-mail" name="email" value="<?= $email ?>"/>
+                                        <input id="email" type="text" class="form-control" placeholder="Seu melhor e-mail" name="email" />
                                     </div>
                                     <div class="form-group input-group">
                                         <span class="input-group-addon"><img src="./assets/img/password.png" width=15 height=15></span>

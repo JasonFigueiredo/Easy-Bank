@@ -7,7 +7,7 @@ if (isset($_POST["btn_entrar"])) {
     $email = $_POST["email"];
     $senha = $_POST["senha"];
     $ret = $objdao->ValidarLogin($email, $senha);
-} 
+}
 if (isset($_POST["btn_recuperar"])) {
     $ret = $objdao->RecuperarSenha();
 }
@@ -51,7 +51,7 @@ include_once '_head.php';
                             </div>
                             <center>
                                 <center>Esqueçeu a sua senha?
-                                <button class="btn-primary2" name="btn_recuperar">Redefinir senha</button>
+                                    <button class="btn-primary2" name="btn_recuperar">Redefinir senha</button>
                                 </center>
                                 <br>
                                 <button onclick="return ValidarLogin()" class="btn btn-primary" name="btn_entrar">Entrar</button>

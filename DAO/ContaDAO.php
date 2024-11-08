@@ -31,11 +31,12 @@ class ContaDAO extends Conexao
 
         try {
             $sql->execute();
-            return 1;
+            return FLAG_SUCESSO;
         } catch (Exception $ex) {
-            return -1;
+            return FLAG_ERRO;
         }
     }
+
     public function ConsultarConta()
     {
         $conexao = parent::retornarConexao();
@@ -58,7 +59,7 @@ class ContaDAO extends Conexao
     public function DetalharConta($idConta)
     {
         if ($idConta == "") {
-            return 0;
+            return FLAG_VAZIO;
         }
         $conexao = parent::retornarConexao();
         $comando_sql = 'SELECT id_conta,
@@ -82,7 +83,7 @@ class ContaDAO extends Conexao
     public function AlterarConta($idConta, $banco, $agencia, $numero, $saldo)
     {
         if (trim($idConta) == "" || trim($banco) == "" || trim($agencia) == "" || trim($numero) == "" || trim($saldo) == "") {
-            return 0;
+            return FLAG_VAZIO;
         }
         $conexao = parent::retornarConexao();
         $comando_sql = 'UPDATE tb_conta 
@@ -104,17 +105,17 @@ class ContaDAO extends Conexao
 
         try {
             $sql->execute();
-            return 1;
+            return FLAG_SUCESSO;
         } catch (Exception $ex) {
             echo $ex->getMessage();
-            return -1;
+            return FLAG_ERRO;
         }
     }
     public function ExcluirConta($idConta)
     // esse METODO SE CHAMA "Excluir Conta " busca somente o valor que precisa deletar por isso chama comente o $IDconta = PARAMETRO
     {
         if ($idConta == "") 
-            return 0;
+            return FLAG_VAZIO;
         
         $conexao = parent::retornarConexao();
         $comando_sql = 'DELETE FROM tb_conta
@@ -131,10 +132,10 @@ class ContaDAO extends Conexao
 
         try {
             $sql->execute();
-            return 1;
+            return FLAG_SUCESSO;
         } catch (Exception $ex) {
             echo $ex->getMessage();
-            return -4;
+            return FLAG_USO;
         }
     }
 }

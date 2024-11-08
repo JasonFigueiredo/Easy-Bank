@@ -29,8 +29,8 @@ class UsuarioDAO extends Conexao
         if (trim($nome) == '' || trim($email) == '') {
             return FLAG_VAZIO;
         }
-        if($this->VerificarEmailDuplicadoAlteracao($email) != 0){
-            return -5;
+        if ($this->VerificarEmailDuplicadoAlteracao($email) != 0) {
+            return FLAG_EMAIL;
         }
 
         $conexao = parent::retornarConexao();
@@ -46,10 +46,10 @@ class UsuarioDAO extends Conexao
 
         try {
             $sql->execute();
-            return 1;
+            return FLAG_SUCESSO;
         } catch (Exception $ex) {
             echo $ex->getMessage();
-            return -1;
+            return FLAG_ERRO;
         }
     }
     public function ValidarLogin($email, $senha)
@@ -67,30 +67,29 @@ class UsuarioDAO extends Conexao
         $sql = new PDOStatement();
         $sql = $conexao->prepare($comando_sql);
 
-        $sql->bindValue(1, $email );
-        $sql->bindValue(2, $senha );
+        $sql->bindValue(1, $email);
+        $sql->bindValue(2, $senha);
 
         $sql->setFetchMode(PDO::FETCH_ASSOC);
 
         $sql->execute();
 
         $user = $sql->fetchAll();
-        
-        if(count($user)== 0){
-            return -6;
+
+        if (count($user) == 0) {
+            return FLAG_USUARIO;
         }
 
         $cod = $user[0]["id_usuario"];
         $nome = $user[0]['nome_usuario'];
-        UtilDAO::CriarSessao($cod,$nome);
+        UtilDAO::CriarSessao($cod, $nome);
         header("location: inicial.php");
         exit;
-
     }
     public function VerificarEmailDuplicadoCadastro($email)
     {
-        if(trim($email)==""){
-            return 0;
+        if (trim($email) == "") {
+            return FLAG_VAZIO;
         }
 
         $conexao = parent::retornarConexao();
@@ -113,8 +112,8 @@ class UsuarioDAO extends Conexao
     }
     public function VerificarEmailDuplicadoAlteracao($email)
     {
-        if(trim($email)==""){
-            return 0;
+        if (trim($email) == "") {
+            return FLAG_VAZIO;
         }
 
         $conexao = parent::retornarConexao();
@@ -122,7 +121,7 @@ class UsuarioDAO extends Conexao
                             AS contar 
                             FROM tb_usuario 
                             WHERE email_usuario = ? AND id_usuario != ? ";
-    
+
         $sql = new PDOStatement();
         $sql = $conexao->prepare($comando_sql);
 
@@ -151,8 +150,8 @@ class UsuarioDAO extends Conexao
             return FLAG_INCORRETO;
         }
 
-        if($this->VerificarEmailDuplicadoCadastro($email) != 0){
-            return -5;
+        if ($this->VerificarEmailDuplicadoCadastro($email) != 0) {
+            return FLAG_EMAIL;
         }
 
         $conexao = parent::retornarConexao();
@@ -178,6 +177,6 @@ class UsuarioDAO extends Conexao
     }
     public function RecuperarSenha()
     {
-        return -8;
+        return FLAG_RSENHA;
     }
 }

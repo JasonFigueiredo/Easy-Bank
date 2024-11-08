@@ -16,8 +16,8 @@
         </center>
     </div>
     <center>
-    <div style="color: white;
-padding: 20px 50px 10px 50px;
+    <div style="color: #fff;
+padding: 30px 50px 10px 50px;
 float: right;
-font-size: 16px; text-shadow: 3px 5px 5px rgb(26, 26, 26);">Olá, <?= UtilDAO::NomeLogado(); ?>, Dúvidas Ligue para (62) 9 99369-3788 </div></center>
+font-size: 16px;">Olá, <?= UtilDAO::NomeLogado(); ?>, Dúvidas Ligue para (62) 9 99369-3788 </div></center>
 </nav>

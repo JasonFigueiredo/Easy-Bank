@@ -7,68 +7,84 @@ if (isset($ret)) {
     switch ($ret) {
         case 0:
             echo '<div class="alert alert-warning">
-            Preencher o(s) campo(s) obrigatorio(s)!
+            Preencha o(s) campo(s) obrigatório(s)!
             </div>';
             break;
+
         case 1:
-            echo '<div class="alert alert-success">
-            Ação realizada com sucesso!
-            </div>';
-            // echo '<script> Swal.fire({
-            // title: "Sucesso",
-            // text: "Ação realizada com sucesso",
-            // icon: "success"
-            // });</script>';
+            echo '<script> Swal.fire({
+            title: "Sucesso",
+            text: "Ação realizada com sucesso.",
+            icon: "success"
+            });</script>';
             break;
+
         case -1:
-            echo '<div class="alert alert-danger">
-            Ocorreu um erro na operação. Tente mais tarde!
-            </div>';
+            echo '<script> Swal.fire({
+            title: "Erro",
+            text: "Ocorreu um erro na operação. Tente mais tarde!",
+            icon: "error"
+            });</script>';
             break;
+
         case -2:
             echo '<div class="alert alert-danger">
-            Senhas estão diferentes, Por favor, digite as senhas iguais!
+            Senhas diferentes. Por favor, digite senhas iguais!
             </div>';
             break;
+
         case -3:
             echo '<div class="alert alert-warning">
-           A senha deve conter mais de 6 caracteres!
-           </div>';
+            A senha deve ter mais de 6 caracteres!
+            </div>';
             break;
+
         case -4:
-            echo '<div class="alert alert-warning">
-           O registro não poderá ser excluido, pois está em uso !
-           </div>';
+            echo '<script> Swal.fire({
+            title: "Erro",
+            text: "O registro não pode ser excluído, pois está em uso!",
+            icon: "error"
+            });</script>';
             break;
+
         case -5:
-            echo '<div class="alert alert-warning">
-           O e-mail já está cadastrado, por favor, escolha outro e-mail.
-           </div>';
+            echo '<script> Swal.fire({
+            title: "E-mail já cadastrado",
+            text: "Por favor, escolha outro e-mail.",
+            icon: "error"
+            });</script>';
             break;
+
         case -6:
-            echo '<div class="alert alert-warning">
-           Usuario não encontrado.
-           </div>';
+            echo '<script> Swal.fire({
+            title: "Usuário não encontrado",
+            text: "Por favor, verifique o e-mail informado.",
+            icon: "error"
+            });</script>';
             break;
+
         case -7:
-            echo '<div class="alert alert-warning">
-           Nenhuma movimentação encontrada.
-           </div>';
+            echo '<script> Swal.fire({
+            title: "Sem Movimentação",
+            text: "Nenhuma movimentação encontrada.",
+            icon: "question"
+            });</script>';
             break;
+
         case -8:
             echo '<script> Swal.fire({
-                title: "<strong>Redefinir senha</strong>",
-                icon: "info",
-                html: `
-                    Para alterar sua senha, por favor entre em contato com o nosso suporte técnico. Seguindo o link abaixo:
-                    <a href="mailto:jasonlopes132@gmail.com?subject=Redefinição de senha. &body=Conteúdo do email que será preenchido automaticamente"" autofocus> -- Solicitar redefinição de senha - </a>
-                `,
-                focusConfirm: false,
-                confirmButtonText: `
-                    <i class="fa fa-thumbs-up"></i> OK!
-                `,
-                confirmButtonAriaLabel: "Thumbs up, great!"
-                });</script>';
+            title: "<strong>Redefinir senha</strong>", 
+            icon: "info",
+            html: `Para alterar sua senha, entre em contato com nosso suporte técnico através do link abaixo, 
+            informando seu e-mail e nome de usuário.
+            </br>
+            <hr>
+            <a href="mailto:jasonlopes132@gmail.com?subject=Solicitação para redefinição de senha!
+            &body="--- Solicitar redefinição de senha ---" autofocus>Solicitar redefinição de senha</a>
+            `,
+            focusConfirm: false,
+            confirmButtonText: `Finalizar`,
+            });</script>';
             break;
     }
 }

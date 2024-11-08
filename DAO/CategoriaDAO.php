@@ -43,7 +43,7 @@ class CategoriaDAO extends Conexao
     public function AlterarCategoria($idCategoria, $nome)
     {
         if (trim($idCategoria) == "" || $nome == "") {
-            return 0;
+            return FLAG_VAZIO;
         }
 
         $conexao = parent::retornarConexao();
@@ -61,16 +61,16 @@ class CategoriaDAO extends Conexao
 
         try {
             $sql->execute();
-            return 1;
+            return FLAG_SUCESSO;
         } catch (Exception $ex) {
             echo $ex->getMessage();
-            return -1;
+            return FLAG_ERRO;
         }
     }
     public function ExcluirCategoria($idCategoria)
     {
         if ($idCategoria == "") {
-            return 0;
+            return FLAG_VAZIO;
         }
 
         $conexao = parent::retornarConexao();
@@ -85,10 +85,10 @@ class CategoriaDAO extends Conexao
 
         try {
             $sql->execute();
-            return 1;
+            return FLAG_SUCESSO;
         } catch (Exception $ex) {
             echo $ex->getMessage();
-            return -4;
+            return FLAG_USO;
         }
     }
     public function CadastrarCategoria($nome)
@@ -112,9 +112,9 @@ class CategoriaDAO extends Conexao
 
         try { //passo 6 : execultar no banco de dados
             $sql->execute();
-            return 1;
+            return FLAG_SUCESSO;
         } catch (Exception $ex) {
-            return -1;
+            return FLAG_ERRO;
         }
     }
 }
