@@ -38,22 +38,22 @@ include_once '_head.php';
                     <div class="col-md-12">
                         <?php include_once "_msg.php"; ?>
                         <h2><strong>Meus dados</strong></h2>
-                        <h5>Aqui voce poderá acessar e alterar seus dados.</h5>
+                        <h5>Nesta seção, você poderá consultar e modificar seus dados pessoais.</h5>
                     </div>
                 </div>
                 <hr />
                 <form action="meus_dados.php" method="post">
                     <div class="form-group">
                         <label>Nome:</label>
-                        <input class="form-control" placeholder="Digite o seu nome" name="nome" value="<?= $dados[0]['nome_usuario'] ?>" id="nome" />
+                        <input class="form-control" placeholder="Digite o seu nome" name="nome" value="<?= $dados[0]['nome_usuario'] ?>" id="nome" maxlength="45" />
                     </div>
                     <div class="form-group">
                         <label>E-mail:</label>
-                        <input class="form-control" placeholder="Digite seu e-mail" name="email" value="<?= $dados[0]['email_usuario'] ?>" id="email"
+                        <input class="form-control" placeholder="Digite seu e-mail" name="email" value="<?= $dados[0]['email_usuario'] ?>" id="email" maxlength="45"
                             type="email" />
                     </div>
                     <button type="submit" onclick="return ValidarMeusDados()" class="btn btn-success"
-                        name="btn_Gravar"> Guardar</button>
+                        name="btn_Gravar"> Salvar</button>
                 </form>
             </div>
         </div>

@@ -179,7 +179,7 @@ include_once '_head.php';
                                         </table>
                                         <hr>
                                         <center class="value">
-                                            <label style='color: <?= $total < 0 ? '#ff0000' : '#00db5f' ?>; '> Total de movimentação: R$
+                                            <label style='color: <?= $total < 0 ? '#ef0300' : '#00db5f' ?>; '> Total de movimentação: R$
                                                 <?= number_format($total, 2, ",", "."); ?> </label>
                                         </center>
                                     </div>

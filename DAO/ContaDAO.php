@@ -33,6 +33,7 @@ class ContaDAO extends Conexao
             $sql->execute();
             return FLAG_SUCESSO;
         } catch (Exception $ex) {
+            echo $ex->getMessage();
             return FLAG_ERRO;
         }
     }

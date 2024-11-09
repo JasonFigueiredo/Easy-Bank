@@ -50,8 +50,8 @@ include_once '_head.php';
                 <div class="row">
                     <div class="col-md-12">
                         <?php include_once "_msg.php" ?>
-                        <h2>Alterar Categoria</h2>
-                        <h5>Aqui você pode alterar ou excluir suas categorias.</h5>
+                        <h2><strong> Alterar Categoria</strong></h2>
+                        <h5>Aqui, você tem controle total para alterar ou excluir suas categorias.</h5>
                     </div>
                 </div>
                 <!-- /. ROW  -->
@@ -71,7 +71,7 @@ include_once '_head.php';
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                     <center>
-                                        <h4 class="modal-title" id="myModalLabel">Confirmação de exclusão</h4>
+                                        <h4 class="modal-title" id="myModalLabel">Confirma a exclusão dos dados?</h4>
                                     </center>
                                 </div>
                                 <div class="modal-body">

@@ -177,15 +177,15 @@ p {
 .back-footer-green {
     background-color: #009B50;
     border-top: 0px solid #fff;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
 }
 
 .back-footer-red {
     background-color: #fd1818;
     border-top: 0px solid #fff;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
 }
 
 .color-bottom-txt {
@@ -376,7 +376,7 @@ p {
 
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-    background-color: #B40101;
+    background-color: #3a3a3a;
 }
 
 .navbar-default .navbar-toggle {

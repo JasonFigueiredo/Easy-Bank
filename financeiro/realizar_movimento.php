@@ -72,7 +72,7 @@ include_once '_head.php';
                         <div class="form-group">
                             <label>Valor da Movimentação * :</label>
                             <input id="valor" name="valor" class="form-control"
-                                placeholder="Digite o valor da movimentação">
+                                placeholder="Digite o valor da movimentação" type="number" oninput="contarCaracteresValorMov()">
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -116,7 +116,7 @@ include_once '_head.php';
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>Observações:</label>
-                            <textarea class="form-control" rows="1" id="obs" name="obs" placeholder="Insira observações referente a movimentação."></textarea>
+                            <textarea maxlength="100" class="form-control" rows="1" id="obs" name="obs" placeholder="Insira observações referente a movimentação."></textarea>
                         </div>
                         <button onclick="return ValidarMovimento()" type="submit" name="btn_gravar"
                             class="btn btn-success">Finalizar Movimentação</button>

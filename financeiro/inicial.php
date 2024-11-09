@@ -28,7 +28,7 @@ include_once '_head.php';
                     <div class="col-md-12">
                         <?php include_once "_msg.php"; ?>
                         <h2><strong>Página Inicial</strong></h2>
-                        <h5>Aqui voce acompanha todos os numeros de uma forma geral.</h5>
+                        <h5>Aqui, você tem acesso a um resumo completo de todas as operações realizadas.</h5>
                     </div>
                 </div>
                 <hr>
@@ -64,7 +64,7 @@ include_once '_head.php';
                         <div class="col-md-12">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    Ultimos 10 Lançamentos de Movimento
+                                Últimos 10 Lançamentos de Movimento
                                 </div>
                                 <div class="panel-body">
                                     <div class="table-responsive">
@@ -73,7 +73,7 @@ include_once '_head.php';
                                                 <tr>
                                                     <th>Data do Movimento</th>
                                                     <th>Tipo</th>
-                                                    <th>categoria</th>
+                                                    <th>Categoria</th>
                                                     <th>Empresa</th>
                                                     <th>conta</th>
                                                     <th>Valor</th>
@@ -115,7 +115,7 @@ include_once '_head.php';
                                         </table>
                                         <hr>
                                         <center class="value">
-                                            <label style='color: <?= $total < 0 ? '#ff0000' : '#00db5f' ?>; '> Total de movimentação: R$
+                                            <label style='color: <?= $total < 0 ? '#ff0000' : '#00db5f' ?>; '> Montante total movimentado: R$
                                                 <?= number_format($total, 2, ",", "."); ?> </label>
                                         </center>
                                     </div>

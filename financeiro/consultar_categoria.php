@@ -24,14 +24,14 @@ include_once '_head.php';
                     <div class="col-md-12">
                         <?php include_once "_msg.php"; ?>
                         <h2><strong>Consultar Categoria</strong></h2>
-                        <h5>Aqui você poderá alterar todas as suas categorias.</h5>
+                        <h5>Aqui, você tem controle total para consultar e alterar suas categorias.</h5>
                     </div>
                 </div>
                 <!-- /. ROW  -->
                 <hr />
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Categorias Cadastradas, Caso deseja alterar, Clique no botão.
+                    Categorias cadastradas. Caso deseje realizar alterações, clique no botão 'Alterar'.
                     </div>
                     <div class="panel-body">
                         <div class="table-responsive">

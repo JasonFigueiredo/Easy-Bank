@@ -262,3 +262,57 @@ function ValidarConsulta() {
         return false;
     }
 }
+function contarCaracteres() {
+    // Limite de caracteres permitido no imput
+    const limiteCaracteres = 11;
+    // puxa informaçõa do imput id "maxnumber"
+    var maxnumber = document.getElementById("maxnumber");
+    // value - puxa o que foi inserido no imput
+    var maxnumberConteudo = maxnumber.value;
+    // length - quantidade de caracteres
+    if (maxnumberConteudo.length > limiteCaracteres) {
+        // Enviar para o campo maxnumber somente os primeiros 15 caracteres
+        // maxnumberConteudo - POssui o valor atual do imput
+        // A função slice() permite extrair uma parte da string com base nos índices especificados. é utilizado o intervalo de 0 a 15. 
+        maxnumber.value = maxnumberConteudo.slice(0, limiteCaracteres);
+    }
+    // Contar a quantidade de caracteres e enviar para o SELETOR "contador" no HTML
+    // maxnumber.value.length - Contar a quantidade de caracteres
+    document.getElementById("contador").textContent = maxnumber.value.length;
+}
+function contarCaracteresAgencia() {
+    const limiteCaracteres = 4;
+    var maxnumber = document.getElementById("agencia");
+    var maxnumberConteudo = maxnumber.value;
+    if (maxnumberConteudo.length > limiteCaracteres) {
+        maxnumber.value = maxnumberConteudo.slice(0, limiteCaracteres);
+    }
+    document.getElementById("contador").textContent = maxnumber.value.length;
+}
+function contarCaracteresNumeroConta() {
+    const limiteCaracteres = 9;
+    var maxnumber = document.getElementById("conta");
+    var maxnumberConteudo = maxnumber.value;
+    if (maxnumberConteudo.length > limiteCaracteres) {
+        maxnumber.value = maxnumberConteudo.slice(0, limiteCaracteres);
+    }
+    document.getElementById("contador").textContent = maxnumber.value.length;
+}
+function contarCaracteresSaldoConta() {
+    const limiteCaracteres = 15;
+    var maxnumber = document.getElementById("saldo");
+    var maxnumberConteudo = maxnumber.value;
+    if (maxnumberConteudo.length > limiteCaracteres) {
+        maxnumber.value = maxnumberConteudo.slice(0, limiteCaracteres);
+    }
+    document.getElementById("contador").textContent = maxnumber.value.length;
+}
+function contarCaracteresValorMov() {
+    const limiteCaracteres = 15;
+    var maxnumber = document.getElementById("valor");
+    var maxnumberConteudo = maxnumber.value;
+    if (maxnumberConteudo.length > limiteCaracteres) {
+        maxnumber.value = maxnumberConteudo.slice(0, limiteCaracteres);
+    }
+    document.getElementById("contador").textContent = maxnumber.value.length;
+}

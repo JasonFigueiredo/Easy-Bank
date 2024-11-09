@@ -52,8 +52,8 @@ include_once '_head.php';
                 <div class="row">
                     <div class="col-md-12">
                         <?php include_once "_msg.php" ?>
-                        <h2>Alterar Empresa</h2>
-                        <h5>Aqui voce poderá alterar todas as empresas.</h5>
+                        <h2><strong>Alterar Empresa</strong></h2>
+                        <h5>Altere aqui todas as empresas cadastradas.</h5>
                     </div>
                 </div>
                 <hr />
@@ -61,15 +61,15 @@ include_once '_head.php';
                     <input type="hidden" name="cod" value="<?= $dados[0]["id_empresa"] ?>">
                     <div class=" form-group">
                         <label>Nome da Empresa * :</label>
-                        <input class="form-control" value="<?= $dados[0]["nome_empresa"] ?>" placeholder=" Digite o nome da empresa" name="nomeempresa" id="nome">
+                        <input class="form-control" value="<?= $dados[0]["nome_empresa"] ?>" placeholder=" Digite o nome da empresa" name="nomeempresa" id="nome" maxlength="45">
                     </div>
                     <div class="form-group">
                         <label>Telefone:</label>
-                        <input class="form-control" value="<?= $dados[0]["telefone_empresa"] ?>" placeholder=" Digite o telefone" name="telefoneempresa">
+                        <input class="form-control" value="<?= $dados[0]["telefone_empresa"] ?>" placeholder=" Digite o telefone" name="telefoneempresa" type="number" id='maxnumber' oninput="contarCaracteres()">
                     </div>
                     <div class="form-group">
                         <label>Endereço:</label>
-                        <input class="form-control" value="<?= $dados[0]["endereco_empresa"] ?>" placeholder=" Digite o endereço da empresa" name="enderecoempresa" >
+                        <input class="form-control" value="<?= $dados[0]["endereco_empresa"] ?>" placeholder=" Digite o endereço da empresa" name="enderecoempresa" maxlength="60" >
                     </div>
                     <button type="submit" class="btn btn-success" name="btn_salvar" onclick="return CadastrarEmpresa()">Salvar Alterações</button>
                     <button type="button" data-toggle="modal" data-target="#modalExcluir" class="btn btn-danger">Excluir</button>
@@ -78,7 +78,9 @@ include_once '_head.php';
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    <h4 class="modal-title" id="myModalLabel">Confirmação de exclusão</h4>
+                                    <center>
+                                    <h4 class="modal-title" id="myModalLabel">Confirma a exclusão dos dados?</h4>
+                                    </center>
                                 </div>
                                 <div class="modal-body">
                                     Deseja excluir a empresa: <strong><?= $dados[0]["nome_empresa"] ?></strong> ?

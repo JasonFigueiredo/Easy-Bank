@@ -1,6 +1,6 @@
 <?php
-require_once "../DAO/UtilDAO.php";
 UtilDAO::VerificarLogado();
+require_once "../DAO/UtilDAO.php";
 require_once '../DAO/ContaDAO.php';
 
 if(isset($_POST["btn"])){
@@ -38,19 +38,19 @@ include_once '_head.php';
                 <form method="post" action="nova_conta.php">
                     <div class="form-group">
                         <label>Nome do Banco * :</label>
-                        <input id="banco" name="banco" class="form-control" placeholder="Digite o nome do banco" />
+                        <input id="banco" name="banco" class="form-control" placeholder="Digite o nome do banco" maxlength="20" />
                     </div>
                     <div class="form-group">
                         <label>Agência * :</label>
-                        <input id="agencia" name="agencia" class="form-control" placeholder="Digite a agência bancaria" />
+                        <input id="agencia" name="agencia" class="form-control" placeholder="Digite a agência bancaria" type="number" oninput="contarCaracteresAgencia()"  />
                     </div>
                     <div class="form-group">
                         <label>Numero da Conta * :</label>
-                        <input id="conta" name="numero" class="form-control" placeholder="Digite o numero da conta" />
+                        <input id="conta" name="numero" class="form-control" placeholder="Digite o numero da conta" type="number" oninput="contarCaracteresNumeroConta()" />
                     </div>
                     <div class="form-group">
                         <label>Saldo da Conta * :</label>
-                        <input id="saldo" name="saldo" class="form-control" placeholder="Digite o saldo da conta" />
+                        <input id="saldo" name="saldo" class="form-control" placeholder="Digite o saldo da conta" type="number" oninput="contarCaracteresSaldoConta()"/>
                     </div>
                 <button onclick="return CriarConta()" class="btn btn-success" name="btn">Guardar</button>
                 <a href="consultar_conta.php" class="btn btn-info">Consultar suas Contas</a>    

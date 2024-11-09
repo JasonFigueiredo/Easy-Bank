@@ -25,15 +25,15 @@ include_once '_head.php';
                 <div class="row">
                     <div class="col-md-12">
                         <?php include_once '_msg.php';?>
-                        <h2><strong>Consultar empresas</strong></h2>
-                        <h5>Aqui você poderá consultar todas as suas empresas.</h5>
+                        <h2><strong>Consultar Empresas</strong></h2>
+                        <h5>Consulte aqui todas as empresas cadastradas.</h5>
                     </div>
                 </div>
                 <!-- /. ROW  -->
                 <hr />
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Empresas Cadastradas, Caso deseja alterar, Clique no botão.
+                    Empresas cadastradas. Caso deseje realizar alterações, clique no botão 'Alterar'.
                     </div>
                     <div class="panel-body">
                         <div class="table-responsive">
