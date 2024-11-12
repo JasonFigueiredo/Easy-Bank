@@ -53,7 +53,7 @@ include_once '_head.php';
                     <div class="col-md-12">
                         <?php include_once "_msg.php" ?>
                         <h2><strong>Alterar Empresa</strong></h2>
-                        <h5>Altere aqui todas as empresas cadastradas.</h5>
+                        <h5>Aqui, você poderá realizar alterações nos dados cadastrais da empresa.</h5>
                     </div>
                 </div>
                 <hr />

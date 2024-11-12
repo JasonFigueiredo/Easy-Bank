@@ -13,7 +13,6 @@ class UsuarioDAO extends Conexao
                                        email_usuario
                                   FROM tb_usuario
                                   WHERE id_usuario = ?';
-        $sql = new PDOStatement();
         $sql = $conexao->prepare($comando_sql);
 
         $sql->bindValue(1, UtilDAO::CodigoLogado());
@@ -24,6 +23,7 @@ class UsuarioDAO extends Conexao
 
         return $sql->fetchAll();
     }
+
     public function GravarMeusDados($nome, $email)
     {
         if (trim($nome) == '' || trim($email) == '') {
@@ -52,6 +52,7 @@ class UsuarioDAO extends Conexao
             return FLAG_ERRO;
         }
     }
+
     public function ValidarLogin($email, $senha)
     {
         if (trim($email) == '' || trim($senha) == '') {
@@ -86,6 +87,7 @@ class UsuarioDAO extends Conexao
         header("location: inicial.php");
         exit;
     }
+
     public function VerificarEmailDuplicadoCadastro($email)
     {
         if (trim($email) == "") {
@@ -110,6 +112,7 @@ class UsuarioDAO extends Conexao
 
         return $contar[0]['contar'];
     }
+
     public function VerificarEmailDuplicadoAlteracao($email)
     {
         if (trim($email) == "") {
@@ -135,6 +138,7 @@ class UsuarioDAO extends Conexao
 
         return $contar[0]['contar'];
     }
+
     public function CriarCadastro($nome, $email, $senha1, $senha2)
     {
 
@@ -175,8 +179,65 @@ class UsuarioDAO extends Conexao
             return FLAG_ERRO;
         }
     }
-    public function RecuperarSenha()
+
+    public function RedefinirSenha($email, $senha_atual, $rsenha1, $rsenha2)
     {
-        return FLAG_RSENHA;
+        if (trim($email) == '' || trim($senha_atual) == '' || trim($rsenha1) == '' || trim($rsenha2) == '') {
+            return FLAG_VAZIO;
+        }
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return FLAG_INVALIDO;
+        }
+
+        if (strlen($rsenha1) < 6) {
+            return FLAG_MENOR;
+        }
+
+        if (trim($rsenha1) != trim($rsenha2)) {
+            return FLAG_INCORRETO;
+        }
+
+        $conexao = parent::retornarConexao();
+        $comando_sql = 'SELECT count(*) as contar 
+                        FROM tb_usuario 
+                        WHERE email_usuario = ? 
+                        AND senha_usuario = ?';
+        $sql = $conexao->prepare($comando_sql);
+        $sql->bindValue(1, $email);
+        $sql->bindValue(2, $senha_atual);
+        $sql->setFetchMode(PDO::FETCH_ASSOC);
+        $sql->execute();
+        $contar = $sql->fetchAll();
+
+        if ($contar[0]['contar'] == 0) {
+            return FLAG_USUARIO1;
+        }
+
+        $comando_sql = 'SELECT senha_usuario FROM tb_usuario WHERE email_usuario = ?';
+        $sql = $conexao->prepare($comando_sql);
+        $sql->bindValue(1, $email);
+        $sql->setFetchMode(PDO::FETCH_ASSOC);
+        $sql->execute();
+        $senhaBanco = $sql->fetch();
+
+        if ($senhaBanco['senha_usuario'] == $rsenha1) {
+            return FLAG_SENHA;
+        }
+
+        $comando_sql = 'UPDATE tb_usuario 
+                        SET senha_usuario = ? 
+                        WHERE email_usuario = ?';
+        $sql = $conexao->prepare($comando_sql);
+        $sql->bindValue(1, $rsenha1);
+        $sql->bindValue(2, $email);
+
+        try {
+            $sql->execute();
+            return FLAG_SUCESSO;
+        } catch (Exception $ex) {
+            echo $ex->getMessage();
+            return FLAG_ERRO;
+        }
     }
 }

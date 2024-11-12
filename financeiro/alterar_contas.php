@@ -54,8 +54,8 @@ include_once '_head.php';
                 <div class="row">
                     <div class="col-md-12">
                         <?php include_once "_msg.php" ?>
-                        <h2>Alterar Contas</h2>
-                        <h5>Aqui voce poderá alterar todas as suas contas.</h5>
+                        <h2><strong>Alterar Contas</strong></h2>
+                        <h5>Realize alterações em todos os dados cadastrais das suas contas.</h5>
                     </div>
                 </div>
                 <hr />
@@ -63,19 +63,19 @@ include_once '_head.php';
                     <input type="hidden" name="cod" value="<?= $dados[0]["id_conta"] ?>">
                     <div class="form-group">
                         <label>Nome do Banco * :</label>
-                        <input class="form-control" placeholder="Digite o nome do banco" name="nome" id="banco" value="<?= $dados[0]['banco_conta'] ?>">
+                        <input class="form-control" placeholder="Digite o nome do banco" name="nome" id="banco" value="<?= $dados[0]['banco_conta'] ?>" maxlength="20">
                     </div>
                     <div class="form-group">
                         <label>Agência * :</label>
-                        <input class="form-control" placeholder="Digite a agência bancaria" name="agencia" id="agencia" value="<?= $dados[0]['agencia_conta'] ?>">
+                        <input class="form-control" placeholder="Digite a agência bancaria" name="agencia" id="agencia" value="<?= $dados[0]['agencia_conta'] ?>" oninput="contarCaracteresAgencia()">
                     </div>
                     <div class="form-group">
                         <label>Numero da Conta * :</label>
-                        <input class="form-control" placeholder="Digite o numero da conta" name="conta" id="conta" value="<?= $dados[0]['numero_conta'] ?>">
+                        <input class="form-control" placeholder="Digite o numero da conta" name="conta" id="conta" value="<?= $dados[0]['numero_conta'] ?>" oninput="contarCaracteresNumeroConta()" >
                     </div>
                     <div class="form-group">
                         <label>Saldo da Conta * :</label>
-                        <input class="form-control" placeholder="Digite o saldo da conta" name="saldo" id="saldo" value="<?= $dados[0]['saldo_conta'] ?>">
+                        <input class="form-control" placeholder="Digite o saldo da conta" name="saldo" id="saldo" value="<?= $dados[0]['saldo_conta'] ?>" oninput="contarCaracteresSaldoConta()">
                     </div>
                     <button type="submit" class="btn btn-success" onclick="return CriarConta()" name="btn_salvar">Salvar Alterações</button>
                     <button type="button" data-toggle="modal" data-target="#modalExcluir" class="btn btn-danger">Excluir</button>

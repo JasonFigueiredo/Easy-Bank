@@ -27,14 +27,14 @@ include_once '_head.php';
                     <div class="col-md-12">
                         <?php include_once "_msg.php"?>
                         <h2><strong>Consultar Contas</strong></h2>
-                        <h5>Aqui você poderá consultar todas as suas contas.</h5>
+                        <h5>Consulte aqui o saldo completo de todas as suas contas.</h5>
                     </div>
                 </div>
                 <!-- /. ROW  -->
                 <hr />
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Contas Cadastradas, Caso deseja alterar, Clique no botão.
+                    Contas cadastradas. Caso deseje realizar alterações, clique no botão 'Alterar'.
                     </div>
                     <div class="panel-body">
                         <div class="table-responsive">
@@ -54,7 +54,7 @@ include_once '_head.php';
                                         <td><?= $item['banco_conta'] ?></td>
                                         <td>Nº <?= $item['agencia_conta'] ?></td>
                                         <td>Nº <?= $item['numero_conta'] ?></td>
-                                        <td>R$ <?= $item['saldo_conta'] ?></td>
+                                        <td>R$ <?= number_format($item['saldo_conta'], 2 ,",","."); ?></td>
                                         <td>
                                             <a href="alterar_contas.php?cod=<?= $item['id_conta']?>" class="btn btn-primary" class="fa fa-edit ">Alterar</a>
                                         </td>

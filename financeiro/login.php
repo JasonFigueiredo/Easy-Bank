@@ -43,16 +43,16 @@ include_once '_head.php';
                             <?php include_once "_msg.php" ?>
                             <div class="form-group input-group">
                                 <span class="input-group-addon"><img src="./assets/img/email.png" width=15 height=15></span>
-                                <input id="email" name="email" type="email" class="form-control" placeholder="Seu E-mail " />
+                                <input id="email" maxlength="45" name="email" type="email" class="form-control" placeholder="Seu E-mail " />
                             </div>
                             <div class="form-group input-group">
                                 <span class="input-group-addon"><img src="./assets/img/password.png" width=15 height=15></span>
-                                <input id="senha" name="senha" type="password" class="form-control" placeholder="Sua Senha" />
+                                <input id="senha" maxlength="12" name="senha" type="password" class="form-control" placeholder="Sua Senha" />
                             </div>
                             <center>
-                                <center>Esqueçeu a sua senha?
-                                    <button class="btn-primary2" name="btn_recuperar">Redefinir senha</button>
-                                </center>
+                                Esqueçeu a sua senha?
+                                <a href="redefinir_senha.php">Redefinir sua senha !</a>
+                                <br>
                                 <br>
                                 <button onclick="return ValidarLogin()" class="btn btn-primary" name="btn_entrar">Entrar</button>
                                 <hr />Não tem cadastro ?

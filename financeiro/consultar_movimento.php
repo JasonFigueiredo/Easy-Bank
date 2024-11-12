@@ -119,14 +119,6 @@ include_once '_head.php';
                                                     } else {
                                                         $total -= $movs[$i]['valor_movimento'];
                                                     }
-                                                    // $total = 0;
-                                                    // for ($i = 0; $i < count($movs); $i++) {
-                                                    //     if ($movs[$i]['tipo_movimento'] == 1) {
-                                                    //       $total = $total + $movs[$i]['valor_movimento'];
-                                                    //     } else {
-                                                    //       $total = $total - $movs[$i]['valor_movimento'];
-                                                    //     }
-
                                                 ?>
                                                     <tr class="odd gradeX">
                                                         <td><?= $movs[$i]["data_movimento"] ?></td>
@@ -135,7 +127,7 @@ include_once '_head.php';
                                                         <td><?= $movs[$i]["nome_empresa"] ?></td>
                                                         <td><?= $movs[$i]["banco_conta"] ?> / Ag. <?= $movs[$i]["agencia_conta"] ?> - Nº <?= $movs[$i]["numero_conta"] ?></td>
                                                         <td>R$ <?= number_format($movs[$i]["valor_movimento"], 2, ",", ".");  ?></td>
-                                                        <td><?= $movs[$i]["obs_movimento"] ?></td>
+                                                        <td style="word-break: break-all;"><?= $movs[$i]["obs_movimento"] ?></td>
                                                         <td>
                                                             <button type="button" data-toggle="modal" data-target="#modalExcluir<?= $i ?>" class="btn btn-danger">Excluir</button>
                                                             <form action="consultar_movimento.php" method="post">

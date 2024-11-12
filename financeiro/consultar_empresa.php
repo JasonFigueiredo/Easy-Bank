@@ -26,7 +26,7 @@ include_once '_head.php';
                     <div class="col-md-12">
                         <?php include_once '_msg.php';?>
                         <h2><strong>Consultar Empresas</strong></h2>
-                        <h5>Consulte aqui todas as empresas cadastradas.</h5>
+                        <h5>Neste local, você encontrará todas as empresas cadastradas.</h5>
                     </div>
                 </div>
                 <!-- /. ROW  -->

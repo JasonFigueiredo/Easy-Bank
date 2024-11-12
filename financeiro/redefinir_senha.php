@@ -1,15 +1,14 @@
 <?php
-
 require_once "../DAO/UsuarioDAO.php";
 
 if (isset($_POST["btn_enviar"])) {
-    $nome = $_POST["nome"];
     $email = $_POST["email"];
-    $senha1 = $_POST["senha1"];
-    $senha2 = $_POST["senha2"];
+    $senha_atual = $_POST["senha_atual"];
+    $rsenha1 = $_POST["rsenha1"];
+    $rsenha2 = $_POST["rsenha2"];
 
     $objdao = new UsuarioDao();
-    $ret = $objdao->CriarCadastro($nome, $email, $senha1, $senha2);
+    $ret = $objdao->RedefinirSenha($email, $senha_atual, $rsenha1, $rsenha2);
 }
 ?>
 <!DOCTYPE html>
@@ -24,7 +23,7 @@ include_once '_head.php';
         <img src="./assets/img/moedas2.gif" type="gif">
     </div>
     <div class="container">
-        <div class="row text-center  ">
+        <div class="row text-center">
             <div class="col-md-12">
                 <div class="titulo">
                     <img src="./assets/img/easybanklogo2.png" alt="EasyBanklogo">
@@ -33,29 +32,29 @@ include_once '_head.php';
                     <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <strong> Novo Usuario ? Registre - se </strong>
+                                <strong> Redefinir Senha do Usuario </strong>
                             </div>
                             <div class="panel-body">
-                                <form method="post" action="cadastro.php">
+                                <form method="post" action="redefinir_senha.php">
                                     <br />
                                     <?php include_once "_msg.php" ?>
                                     <div class="form-group input-group">
-                                        <span class="input-group-addon"><img src="./assets/img/user.png" width=15 height=15><i class="fa fa-circle-o-notch"></i></span>
-                                        <input id="nome" maxlength="45" type="text" class="form-control" placeholder="Seu nome" name="nome" />
-                                    </div>
-                                    <div class="form-group input-group">
                                         <span class="input-group-addon"><img src="./assets/img/email.png" width=15 height=15></span>
-                                        <input id="email" maxlength="45" type="text" class="form-control" placeholder="Seu melhor e-mail" name="email" />
+                                        <input id="email" maxlength="45" type="text" class="form-control" placeholder="Seu e-mail" name="email"/>
                                     </div>
                                     <div class="form-group input-group">
                                         <span class="input-group-addon"><img src="./assets/img/password.png" width=15 height=15></span>
-                                        <input id="senha1" maxlength="12" type="password" class="form-control" placeholder="Sua senha" name="senha1" />
+                                        <input id="senha_atual" maxlength="12" type="password" class="form-control" placeholder="Sua senha atual" name="senha_atual"/>
                                     </div>
                                     <div class="form-group input-group">
                                         <span class="input-group-addon"><img src="./assets/img/password.png" width=15 height=15></span>
-                                        <input id="senha2" maxlength="12 type="password" class="form-control" placeholder="Repita sua senha" name="senha2">
+                                        <input id="rsenha1" maxlength="12" type="password" class="form-control" placeholder="Sua nova senha" name="rsenha1"/>
                                     </div>
-                                    <button onclick="return ValidarCadastro()" class="btn btn-success " name="btn_enviar">Tudo Pronto</button>
+                                    <div class="form-group input-group">
+                                        <span class="input-group-addon"><img src="./assets/img/password.png" width=15 height=15></span>
+                                        <input id="rsenha2" maxlength="12" type="password" class="form-control" placeholder="Repita sua nova senha" name="rsenha2"/>
+                                    </div>
+                                    <button class="btn btn-success " name="btn_enviar" onclick="return RedefinirSenha()">Alterar Senha</button>
                                     <hr />
                                     Já possui cadastro ?
                                     <a href="login.php">Fazer Login</a>
@@ -65,6 +64,8 @@ include_once '_head.php';
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 </body>
 
 </html>

@@ -8,5 +8,7 @@ const FLAG_USO = -4;
 const FLAG_EMAIL = -5;
 const FLAG_USUARIO = -6;
 const FLAG_MOVIMENTACAO = -7;
-const FLAG_RSENHA = -8;
+const FLAG_SENHA = -8;
+const FLAG_USUARIO1 = -10;
+const FLAG_INVALIDO = -11;
 ?>

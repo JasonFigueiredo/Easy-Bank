@@ -2813,8 +2813,8 @@ fieldset[disabled] .btn-success.active {
 
 .btn-info {
   color: #fff;
-  background-color: #5bc0de;
-  border-color: #46b8da;
+  background-color: #008bb5;
+  border-color: #005771;
 }
 
 .btn-info:hover,
@@ -2823,8 +2823,8 @@ fieldset[disabled] .btn-success.active {
 .btn-info.active,
 .open .dropdown-toggle.btn-info {
   color: #fff;
-  background-color: #39b3d7;
-  border-color: #269abc;
+  background-color: #0040ef;
+  border-color: #001ec6;
 }
 
 .btn-info:active,

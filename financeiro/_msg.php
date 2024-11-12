@@ -35,7 +35,7 @@ if (isset($ret)) {
 
         case -3:
             echo '<div class="alert alert-warning">
-            A senha deve ter mais de 6 caracteres!
+            A senha deve conter 6 ou mais caracteres!
             </div>';
             break;
 
@@ -70,20 +70,25 @@ if (isset($ret)) {
             icon: "question"
             });</script>';
             break;
-
         case -8:
             echo '<script> Swal.fire({
-            title: "<strong>Redefinir senha</strong>", 
-            icon: "info",
-            html: `Para alterar sua senha, entre em contato com nosso suporte técnico através do link abaixo, 
-            informando seu e-mail e nome de usuário.
-            </br>
-            <hr>
-            <a href="mailto:jasonlopes132@gmail.com?subject=Solicitação para redefinição de senha!
-            &body="--- Solicitar redefinição de senha ---" autofocus>Solicitar redefinição de senha</a>
-            `,
-            focusConfirm: false,
-            confirmButtonText: `Finalizar`,
+            title: "Insira Senhas Diferentes",
+            text: "A sua senha não pode ser igual a anterior.",
+            icon: "warning"
+            });</script>';
+            break;
+        case -10:
+            echo '<script> Swal.fire({
+            title: "Usuário não encontrado",
+            text: "Por favor, digite o e-mail ou senha corretamente.",
+            icon: "error"
+            });</script>';
+            break;
+        case -11:
+            echo '<script> Swal.fire({
+            title: "E-mail Inválido",
+            text: "Por favor, insira um e-mail válido.",
+            icon: "warning"
             });</script>';
             break;
     }

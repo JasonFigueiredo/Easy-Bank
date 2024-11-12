@@ -21,7 +21,14 @@ if (isset($_POST["btn_gravar"])) {
 
     $objdao = new MovimentoDAO();
     $ret = $objdao->RealizarMovimento(
-        $movimento, $data, $valor, $obs, $categoria, $empresa, $conta);
+        $movimento,
+        $data,
+        $valor,
+        $obs,
+        $categoria,
+        $empresa,
+        $conta
+    );
 }
 
 $categorias = $dao_cat->ConsultarCategoria();
@@ -49,9 +56,9 @@ include_once '_head.php';
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                        <?php include_once "_msg.php"?>
+                        <?php include_once "_msg.php" ?>
                         <h2><strong>Realizar Movimentações</strong></h2>
-                        <h5>Aqui voce poderá realizar movimentos de entrada e saída.</h5>
+                        <h5>Realize aqui todas as suas movimentações financeiras de entrada e saída.</h5>
                     </div>
                 </div>
                 <hr />
@@ -72,7 +79,7 @@ include_once '_head.php';
                         <div class="form-group">
                             <label>Valor da Movimentação * :</label>
                             <input id="valor" name="valor" class="form-control"
-                                placeholder="Digite o valor da movimentação" type="number" oninput="contarCaracteresValorMov()">
+                                placeholder="Digite o valor da movimentação" oninput="contarCaracteresValorMov()">
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -107,7 +114,7 @@ include_once '_head.php';
                                         <?= "Banco: " . $item["banco_conta"] .
                                             " / Agência: Nº" . $item["agencia_conta"] .
                                             " / " . "Nº Conta " . $item["numero_conta"] .
-                                            " / Saldo: " . $item["saldo_conta"] ?>
+                                            " / Saldo: " . number_format($item["saldo_conta"], 2, ",", "."); ?>
                                     </option>
                                 <?php } ?>
                             </select>

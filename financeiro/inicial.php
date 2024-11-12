@@ -35,7 +35,7 @@ include_once '_head.php';
                 <div class="col-md-6">
                     <div class="panel panel-primary text-center no-boder bg-color-green">
                         <div class="panel-body">
-                        <img src="./assets/img/money_in.png" width=80 height=80>
+                            <img src="./assets/img/money_in.png" width=80 height=80>
                             <h3>R$ <?= $total_entrada[0]["total"] != "" ? number_format($total_entrada[0]['total'], 2, ",", ".") : "0" ?></h3>
                         </div>
                         <div class="panel-footer back-footer-green">
@@ -47,7 +47,7 @@ include_once '_head.php';
                 <div class="col-md-6">
                     <div class="panel panel-primary text-center no-boder bg-color-red">
                         <div class="panel-body">
-                        <img src="./assets/img/money_out.png" width=80 height=80>
+                            <img src="./assets/img/money_out.png" width=80 height=80>
                             <h3>R$ <?= $total_saida[0]["total"] != "" ? number_format($total_saida[0]['total'], 2, ",", ".") : "0" ?></h3>
                         </div>
                         <div class="panel-footer back-footer-red">
@@ -64,7 +64,7 @@ include_once '_head.php';
                         <div class="col-md-12">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                Últimos 10 Lançamentos de Movimento
+                                    Últimos 10 Lançamentos de Movimento
                                 </div>
                                 <div class="panel-body">
                                     <div class="table-responsive">
@@ -75,7 +75,7 @@ include_once '_head.php';
                                                     <th>Tipo</th>
                                                     <th>Categoria</th>
                                                     <th>Empresa</th>
-                                                    <th>conta</th>
+                                                    <th>Conta</th>
                                                     <th>Valor</th>
                                                     <th>Observação</th>
                                                 </tr>
@@ -106,7 +106,7 @@ include_once '_head.php';
                                                         <td><?= $movs[$i]["nome_empresa"] ?></td>
                                                         <td><?= $movs[$i]["banco_conta"] ?> / Ag. <?= $movs[$i]["agencia_conta"] ?> - Nº <?= $movs[$i]["numero_conta"] ?></td>
                                                         <td>R$ <?= number_format($movs[$i]["valor_movimento"], 2, ",", ".");  ?></td>
-                                                        <td><?= $movs[$i]["obs_movimento"] ?></td>
+                                                        <td style="word-break: break-all;"><?= $movs[$i]["obs_movimento"] ?></td>
                                                     </tr>
                                                 <?php
                                                 }
@@ -125,7 +125,7 @@ include_once '_head.php';
                     </div>
                 <?php } else { ?>
                     <div class="alert alert-info col-md-12">
-                        Não existe nenhum movimento para ser exibido.
+                        <b>Não há dados registrados:</b> Você ainda não realizou nenhuma transação, pagamento ou outro tipo de movimentação financeira na sua conta.
                     </div>
                 <?php } ?>
             </div>

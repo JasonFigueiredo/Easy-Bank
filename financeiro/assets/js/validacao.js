@@ -1,7 +1,7 @@
 function ValidarMeusDados() {
     var nome = document.getElementById("nome").value;
     var email = $("#email").val();
-
+    var emailvalido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (nome.trim() == "") {
         Swal.fire({
             title: "Nome de Usuário",
@@ -15,6 +15,15 @@ function ValidarMeusDados() {
         Swal.fire({
             title: "E-mail",
             text: "Por favor, preencha o campo obrigatório.",
+            icon: "warning"
+        });
+        $("#email").focus();
+        return false;
+    }
+    if (!emailvalido.test(email)) {
+        Swal.fire({
+            title: "E-mail Inválido",
+            text: "Por favor, insira um e-mail válido.",
             icon: "warning"
         });
         $("#email").focus();
@@ -93,11 +102,20 @@ function CriarConta() {
 function ValidarLogin() {
     var email = document.getElementById("email").value;
     var senha = document.getElementById("senha").value;
-
+    var emailvalido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (email.trim() == "") {
         Swal.fire({
             title: "E-mail",
             text: "Por favor, preencha o campo obrigatório.",
+            icon: "warning"
+        });
+        $("#email").focus();
+        return false;
+    }
+    if (!emailvalido.test(email)) {
+        Swal.fire({
+            title: "E-mail Inválido",
+            text: "Por favor, insira um e-mail válido.",
             icon: "warning"
         });
         $("#email").focus();
@@ -119,7 +137,7 @@ function ValidarCadastro() {
     var email = document.getElementById("email").value;
     var senha1 = document.getElementById("senha1").value;
     var senha2 = document.getElementById("senha2").value;
-
+    var emailvalido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (nome.trim() == "") {
         Swal.fire({
             title: "Seu Nome",
@@ -133,6 +151,15 @@ function ValidarCadastro() {
         Swal.fire({
             title: "Seu E-mail",
             text: "Por favor, preencha o campo obrigatório.",
+            icon: "warning"
+        });
+        $("#email").focus();
+        return false;
+    }
+    if (!emailvalido.test(email)) {
+        Swal.fire({
+            title: "E-mail Inválido",
+            text: "Por favor, insira um e-mail válido.",
             icon: "warning"
         });
         $("#email").focus();
@@ -168,7 +195,7 @@ function ValidarCadastro() {
     if (senha1.trim().length < 6) {
         Swal.fire({
             title: "Senha Muito Fraca",
-            text: "A senha deve conter ao menos 6 caracteres.",
+            text: "A senha deve conter 6 ou mais caracteres.",
             icon: "warning"
         });
         $("#senha1").focus();
@@ -262,57 +289,106 @@ function ValidarConsulta() {
         return false;
     }
 }
-function contarCaracteres() {
-    // Limite de caracteres permitido no imput
-    const limiteCaracteres = 11;
-    // puxa informaçõa do imput id "maxnumber"
-    var maxnumber = document.getElementById("maxnumber");
-    // value - puxa o que foi inserido no imput
-    var maxnumberConteudo = maxnumber.value;
-    // length - quantidade de caracteres
-    if (maxnumberConteudo.length > limiteCaracteres) {
-        // Enviar para o campo maxnumber somente os primeiros 15 caracteres
-        // maxnumberConteudo - POssui o valor atual do imput
-        // A função slice() permite extrair uma parte da string com base nos índices especificados. é utilizado o intervalo de 0 a 15. 
-        maxnumber.value = maxnumberConteudo.slice(0, limiteCaracteres);
+function RedefinirSenha() {
+    var email = document.getElementById("email").value;
+    var senha_atual = document.getElementById("senha_atual").value;
+    var rsenha1 = document.getElementById("rsenha1").value;
+    var rsenha2 = document.getElementById("rsenha2").value;
+    var emailvalido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (email.trim() == "") {
+        Swal.fire({
+            title: "Seu E-mail",
+            text: "Por favor, preencha o campo obrigatório.",
+            icon: "warning"
+        });
+        $("#email").focus();
+        return false;
     }
-    // Contar a quantidade de caracteres e enviar para o SELETOR "contador" no HTML
-    // maxnumber.value.length - Contar a quantidade de caracteres
+    if (senha_atual.trim() == "") {
+        Swal.fire({
+            title: "Sua Senha Atual",
+            text: "Por favor, preencha o campo obrigatório.",
+            icon: "warning"
+        });
+        $("#senha_atual").focus();
+        return false;
+    }
+    if (rsenha1.trim() == "") {
+        Swal.fire({
+            title: "Sua nova Senha",
+            text: "Por favor, preencha o campo obrigatório.",
+            icon: "warning"
+        });
+        $("#rsenha1").focus();
+        return false;
+    }
+    if (rsenha2.trim() == "") {
+        Swal.fire({
+            title: "Repita sua nova Senha",
+            text: "Por favor, preencha o campo obrigatório.",
+            icon: "warning"
+        });
+        $("#rsenha2").focus();
+        return false;
+    }
+    if ($("#rsenha1").val().trim() != $("#rsenha2").val().trim()) {
+        Swal.fire({
+            title: "Senhas Diferentes",
+            text: "Por favor, certifique-se de que as novas senhas sejam iguais.",
+            icon: "warning"
+        });
+        $("#rsenha2").focus();
+        return false;
+    }
+    if (rsenha1.trim().length < 6) {
+        Swal.fire({
+            title: "Senha Muito Fraca",
+            text: "A senha deve conter 6 ou mais caracteres.",
+            icon: "warning"
+        });
+        $("#rsenha1").focus();
+        return false;
+    }
+    if (!emailvalido.test(email)) {
+        Swal.fire({
+            title: "E-mail Inválido",
+            text: "Por favor, insira um e-mail válido.",
+            icon: "warning"
+        });
+        $("#email").focus();
+        return false;
+    }
+    
+    
+}
+function contarCaracteres() {
+    const limiteCaracteres = 11;
+    var maxnumber = document.getElementById("maxnumber");
+    maxnumber.value = maxnumber.value.replace(/[^0-9]/g, '').slice(0, limiteCaracteres);
     document.getElementById("contador").textContent = maxnumber.value.length;
 }
 function contarCaracteresAgencia() {
     const limiteCaracteres = 4;
     var maxnumber = document.getElementById("agencia");
-    var maxnumberConteudo = maxnumber.value;
-    if (maxnumberConteudo.length > limiteCaracteres) {
-        maxnumber.value = maxnumberConteudo.slice(0, limiteCaracteres);
-    }
+    maxnumber.value = maxnumber.value.replace(/[^0-9]/g, '').slice(0, limiteCaracteres);
     document.getElementById("contador").textContent = maxnumber.value.length;
 }
 function contarCaracteresNumeroConta() {
     const limiteCaracteres = 9;
     var maxnumber = document.getElementById("conta");
-    var maxnumberConteudo = maxnumber.value;
-    if (maxnumberConteudo.length > limiteCaracteres) {
-        maxnumber.value = maxnumberConteudo.slice(0, limiteCaracteres);
-    }
+    maxnumber.value = maxnumber.value.replace(/[^0-9]/g, '').slice(0, limiteCaracteres);
     document.getElementById("contador").textContent = maxnumber.value.length;
 }
 function contarCaracteresSaldoConta() {
     const limiteCaracteres = 15;
     var maxnumber = document.getElementById("saldo");
-    var maxnumberConteudo = maxnumber.value;
-    if (maxnumberConteudo.length > limiteCaracteres) {
-        maxnumber.value = maxnumberConteudo.slice(0, limiteCaracteres);
-    }
+    maxnumber.value = maxnumber.value.replace(/[^0-9]/g, '').slice(0, limiteCaracteres);
     document.getElementById("contador").textContent = maxnumber.value.length;
 }
 function contarCaracteresValorMov() {
     const limiteCaracteres = 15;
     var maxnumber = document.getElementById("valor");
-    var maxnumberConteudo = maxnumber.value;
-    if (maxnumberConteudo.length > limiteCaracteres) {
-        maxnumber.value = maxnumberConteudo.slice(0, limiteCaracteres);
-    }
+    maxnumber.value = maxnumber.value.replace(/[^0-9]/g, '').slice(0, limiteCaracteres);
     document.getElementById("contador").textContent = maxnumber.value.length;
 }
