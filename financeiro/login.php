@@ -48,7 +48,7 @@ include_once '_head.php';
                             </div>
                             <center>
                                 Esqueçeu a sua senha?
-                                <a href="redefinir_senha.php">Redefinir sua senha !</a>
+                                <a href="redefinir_senha.php">Redefinir senha !</a>
                                 <br>
                                 <br>
                                 <button onclick="return ValidarLogin()" class="btn btn-primary" name="btn_entrar">Entrar</button>

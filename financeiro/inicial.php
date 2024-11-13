@@ -133,5 +133,7 @@ include_once '_head.php';
     </div>
     </div>
 </body>
-
+<?php
+include_once '_footer.php';
+?>
 </html>
