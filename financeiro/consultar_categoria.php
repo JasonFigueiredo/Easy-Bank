@@ -31,7 +31,7 @@ include_once '_head.php';
                 <hr />
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                    Categorias cadastradas. Caso deseje realizar alterações, clique no botão 'Alterar'.
+                        Categorias cadastradas. Caso deseje realizar alterações, clique no botão 'Alterar'.
                     </div>
                     <div class="panel-body">
                         <div class="table-responsive">
@@ -44,7 +44,7 @@ include_once '_head.php';
                                 </thead>
                                 <tbody>
 
-                                    <?php foreach($categorias as $item){ ?>
+                                    <?php foreach ($categorias as $item) { ?>
                                         <tr class="odd gradeX">
                                             <td>
                                                 <?= $item['nome_categoria'] ?>
@@ -67,5 +67,8 @@ include_once '_head.php';
     </div>
 
 </body>
+<?php
+include_once '_footer.php';
+?>
 
 </html>

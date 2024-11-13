@@ -53,7 +53,7 @@ include_once '_head.php';
                                     </div>
                                     <div class="form-group input-group">
                                         <span class="input-group-addon"><img src="./assets/img/password.png" width=15 height=15></span>
-                                        <input id="senha2" maxlength="12 type="password" class="form-control" placeholder="Repita sua senha" name="senha2">
+                                        <input id="senha2" maxlength="12 type=" password" class="form-control" placeholder="Repita sua senha" name="senha2">
                                     </div>
                                     <button onclick="return ValidarCadastro()" class="btn btn-success " name="btn_enviar">Tudo pronto</button>
                                     <hr />
@@ -65,6 +65,9 @@ include_once '_head.php';
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
 </body>
 
 </html>

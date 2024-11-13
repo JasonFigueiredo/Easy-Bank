@@ -70,5 +70,7 @@ include_once '_head.php';
     </div>
 
 </body>
-
+<?php
+include_once '_footer.php';
+?>
 </html>

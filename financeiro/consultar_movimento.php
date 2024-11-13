@@ -185,5 +185,7 @@ include_once '_head.php';
         <!-- /. PAGE WRAPPER  -->
     </div>
 </body>
-
+<?php
+include_once '_footer.php';
+?>
 </html>

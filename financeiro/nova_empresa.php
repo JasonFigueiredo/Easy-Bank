@@ -43,7 +43,7 @@ include_once '_head.php';
                             </div>
                             <div class="form-group">
                                 <label>Telefone:</label>
-                                <input class="form-control" placeholder="Digite o telefone (DDD) Número" name="telefone" type="number" id='maxnumber' oninput="contarCaracteres()"/>
+                                <input class="form-control" placeholder="Digite o telefone (DDD) Número" name="telefone" type="number" id='maxnumber' oninput="contarCaracteres()" />
                             </div>
                             <div class="form-group">
                                 <label>Endereço da empresa:</label>
@@ -52,11 +52,15 @@ include_once '_head.php';
                             <button class="btn btn-success" name="gravarempresa">Salvar</button>
                             <a href="consultar_empresa.php" class="btn btn-info">Empresas cadastradas</a>
                         </form>
-
                         <hr>
                     </div>
                 </div>
             </div>
-</body>
+        </div>
+    </div>
 
+</body>
+<?php
+include_once '_footer.php';
+?>
 </html>
