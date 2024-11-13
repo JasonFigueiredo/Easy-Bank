@@ -25,7 +25,7 @@ include_once '_head.php';
                 <div class="row">
                     <div class="col-md-12">
                         <?php include_once '_msg.php';?>
-                        <h2><strong>Consultar Empresas</strong></h2>
+                        <h2><strong>Consultar empresas</strong></h2>
                         <h5>Neste local, você encontrará todas as empresas cadastradas.</h5>
                     </div>
                 </div>
@@ -40,7 +40,7 @@ include_once '_head.php';
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
-                                        <th>Nome da Empresa</th>
+                                        <th>Nome da empresa</th>
                                         <th>Telefone</th>
                                         <th>Endereço</th>
                                         <th>Ação</th>

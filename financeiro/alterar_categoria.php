@@ -50,7 +50,7 @@ include_once '_head.php';
                 <div class="row">
                     <div class="col-md-12">
                         <?php include_once "_msg.php" ?>
-                        <h2><strong> Alterar Categoria</strong></h2>
+                        <h2><strong> Alterar categoria</strong></h2>
                         <h5>Aqui, você tem controle total para alterar ou excluir suas categorias.</h5>
                     </div>
                 </div>
@@ -59,11 +59,11 @@ include_once '_head.php';
                     <input type="hidden" name="cod" value="<?= $dados[0]["id_categoria"] ?>">
                     <hr />
                     <div class="form-group">
-                        <label>Nome da Categoria:</label>
+                        <label>Nome da categoria:</label>
                         <input name="nomecategoria" value="<?= $dados[0]['nome_categoria'] ?>" maxlength="35"
-                            class="form-control" placeholder="Digite o nome da categoria EX: Conta de Luz" id="nome">
+                            class="form-control" placeholder="Digite o nome da categoria EX: Conta de luz" id="nome">
                     </div>
-                    <button name="btn_salvar" type="submit" onclick="return ValidarCategoria()" class="btn btn-success">Salvar Alterações</button>
+                    <button name="btn_salvar" type="submit" onclick="return ValidarCategoria()" class="btn btn-success">Salvar alterações</button>
                     <button type="button" data-toggle="modal" data-target="#modalExcluir" class="btn btn-danger">Excluir</button>
                     <div class="modal fade" id="modalExcluir" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog">

@@ -7,22 +7,26 @@ class UtilDAO
             session_start();
         }
     }
+
     public static function CriarSessao($cod, $nome)
     {
         self::IniciarSessao();
         $_SESSION['cod'] = $cod;
         $_SESSION['nome'] = $nome;
     }
+
     public static function CodigoLogado()
     {
         self::IniciarSessao();
         return $_SESSION['cod'];
     }
+
     public static function NomeLogado()
     {
         self::IniciarSessao();
         return $_SESSION['nome'];
     }
+
     public static function Deslogar()
     {
         self::IniciarSessao();
@@ -32,6 +36,7 @@ class UtilDAO
         header('location: login.php');
         exit;
     }
+
     public static function VerificarLogado()
     {
         self::IniciarSessao();
@@ -41,3 +46,4 @@ class UtilDAO
         }
     }
 }
+?>

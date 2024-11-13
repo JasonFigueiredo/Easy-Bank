@@ -29,6 +29,11 @@ class UsuarioDAO extends Conexao
         if (trim($nome) == '' || trim($email) == '') {
             return FLAG_VAZIO;
         }
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return FLAG_INVALIDO;
+        }
+        
         if ($this->VerificarEmailDuplicadoAlteracao($email) != 0) {
             return FLAG_EMAIL;
         }
@@ -57,6 +62,10 @@ class UsuarioDAO extends Conexao
     {
         if (trim($email) == '' || trim($senha) == '') {
             return FLAG_VAZIO;
+        }
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return FLAG_INVALIDO;
         }
 
         $conexao = parent::retornarConexao();
@@ -94,6 +103,10 @@ class UsuarioDAO extends Conexao
             return FLAG_VAZIO;
         }
 
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return FLAG_INVALIDO;
+        }
+
         $conexao = parent::retornarConexao();
         $comando_sql = " SELECT count(email_usuario) 
                             AS contar 
@@ -117,6 +130,10 @@ class UsuarioDAO extends Conexao
     {
         if (trim($email) == "") {
             return FLAG_VAZIO;
+        }
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return FLAG_INVALIDO;
         }
 
         $conexao = parent::retornarConexao();
@@ -144,6 +161,10 @@ class UsuarioDAO extends Conexao
 
         if (trim($nome) == '' || trim($email) == '' || trim($senha1) == '' || trim($senha2) == '') {
             return FLAG_VAZIO;
+        }
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return FLAG_INVALIDO;
         }
 
         if (strlen($senha1) < 6) {
@@ -203,6 +224,7 @@ class UsuarioDAO extends Conexao
                         FROM tb_usuario 
                         WHERE email_usuario = ? 
                         AND senha_usuario = ?';
+        $sql = new PDOStatement();
         $sql = $conexao->prepare($comando_sql);
         $sql->bindValue(1, $email);
         $sql->bindValue(2, $senha_atual);
@@ -214,7 +236,10 @@ class UsuarioDAO extends Conexao
             return FLAG_USUARIO1;
         }
 
-        $comando_sql = 'SELECT senha_usuario FROM tb_usuario WHERE email_usuario = ?';
+        $comando_sql = 'SELECT senha_usuario 
+                        FROM tb_usuario 
+                        WHERE email_usuario = ?';
+        $sql = new PDOStatement();
         $sql = $conexao->prepare($comando_sql);
         $sql->bindValue(1, $email);
         $sql->setFetchMode(PDO::FETCH_ASSOC);
@@ -228,6 +253,7 @@ class UsuarioDAO extends Conexao
         $comando_sql = 'UPDATE tb_usuario 
                         SET senha_usuario = ? 
                         WHERE email_usuario = ?';
+        $sql = new PDOStatement();
         $sql = $conexao->prepare($comando_sql);
         $sql->bindValue(1, $rsenha1);
         $sql->bindValue(2, $email);

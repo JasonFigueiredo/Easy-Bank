@@ -38,8 +38,8 @@ include_once '_head.php';
                 <hr />
                 <form action="nova_categoria.php" method="post">
                 <div class="form-group">
-                    <label>Nome da Categoria:</label>
-                    <input id="nome" class="form-control" placeholder="Informe a categoria desejada: (Exemplo: Conta de Luz)" name="nome" maxlength="35" />
+                    <label>Nome da categoria:</label>
+                    <input id="nome" class="form-control" placeholder="Informe a categoria desejada: (Exemplo: Conta de luz)" name="nome" maxlength="35" />
                 </div>
                 <button type="submit" onclick="return ValidarCategoria()" name="btn_gravar" class="btn btn-success">Salvar </button> 
                 <a href="consultar_categoria.php" class="btn btn-info">Consultar categorias</a>

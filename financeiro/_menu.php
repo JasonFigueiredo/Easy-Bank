@@ -10,19 +10,19 @@ if (isset($_GET["close"]) && $_GET['close'] == "1") {
     <div class="sidebar-collapse">
         <ul class="nav" id="main-menu">
             <li>
-                <a href="inicial.php"><img src="./assets/img/home.png" width=40 height=40> Página Inicial</a>
+                <a href="inicial.php"><img src="./assets/img/home.png" width=40 height=40> Página inicial</a>
             </li>
             <li>
-                <a href="meus_dados.php"><img src="./assets/img/user.png" width=40 height=40> Meus Dados</a>
+                <a href="meus_dados.php"><img src="./assets/img/user.png" width=40 height=40> Meus dados</a>
             </li>
             <li>
                 <a href="#"><img src="./assets/img/menu.png" width=35 height=35> Categorias <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="nova_categoria.php"><img src="./assets/img/post.png" width=20 height=20> Nova Categoria</a>
+                        <a href="nova_categoria.php"><img src="./assets/img/post.png" width=20 height=20> Nova categoria</a>
                     </li>
                     <li>
-                        <a href="consultar_categoria.php"><img src="./assets/img/search1.png" width=20 height=20=> Consultar Categoria</a>
+                        <a href="consultar_categoria.php"><img src="./assets/img/search1.png" width=20 height=20=> Consultar categoria</a>
                     </li>
                 </ul>
             </li>
@@ -30,10 +30,10 @@ if (isset($_GET["close"]) && $_GET['close'] == "1") {
                 <a href="#"><img src="./assets/img/office-building.png" width=40 height=40> Empresa <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="nova_empresa.php"> <img src="./assets/img/post.png" width=20 height=20> Nova Empresa </a>
+                        <a href="nova_empresa.php"> <img src="./assets/img/post.png" width=20 height=20> Nova empresa </a>
                     </li>
                     <li>
-                        <a href="consultar_empresa.php"><img src="./assets/img/search1.png" width=20 height=20> Consultar Empresa</a>
+                        <a href="consultar_empresa.php"><img src="./assets/img/search1.png" width=20 height=20> Consultar empresa</a>
                     </li>
                 </ul>
             </li>
@@ -41,10 +41,10 @@ if (isset($_GET["close"]) && $_GET['close'] == "1") {
                 <a href="#"><img src="./assets/img/bank.png" width=40 height=40> Contas<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="nova_conta.php"> <img src="./assets/img/post.png" width=20 height=20> Nova Conta</a>
+                        <a href="nova_conta.php"> <img src="./assets/img/post.png" width=20 height=20> Nova conta</a>
                     </li>
                     <li>
-                        <a href="consultar_conta.php"><img src="./assets/img/search1.png" width=20 height=20> Consultar Conta</a>
+                        <a href="consultar_conta.php"><img src="./assets/img/search1.png" width=20 height=20> Consultar conta</a>
                     </li>
                 </ul>
             </li>
@@ -52,10 +52,10 @@ if (isset($_GET["close"]) && $_GET['close'] == "1") {
                 <a href="#"><img src="./assets/img/transfer.png" width=40 height=40> Movimento<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="realizar_movimento.php"><img src="./assets/img/exchange.png" width=20 height=20> Realizar Movimento</a>
+                        <a href="realizar_movimento.php"><img src="./assets/img/exchange.png" width=20 height=20> Realizar movimento</a>
                     </li>
                     <li>
-                        <a href="consultar_movimento.php"><img src="./assets/img/search1.png" width=20 height=20> Consultar Movimento</a>
+                        <a href="consultar_movimento.php"><img src="./assets/img/search1.png" width=20 height=20> Consultar movimento</a>
                     </li>
                 </ul>
             </li>

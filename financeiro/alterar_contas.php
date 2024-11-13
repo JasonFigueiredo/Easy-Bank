@@ -54,7 +54,7 @@ include_once '_head.php';
                 <div class="row">
                     <div class="col-md-12">
                         <?php include_once "_msg.php" ?>
-                        <h2><strong>Alterar Contas</strong></h2>
+                        <h2><strong>Alterar contas</strong></h2>
                         <h5>Realize alterações em todos os dados cadastrais das suas contas.</h5>
                     </div>
                 </div>
@@ -62,7 +62,7 @@ include_once '_head.php';
                 <form action="alterar_contas.php" method="post">
                     <input type="hidden" name="cod" value="<?= $dados[0]["id_conta"] ?>">
                     <div class="form-group">
-                        <label>Nome do Banco * :</label>
+                        <label>Nome do banco * :</label>
                         <input class="form-control" placeholder="Digite o nome do banco" name="nome" id="banco" value="<?= $dados[0]['banco_conta'] ?>" maxlength="20">
                     </div>
                     <div class="form-group">
@@ -70,14 +70,14 @@ include_once '_head.php';
                         <input class="form-control" placeholder="Digite a agência bancaria" name="agencia" id="agencia" value="<?= $dados[0]['agencia_conta'] ?>" oninput="contarCaracteresAgencia()">
                     </div>
                     <div class="form-group">
-                        <label>Numero da Conta * :</label>
-                        <input class="form-control" placeholder="Digite o numero da conta" name="conta" id="conta" value="<?= $dados[0]['numero_conta'] ?>" oninput="contarCaracteresNumeroConta()" >
+                        <label>Número da conta * :</label>
+                        <input class="form-control" placeholder="Digite o número da conta" name="conta" id="conta" value="<?= $dados[0]['numero_conta'] ?>" oninput="contarCaracteresNumeroConta()" >
                     </div>
                     <div class="form-group">
-                        <label>Saldo da Conta * :</label>
+                        <label>Saldo da conta * :</label>
                         <input class="form-control" placeholder="Digite o saldo da conta" name="saldo" id="saldo" value="<?= $dados[0]['saldo_conta'] ?>" oninput="contarCaracteresSaldoConta()">
                     </div>
-                    <button type="submit" class="btn btn-success" onclick="return CriarConta()" name="btn_salvar">Salvar Alterações</button>
+                    <button type="submit" class="btn btn-success" onclick="return CriarConta()" name="btn_salvar">Salvar alterações</button>
                     <button type="button" data-toggle="modal" data-target="#modalExcluir" class="btn btn-danger">Excluir</button>
                     <div class="modal fade" id="modalExcluir" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
@@ -87,7 +87,7 @@ include_once '_head.php';
                                     <h4 class="modal-title" id="myModalLabel">Confirmação de exclusão</h4>
                                 </div>
                                 <div class="modal-body">
-                                    Deseja excluir a conta: <strong><?= $dados[0]["banco_conta"] ?> / Agencia: <?= $dados[0]["agencia_conta"] ?> - Número: <?= $dados[0]["numero_conta"] ?></strong> ?
+                                    Deseja excluir a conta: <strong><?= $dados[0]["banco_conta"] ?> / Agência: <?= $dados[0]["agencia_conta"] ?> - Número: <?= $dados[0]["numero_conta"] ?></strong> ?
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>

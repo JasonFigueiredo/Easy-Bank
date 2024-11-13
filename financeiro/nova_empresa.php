@@ -33,7 +33,7 @@ include_once '_head.php';
                 <div class="row">
                     <div class="col-md-12">
                         <?php include_once "_msg.php" ?>
-                        <h2><strong>Cadastrar Empresa</strong></h2>
+                        <h2><strong>Cadastrar empresa</strong></h2>
                         <h5>Neste campo, por favor, registre todas as empresas de seu interesse.</h5>
                         <hr />
                         <form action="nova_empresa.php" method="post">

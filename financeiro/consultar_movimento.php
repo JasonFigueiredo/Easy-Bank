@@ -49,7 +49,7 @@ include_once '_head.php';
                 <div class="row">
                     <div class="col-md-12">
                         <?php include_once "_msg.php" ?>
-                        <h2><strong>Consultar Movimento</strong></h2>
+                        <h2><strong>Consultar movimento</strong></h2>
                         <h5>Consulte todos os movimentos em um determinado periodo.</h5>
                     </div>
                 </div>
@@ -58,7 +58,7 @@ include_once '_head.php';
                     <hr />
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label>Tipo de Movimento:</label>
+                            <label>Tipo de movimento:</label>
                             <select class="form-control" name="tipo">
                                 <!-- usar o IF ternario é um if e else na mesma linha "? = entao" ": caso contrario" -->
                                 <option value="0" <?= $tipo == "0" ? "selected" : "" ?>>Todos</option>
@@ -69,13 +69,13 @@ include_once '_head.php';
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Data Inicial * :</label>
+                            <label>Data inicial * :</label>
                             <input type="date" class="form-control" name="data_inicial" id="datainicialconsulta" value="<?= $dt_inicial ?>" />
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Data Final * :</label>
+                            <label>Data final * :</label>
                             <input type="date" class="form-control" name="data_final" id="datafinalconsulta" value="<?= $dt_final ?>" />
                         </div>
                     </div>
@@ -92,14 +92,14 @@ include_once '_head.php';
                         <div class="col-md-12">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    Resultado encontrado.
+                                Resultado processado com sucesso.
                                 </div>
                                 <div class="panel-body">
                                     <div class="table-responsive">
                                         <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                             <thead>
                                                 <tr>
-                                                    <th>Data do Movimento</th>
+                                                    <th>Data do movimento</th>
                                                     <th>Tipo</th>
                                                     <th>categoria</th>
                                                     <th>Empresa</th>
@@ -111,7 +111,6 @@ include_once '_head.php';
                                             </thead>
                                             <tbody>
                                                 <?php
-                                                // laço de repetição for alterado por esse abaixo: "laço a ser utilizado e o do comentario abaixo"
                                                 $total = 0;
                                                 for ($i = 0; $i < count($movs); $i++) {
                                                     if ($movs[$i]['tipo_movimento'] == 1) {
@@ -145,7 +144,7 @@ include_once '_head.php';
                                                                             <div class="modal-body">
                                                                                 Deseja excluir a movimentação: <br><br>
                                                                                 <b>Data movimentação:</b> <?= $movs[$i]["data_movimento"] ?><br>
-                                                                                <b>Tipo de Movimentação:</b> <?= $movs[$i]["tipo_movimento"] == 1 ? "Entrada" : "Saída" ?><br>
+                                                                                <b>Tipo de movimentação:</b> <?= $movs[$i]["tipo_movimento"] == 1 ? "Entrada" : "Saída" ?><br>
                                                                                 <b>Categoria:</b> <?= $movs[$i]["nome_categoria"] ?><br>
                                                                                 <b>Empresa:</b> <?= $movs[$i]["nome_empresa"] ?><br>
                                                                                 <b>Conta:</b> <?= $movs[$i]["banco_conta"] . " / Nº Conta: " . $movs[$i]["numero_conta"] . " / Agência: Nº " . $movs[$i]["agencia_conta"] ?><br>

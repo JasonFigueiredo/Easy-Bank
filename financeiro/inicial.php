@@ -27,7 +27,7 @@ include_once '_head.php';
                 <div class="row">
                     <div class="col-md-12">
                         <?php include_once "_msg.php"; ?>
-                        <h2><strong>Página Inicial</strong></h2>
+                        <h2><strong>Página inicial</strong></h2>
                         <h5>Aqui, você tem acesso a um resumo completo de todas as operações realizadas.</h5>
                     </div>
                 </div>
@@ -39,7 +39,7 @@ include_once '_head.php';
                             <h3>R$ <?= $total_entrada[0]["total"] != "" ? number_format($total_entrada[0]['total'], 2, ",", ".") : "0" ?></h3>
                         </div>
                         <div class="panel-footer back-footer-green">
-                            Total de Entrada
+                            Total de entrada
 
                         </div>
                     </div>
@@ -51,7 +51,7 @@ include_once '_head.php';
                             <h3>R$ <?= $total_saida[0]["total"] != "" ? number_format($total_saida[0]['total'], 2, ",", ".") : "0" ?></h3>
                         </div>
                         <div class="panel-footer back-footer-red">
-                            Total de Saída
+                            Total de saída
 
                         </div>
                     </div>
@@ -64,14 +64,14 @@ include_once '_head.php';
                         <div class="col-md-12">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    Últimos 10 Lançamentos de Movimento
+                                    Últimos 10 lançamentos de movimento
                                 </div>
                                 <div class="panel-body">
                                     <div class="table-responsive">
                                         <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                             <thead>
                                                 <tr>
-                                                    <th>Data do Movimento</th>
+                                                    <th>Data do movimento</th>
                                                     <th>Tipo</th>
                                                     <th>Categoria</th>
                                                     <th>Empresa</th>

@@ -60,6 +60,7 @@ class MovimentoDAO extends Conexao
             return FLAG_ERRO;
         }
     }
+    
     public function FiltrarMovimento($tipo, $dt_inicial, $dt_final)
     {
         if (trim($dt_inicial) == "" || trim($dt_final) == "") {
@@ -108,6 +109,7 @@ class MovimentoDAO extends Conexao
 
         return $sql->fetchAll();
     }
+
     public function MostrarUltimosLancamentos()
     {
         $conexao = parent::retornarConexao();
@@ -141,6 +143,7 @@ class MovimentoDAO extends Conexao
 
         return $sql->fetchAll();
     }
+
     public function ExcluirMovimento($id_movimento, $id_conta, $valor, $tipo_movimento)
     {
         if ($id_movimento == "" || $id_conta == "" || $valor == "" || $tipo_movimento == "") {
@@ -181,6 +184,7 @@ class MovimentoDAO extends Conexao
             return FLAG_ERRO;
         }
     }
+
     public function TotalEntrada()
     {
 
@@ -200,6 +204,7 @@ class MovimentoDAO extends Conexao
 
         return $sql->fetchAll();
     }
+
     public function TotalSaida()
     {
         $conexao = parent::retornarConexao();

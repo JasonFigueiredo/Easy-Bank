@@ -26,7 +26,7 @@ include_once '_head.php';
                 <div class="row">
                     <div class="col-md-12">
                         <?php include_once "_msg.php"?>
-                        <h2><strong>Consultar Contas</strong></h2>
+                        <h2><strong>Consultar contas</strong></h2>
                         <h5>Consulte aqui o saldo completo de todas as suas contas.</h5>
                     </div>
                 </div>
@@ -43,7 +43,7 @@ include_once '_head.php';
                                     <tr>
                                         <th>Banco</th>
                                         <th>Agência</th>
-                                        <th>Numero da Conta</th>
+                                        <th>Número da conta</th>
                                         <th>Saldo</th>
                                         <th>Ação</th>
                                     </tr>

@@ -19,5 +19,5 @@
     <div style="color: #fff;
 padding: 30px 50px 10px 50px;
 float: right;
-font-size: 16px;">Olá, <?= UtilDAO::NomeLogado(); ?>, Dúvidas Ligue para (62) 9 99369-3788 </div></center>
+font-size: 16px;">Olá, <?= UtilDAO::NomeLogado(); ?>, Dúvidas ligue para (62) 9 99369-3788 </div></center>
 </nav>

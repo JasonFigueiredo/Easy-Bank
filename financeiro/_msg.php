@@ -65,14 +65,14 @@ if (isset($ret)) {
 
         case -7:
             echo '<script> Swal.fire({
-            title: "Sem Movimentação",
+            title: "Sem movimentação",
             text: "Nenhuma movimentação encontrada.",
             icon: "question"
             });</script>';
             break;
         case -8:
             echo '<script> Swal.fire({
-            title: "Insira Senhas Diferentes",
+            title: "Insira senhas diferentes",
             text: "A sua senha não pode ser igual a anterior.",
             icon: "warning"
             });</script>';
@@ -86,7 +86,7 @@ if (isset($ret)) {
             break;
         case -11:
             echo '<script> Swal.fire({
-            title: "E-mail Inválido",
+            title: "E-mail inválido",
             text: "Por favor, insira um e-mail válido.",
             icon: "warning"
             });</script>';

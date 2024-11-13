@@ -57,6 +57,7 @@ class ContaDAO extends Conexao
         $sql->execute();
         return $sql->fetchAll();
     }
+
     public function DetalharConta($idConta)
     {
         if ($idConta == "") {
@@ -81,6 +82,7 @@ class ContaDAO extends Conexao
         $sql->execute();
         return $sql->fetchAll();
     }
+
     public function AlterarConta($idConta, $banco, $agencia, $numero, $saldo)
     {
         if (trim($idConta) == "" || trim($banco) == "" || trim($agencia) == "" || trim($numero) == "" || trim($saldo) == "") {
@@ -112,6 +114,7 @@ class ContaDAO extends Conexao
             return FLAG_ERRO;
         }
     }
+
     public function ExcluirConta($idConta)
     // esse METODO SE CHAMA "Excluir Conta " busca somente o valor que precisa deletar por isso chama comente o $IDconta = PARAMETRO
     {

@@ -23,7 +23,7 @@ include_once '_head.php';
                 <div class="row">
                     <div class="col-md-12">
                         <?php include_once "_msg.php"; ?>
-                        <h2><strong>Consultar Categoria</strong></h2>
+                        <h2><strong>Consultar categoria</strong></h2>
                         <h5>Aqui, você tem controle total para consultar e alterar suas categorias.</h5>
                     </div>
                 </div>
@@ -38,7 +38,7 @@ include_once '_head.php';
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
-                                        <th>Nome da Categoria</th>
+                                        <th>Nome da categoria</th>
                                         <th>Ação</th>
                                     </tr>
                                 </thead>

@@ -52,7 +52,7 @@ include_once '_head.php';
                 <div class="row">
                     <div class="col-md-12">
                         <?php include_once "_msg.php" ?>
-                        <h2><strong>Alterar Empresa</strong></h2>
+                        <h2><strong>Alterar empresa</strong></h2>
                         <h5>Aqui, você poderá realizar alterações nos dados cadastrais da empresa.</h5>
                     </div>
                 </div>
@@ -60,7 +60,7 @@ include_once '_head.php';
                 <form action="alterar_empresas.php" method="post">
                     <input type="hidden" name="cod" value="<?= $dados[0]["id_empresa"] ?>">
                     <div class=" form-group">
-                        <label>Nome da Empresa * :</label>
+                        <label>Nome da empresa * :</label>
                         <input class="form-control" value="<?= $dados[0]["nome_empresa"] ?>" placeholder=" Digite o nome da empresa" name="nomeempresa" id="nome" maxlength="45">
                     </div>
                     <div class="form-group">
@@ -71,7 +71,7 @@ include_once '_head.php';
                         <label>Endereço:</label>
                         <input class="form-control" value="<?= $dados[0]["endereco_empresa"] ?>" placeholder=" Digite o endereço da empresa" name="enderecoempresa" maxlength="60" >
                     </div>
-                    <button type="submit" class="btn btn-success" name="btn_salvar" onclick="return CadastrarEmpresa()">Salvar Alterações</button>
+                    <button type="submit" class="btn btn-success" name="btn_salvar" onclick="return CadastrarEmpresa()">Salvar alterações</button>
                     <button type="button" data-toggle="modal" data-target="#modalExcluir" class="btn btn-danger">Excluir</button>
                     <div class="modal fade" id="modalExcluir" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog">

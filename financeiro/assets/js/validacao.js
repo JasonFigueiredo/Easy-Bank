@@ -1,10 +1,10 @@
 function ValidarMeusDados() {
     var nome = document.getElementById("nome").value;
-    var email = $("#email").val();
+    var email = document.getElementById("#email").value;
     var emailvalido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (nome.trim() == "") {
         Swal.fire({
-            title: "Nome de Usuário",
+            title: "Nome de usuário",
             text: "Por favor, preencha o campo obrigatório.",
             icon: "warning"
         });
@@ -22,7 +22,7 @@ function ValidarMeusDados() {
     }
     if (!emailvalido.test(email)) {
         Swal.fire({
-            title: "E-mail Inválido",
+            title: "E-mail inválido",
             text: "Por favor, insira um e-mail válido.",
             icon: "warning"
         });
@@ -34,7 +34,7 @@ function ValidarMeusDados() {
 function ValidarCategoria() {
     if ($("#nome").val().trim() == "") {
         Swal.fire({
-            title: "Nome da Categoria",
+            title: "Nome da categoria",
             text: "Por favor, preencha o campo obrigatório.",
             icon: "warning"
         });
@@ -46,7 +46,7 @@ function ValidarCategoria() {
 function CadastrarEmpresa() {
     if ($("#nome").val().trim() == "") {
         Swal.fire({
-            title: "Nome da Empresa",
+            title: "Nome da empresa",
             text: "Por favor, preencha o campo obrigatório.",
             icon: "warning"
         });
@@ -63,7 +63,7 @@ function CriarConta() {
 
     if (banco.trim() == "") {
         Swal.fire({
-            title: "Nome do Banco",
+            title: "Nome do banco",
             text: "Por favor, preencha o campo obrigatório.",
             icon: "warning"
         });
@@ -81,7 +81,7 @@ function CriarConta() {
     }
     if (conta.trim() == "") {
         Swal.fire({
-            title: "Número da Conta",
+            title: "Número da conta",
             text: "Por favor, preencha o campo obrigatório.",
             icon: "warning"
         });
@@ -90,7 +90,7 @@ function CriarConta() {
     }
     if (saldo.trim() == "") {
         Swal.fire({
-            title: "Saldo da Conta",
+            title: "Saldo da conta",
             text: "Por favor, preencha o campo obrigatório.",
             icon: "warning"
         });
@@ -114,7 +114,7 @@ function ValidarLogin() {
     }
     if (!emailvalido.test(email)) {
         Swal.fire({
-            title: "E-mail Inválido",
+            title: "E-mail inválido",
             text: "Por favor, insira um e-mail válido.",
             icon: "warning"
         });
@@ -140,7 +140,7 @@ function ValidarCadastro() {
     var emailvalido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (nome.trim() == "") {
         Swal.fire({
-            title: "Seu Nome",
+            title: "Seu nome",
             text: "Por favor, preencha o campo obrigatório.",
             icon: "warning"
         });
@@ -149,7 +149,7 @@ function ValidarCadastro() {
     }
     if (email.trim() == "") {
         Swal.fire({
-            title: "Seu E-mail",
+            title: "Seu e-mail",
             text: "Por favor, preencha o campo obrigatório.",
             icon: "warning"
         });
@@ -158,7 +158,7 @@ function ValidarCadastro() {
     }
     if (!emailvalido.test(email)) {
         Swal.fire({
-            title: "E-mail Inválido",
+            title: "E-mail inválido",
             text: "Por favor, insira um e-mail válido.",
             icon: "warning"
         });
@@ -167,7 +167,7 @@ function ValidarCadastro() {
     }
     if (senha1.trim() == "") {
         Swal.fire({
-            title: "Sua Senha",
+            title: "Sua senha",
             text: "Por favor, preencha o campo obrigatório.",
             icon: "warning"
         });
@@ -176,7 +176,7 @@ function ValidarCadastro() {
     }
     if (senha2.trim() == "") {
         Swal.fire({
-            title: "Confirmação de Senha",
+            title: "Confirmação de senha",
             text: "Por favor, preencha o campo obrigatório.",
             icon: "warning"
         });
@@ -185,7 +185,7 @@ function ValidarCadastro() {
     }
     if ($("#senha1").val().trim() != $("#senha2").val().trim()) {
         Swal.fire({
-            title: "Senhas Diferentes",
+            title: "Senhas diferentes",
             text: "Por favor, certifique-se de que as senhas sejam iguais.",
             icon: "warning"
         });
@@ -194,7 +194,7 @@ function ValidarCadastro() {
     }
     if (senha1.trim().length < 6) {
         Swal.fire({
-            title: "Senha Muito Fraca",
+            title: "Senha muito fraca",
             text: "A senha deve conter 6 ou mais caracteres.",
             icon: "warning"
         });
@@ -213,7 +213,7 @@ function ValidarMovimento() {
 
     if (movimento.trim() == "0") {
         Swal.fire({
-            title: "Tipo de Movimento",
+            title: "Tipo de movimento",
             text: "Por favor, preencha o campo obrigatório.",
             icon: "warning"
         });
@@ -222,7 +222,7 @@ function ValidarMovimento() {
     }
     if (data.trim() == "") {
         Swal.fire({
-            title: "Data da Movimentação",
+            title: "Data da movimentação",
             text: "Por favor, preencha o campo obrigatório.",
             icon: "warning"
         });
@@ -231,7 +231,7 @@ function ValidarMovimento() {
     }
     if (valor.trim() == "") {
         Swal.fire({
-            title: "Valor da Movimentação",
+            title: "Valor da movimentação",
             text: "Por favor, preencha o campo obrigatório.",
             icon: "warning"
         });
@@ -272,7 +272,7 @@ function ValidarConsulta() {
     var datafinal = document.getElementById("datafinalconsulta").value;
     if (datainicial.trim() == "") {
         Swal.fire({
-            title: "Data Inicial",
+            title: "Data inicial",
             text: "Por favor, preencha o campo obrigatório.",
             icon: "warning"
         });
@@ -281,7 +281,7 @@ function ValidarConsulta() {
     }
     if (datafinal.trim() == "") {
         Swal.fire({
-            title: "Data Final",
+            title: "Data final",
             text: "Por favor, preencha o campo obrigatório.",
             icon: "warning"
         });
@@ -298,7 +298,7 @@ function RedefinirSenha() {
 
     if (email.trim() == "") {
         Swal.fire({
-            title: "Seu E-mail",
+            title: "Seu e-mail",
             text: "Por favor, preencha o campo obrigatório.",
             icon: "warning"
         });
@@ -307,7 +307,7 @@ function RedefinirSenha() {
     }
     if (senha_atual.trim() == "") {
         Swal.fire({
-            title: "Sua Senha Atual",
+            title: "Sua senha atual",
             text: "Por favor, preencha o campo obrigatório.",
             icon: "warning"
         });
@@ -316,7 +316,7 @@ function RedefinirSenha() {
     }
     if (rsenha1.trim() == "") {
         Swal.fire({
-            title: "Sua nova Senha",
+            title: "Sua nova senha",
             text: "Por favor, preencha o campo obrigatório.",
             icon: "warning"
         });
@@ -325,7 +325,7 @@ function RedefinirSenha() {
     }
     if (rsenha2.trim() == "") {
         Swal.fire({
-            title: "Repita sua nova Senha",
+            title: "Repita sua nova senha",
             text: "Por favor, preencha o campo obrigatório.",
             icon: "warning"
         });
@@ -334,7 +334,7 @@ function RedefinirSenha() {
     }
     if ($("#rsenha1").val().trim() != $("#rsenha2").val().trim()) {
         Swal.fire({
-            title: "Senhas Diferentes",
+            title: "Senhas diferentes",
             text: "Por favor, certifique-se de que as novas senhas sejam iguais.",
             icon: "warning"
         });
@@ -343,7 +343,7 @@ function RedefinirSenha() {
     }
     if (rsenha1.trim().length < 6) {
         Swal.fire({
-            title: "Senha Muito Fraca",
+            title: "Senha muito fraca",
             text: "A senha deve conter 6 ou mais caracteres.",
             icon: "warning"
         });
@@ -352,7 +352,7 @@ function RedefinirSenha() {
     }
     if (!emailvalido.test(email)) {
         Swal.fire({
-            title: "E-mail Inválido",
+            title: "E-mail inválido",
             text: "Por favor, insira um e-mail válido.",
             icon: "warning"
         });
