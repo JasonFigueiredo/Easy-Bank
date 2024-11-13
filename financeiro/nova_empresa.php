@@ -21,12 +21,10 @@ include_once '_head.php';
 
 <body>
     <div id="wrapper">
-
         <?php
         include_once '_topo.php';
         include_once '_menu.php';
         ?>
-
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
             <div id="page-inner">
@@ -49,7 +47,7 @@ include_once '_head.php';
                                 <label>Endereço da empresa:</label>
                                 <input class="form-control" placeholder="Digite o endereço da empresa" name="endereco" maxlength="60" />
                             </div>
-                            <button class="btn btn-success" name="gravarempresa">Salvar</button>
+                            <button class="btn btn-success" name="gravarempresa" onclick="return CadastrarEmpresa()">Salvar</button>
                             <a href="consultar_empresa.php" class="btn btn-info">Empresas cadastradas</a>
                         </form>
                         <hr>
@@ -61,6 +59,6 @@ include_once '_head.php';
 
 </body>
 <?php
-include_once '_footer.php';
+include_once '_footer.php'
 ?>
 </html>
