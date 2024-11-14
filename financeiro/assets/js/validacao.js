@@ -3,20 +3,40 @@ function ValidarMeusDados() {
     var email = document.getElementById("email").value;
     var emailvalido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (nome.trim() == "") {
-        Swal.fire({
-            title: "Nome de usuário",
-            text: "Por favor, preencha o campo obrigatório.",
-            icon: "warning"
-        });
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "warning",
+            title: "Preencha o campo obrigatório ! "
+            });
         $("#nome").focus();
         return false;
     }
     if (email.trim() == "") {
-        Swal.fire({
-            title: "E-mail",
-            text: "Por favor, preencha o campo obrigatório.",
-            icon: "warning"
-        });
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "warning",
+            title: "Preencha o campo obrigatório ! "
+            });
         $("#email").focus();
         return false;
     }
@@ -104,11 +124,21 @@ function ValidarLogin() {
     var senha = document.getElementById("senha").value;
     var emailvalido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (email.trim() == "") {
-        Swal.fire({
-            title: "E-mail",
-            text: "Por favor, preencha o campo obrigatório.",
-            icon: "warning"
-        });
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "warning",
+            title: "Preencha o campo obrigatório ! "
+            });
         $("#email").focus();
         return false;
     }
@@ -122,11 +152,21 @@ function ValidarLogin() {
         return false;
     }
     if (senha.trim() == "") {
-        Swal.fire({
-            title: "Senha",
-            text: "Por favor, preencha o campo obrigatório.",
-            icon: "warning"
-        });
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "warning",
+            title: "Preencha o campo obrigatório ! "
+            });
         $("#senha").focus();
         return false;
     }

@@ -6,16 +6,38 @@ if (isset($ret)) {
 
     switch ($ret) {
         case 0:
-            echo '<div class="alert alert-warning">
-            Preencha o(s) campo(s) obrigatório(s)!
-            </div>';
-            break;
+            echo '<script> const Toast = Swal.mixin({
+                toast: true,
+                position: "top",
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
+                }
+                });
+                Toast.fire({
+                icon: "warning",
+                title: "Preencha o campo obrigatório"
+                });</script>';
+                break;
 
         case 1:
-            echo '<script> Swal.fire({
-            title: "Sucesso",
-            text: "Ação realizada com sucesso.",
-            icon: "success"
+            echo '<script> const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "success",
+            title: "Ação realizada com sucesso"
             });</script>';
             break;
 
