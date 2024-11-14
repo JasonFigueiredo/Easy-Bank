@@ -51,7 +51,6 @@ class CategoriaDAO extends Conexao
                             SET nome_categoria = ?
                             WHERE id_categoria = ?
                             AND id_usuario = ?';  
-        //AND Usado para garantir que sempre seja o mesmo ususario logado para atualizar os dados
         $sql = new PDOStatement();
         $sql = $conexao->prepare($comando_sql);
 

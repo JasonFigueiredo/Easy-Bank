@@ -11,7 +11,7 @@ $objdao = new UsuarioDAO();
 if (isset($_POST["btn_Gravar"])) {
     $nome = $_POST["nome"];
     $email = $_POST["email"];
-    
+
     $ret = $objdao->GravarMeusDados($nome, $email);
 }
 
@@ -49,17 +49,15 @@ include_once '_head.php';
                     </div>
                     <div class="form-group">
                         <label>E-mail:</label>
-                        <input class="form-control" placeholder="Digite seu e-mail" name="email" value="<?= $dados[0]['email_usuario'] ?>" id="email" maxlength="45"
-                            type="email" />
+                        <input class="form-control" placeholder="Digite seu e-mail" name="email" value="<?= $dados[0]['email_usuario'] ?>" id="email" maxlength="45" type="email" />
                     </div>
-                    <button type="submit" onclick="return ValidarMeusDados()" class="btn btn-success"
-                        name="btn_Gravar"> Salvar</button>
+                    <button type="submit" onclick="return ValidarMeusDados()" class="btn btn-success" name="btn_Gravar">Salvar</button>
                 </form>
             </div>
         </div>
     </div>
 </body>
-<?php
-include_once '_footer.php';
-?>
+    <?php
+    include_once '_footer.php';
+    ?>
 </html>

@@ -17,7 +17,6 @@ class UsuarioDAO extends Conexao
 
         $sql->bindValue(1, UtilDAO::CodigoLogado());
 
-        // remove index de dentro do array , permanece somente com as colunas do Banco de Dados
         $sql->setFetchMode(PDO::FETCH_ASSOC);
         $sql->execute();
 
@@ -33,7 +32,7 @@ class UsuarioDAO extends Conexao
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             return FLAG_INVALIDO;
         }
-        
+
         if ($this->VerificarEmailDuplicadoAlteracao($email) != 0) {
             return FLAG_EMAIL;
         }

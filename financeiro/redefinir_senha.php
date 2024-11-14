@@ -1,5 +1,9 @@
 <?php
 require_once "../DAO/UsuarioDAO.php";
+$email = "";
+$senha_atual = "";
+$rsenha1 = "";
+$rsenha2 = "";
 
 if (isset($_POST["btn_enviar"])) {
     $email = $_POST["email"];
@@ -9,6 +13,10 @@ if (isset($_POST["btn_enviar"])) {
 
     $objdao = new UsuarioDao();
     $ret = $objdao->RedefinirSenha($email, $senha_atual, $rsenha1, $rsenha2);
+    if ($ret == 1) {
+        header('location: login.php?ret=' . $ret);
+        exit;
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -40,19 +48,19 @@ include_once '_head.php';
                                     <?php include_once "_msg.php" ?>
                                     <div class="form-group input-group">
                                         <span class="input-group-addon"><img src="./assets/img/email.png" width=15 height=15></span>
-                                        <input id="email" maxlength="45" type="text" class="form-control" placeholder="Seu e-mail" name="email"/>
+                                        <input id="email" maxlength="45" type="text" class="form-control" placeholder="Seu e-mail" name="email" value="<?= $email ?>"/>
                                     </div>
                                     <div class="form-group input-group">
                                         <span class="input-group-addon"><img src="./assets/img/password.png" width=15 height=15></span>
-                                        <input id="senha_atual" maxlength="12" type="password" class="form-control" placeholder="Sua senha atual" name="senha_atual"/>
+                                        <input id="senha_atual" maxlength="12" type="password" class="form-control" placeholder="Sua senha atual" name="senha_atual" value="<?= $senha_atual ?>"/>
                                     </div>
                                     <div class="form-group input-group">
                                         <span class="input-group-addon"><img src="./assets/img/password.png" width=15 height=15></span>
-                                        <input id="rsenha1" maxlength="12" type="password" class="form-control" placeholder="Sua nova senha" name="rsenha1"/>
+                                        <input id="rsenha1" maxlength="12" type="password" class="form-control" placeholder="Sua nova senha" name="rsenha1" value="<?= $rsenha1 ?>"/>
                                     </div>
                                     <div class="form-group input-group">
                                         <span class="input-group-addon"><img src="./assets/img/password.png" width=15 height=15></span>
-                                        <input id="rsenha2" maxlength="12" type="password" class="form-control" placeholder="Repita sua nova senha" name="rsenha2"/>
+                                        <input id="rsenha2" maxlength="12" type="password" class="form-control" placeholder="Repita sua nova senha" name="rsenha2" value="<?= $rsenha2 ?>"/>
                                     </div>
                                     <button class="btn btn-success " name="btn_enviar" onclick="return RedefinirSenha()">Alterar senha</button>
                                     <hr />

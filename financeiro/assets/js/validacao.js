@@ -1,6 +1,6 @@
 function ValidarMeusDados() {
     var nome = document.getElementById("nome").value;
-    var email = document.getElementById("#email").value;
+    var email = document.getElementById("email").value;
     var emailvalido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (nome.trim() == "") {
         Swal.fire({

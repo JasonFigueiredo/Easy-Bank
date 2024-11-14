@@ -40,7 +40,6 @@ include_once '_head.php';
                         </div>
                         <div class="panel-footer back-footer-green">
                             Total de entrada
-
                         </div>
                     </div>
                 </div>
@@ -58,8 +57,6 @@ include_once '_head.php';
                 </div>
                 <hr>
                 <?php if (count($movs) && is_array($movs) && count($movs) > 0) { ?>
-                    <!-- foi acrescentado uma verificação se realmenmte é um array
-                     '&& is_array($movs) e uma contatagem' -->
                     <div class="row">
                         <div class="col-md-12">
                             <div class="panel panel-default">
@@ -82,7 +79,6 @@ include_once '_head.php';
                                             </thead>
                                             <tbody>
                                                 <?php
-                                                // laço de repetição for alterado por esse abaixo: "laço a ser utilizado e o do comentario abaixo"
                                                 $total = 0;
                                                 for ($i = 0; $i < count($movs); $i++) {
                                                     if ($movs[$i]['tipo_movimento'] == 1) {
@@ -90,14 +86,6 @@ include_once '_head.php';
                                                     } else {
                                                         $total -= $movs[$i]['valor_movimento'];
                                                     }
-                                                    // $total = 0;
-                                                    // for ($i = 0; $i < count($movs); $i++) {
-                                                    //     if ($movs[$i]['tipo_movimento'] == 1) {
-                                                    //       $total = $total + $movs[$i]['valor_movimento'];
-                                                    //     } else {
-                                                    //       $total = $total - $movs[$i]['valor_movimento'];
-                                                    //     }
-
                                                 ?>
                                                     <tr class="odd gradeX">
                                                         <td><?= $movs[$i]["data_movimento"] ?></td>

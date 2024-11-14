@@ -35,7 +35,7 @@ if (isset($ret)) {
 
         case -3:
             echo '<div class="alert alert-warning">
-            A senha deve conter 6 ou mais caracteres!
+            A senha deve conter de 6 a 12 caracteres!
             </div>';
             break;
 
@@ -58,7 +58,7 @@ if (isset($ret)) {
         case -6:
             echo '<script> Swal.fire({
             title: "Usuário não encontrado",
-            text: "Por favor, verifique o e-mail informado.",
+            text: "Por favor, verifique e-mail e senha.",
             icon: "error"
             });</script>';
             break;
@@ -80,7 +80,7 @@ if (isset($ret)) {
         case -10:
             echo '<script> Swal.fire({
             title: "Usuário não encontrado",
-            text: "Por favor, digite o e-mail ou senha corretamente.",
+            text: "Por favor, verifique o e-mail ou senha.",
             icon: "error"
             });</script>';
             break;

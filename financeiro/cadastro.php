@@ -1,6 +1,12 @@
 <?php
 
 require_once "../DAO/UsuarioDAO.php";
+$nome = "";
+$email = "";
+$senha1 = "";
+$senha2 = "";
+
+$objdao = new UsuarioDao();
 
 if (isset($_POST["btn_enviar"])) {
     $nome = $_POST["nome"];
@@ -8,8 +14,11 @@ if (isset($_POST["btn_enviar"])) {
     $senha1 = $_POST["senha1"];
     $senha2 = $_POST["senha2"];
 
-    $objdao = new UsuarioDao();
     $ret = $objdao->CriarCadastro($nome, $email, $senha1, $senha2);
+    if ($ret == 1) {
+        header('location: login.php?ret=' . $ret);
+        exit;
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -24,7 +33,7 @@ include_once '_head.php';
         <img src="./assets/img/moedas2.gif" type="gif">
     </div>
     <div class="container">
-        <div class="row text-center  ">
+        <div class="row text-center">
             <div class="col-md-12">
                 <div class="titulo">
                     <img src="./assets/img/easybanklogo2.png" alt="EasyBanklogo">
@@ -41,21 +50,21 @@ include_once '_head.php';
                                     <?php include_once "_msg.php" ?>
                                     <div class="form-group input-group">
                                         <span class="input-group-addon"><img src="./assets/img/user.png" width=15 height=15><i class="fa fa-circle-o-notch"></i></span>
-                                        <input id="nome" maxlength="45" type="text" class="form-control" placeholder="Seu nome" name="nome" />
+                                        <input id="nome" maxlength="45" type="text" class="form-control" placeholder="Seu nome" name="nome" value="<?= $nome ?>" />
                                     </div>
                                     <div class="form-group input-group">
                                         <span class="input-group-addon"><img src="./assets/img/email.png" width=15 height=15></span>
-                                        <input id="email" maxlength="45" type="text" class="form-control" placeholder="Seu melhor e-mail" name="email" />
+                                        <input id="email" maxlength="45" type="text" class="form-control" placeholder="Seu melhor e-mail" name="email" value="<?= $email ?>" />
                                     </div>
                                     <div class="form-group input-group">
                                         <span class="input-group-addon"><img src="./assets/img/password.png" width=15 height=15></span>
-                                        <input id="senha1" maxlength="12" type="password" class="form-control" placeholder="Sua senha" name="senha1" />
+                                        <input id="senha1" maxlength="12" type="password" class="form-control" placeholder="Sua senha" name="senha1" value="<?= $senha1 ?>" />
                                     </div>
                                     <div class="form-group input-group">
                                         <span class="input-group-addon"><img src="./assets/img/password.png" width=15 height=15></span>
-                                        <input id="senha2" maxlength="12 type=" password" class="form-control" placeholder="Repita sua senha" name="senha2">
+                                        <input id="senha2" maxlength="12" type="password" class="form-control" placeholder="Repita sua senha" name="senha2" value="<?= $senha2 ?>"/>
                                     </div>
-                                    <button onclick="return ValidarCadastro()" class="btn btn-success " name="btn_enviar">Tudo pronto</button>
+                                    <button onclick="return ValidarCadastro()" class="btn btn-success " name="btn_enviar">Cadastrar</button>
                                     <hr />
                                     Já possui cadastro ?
                                     <a href="login.php">Fazer login</a>
