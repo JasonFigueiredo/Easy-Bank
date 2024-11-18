@@ -50,7 +50,7 @@ class CategoriaDAO extends Conexao
         $comando_sql = 'UPDATE tb_categoria
                             SET nome_categoria = ?
                             WHERE id_categoria = ?
-                            AND id_usuario = ?';  
+                            AND id_usuario = ?';
         $sql = new PDOStatement();
         $sql = $conexao->prepare($comando_sql);
 
@@ -98,9 +98,9 @@ class CategoriaDAO extends Conexao
         //1 passo: criar uma variavel que recebera o obj de conexao
         $conexao = parent::retornarConexao();
         //passo 2 : criar uma variavel que recebera o texto do comando SQL que recebera execultado no DB
-        $comando_sql = 'insert into tb_categoria
+        $comando_sql = 'INSERT INTO tb_categoria
                         (nome_categoria, id_usuario)
-                        values ( ? , ? );';
+                        VALUES ( ? , ? );';
         //passo 3: criar um obj que serra config e levado no BD para ser execultado
         $sql = new PDOStatement();
         //passo 4: colocar dentro do obj sql a conexao preparada para execultar  o comando_sql

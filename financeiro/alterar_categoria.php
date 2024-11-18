@@ -55,11 +55,11 @@ include_once '_head.php';
                 </div>
                 <!-- /. ROW  -->
                 <form action="alterar_categoria.php" method="post">
-                    <input type="hidden" name="cod" value="<?= $dados[0]['id_categoria'] ?>">
+                    <input type="hidden" name="cod" value="<?= $dados[0]['id_categoria']?>">
                     <hr/>
                     <div class="form-group">
                         <label>Nome da categoria:</label>
-                        <input name="nomecategoria" value="<?= $dados[0]['nome_categoria'] ?>" maxlength="35" class="form-control" placeholder="Digite o nome da categoria EX: Conta de luz" id="nome">
+                        <input name="nomecategoria" value="<?= $dados[0]['nome_categoria']?>" maxlength="35" class="form-control" placeholder="Digite o nome da categoria EX: Conta de luz" id="nome">
                     </div>
                     <button name="btn_salvar" type="submit" onclick="return ValidarCategoria()" class="btn btn-success">Salvar alterações</button>
                     <button type="button" data-toggle="modal" data-target="#modalExcluir" class="btn btn-danger">Excluir</button>
