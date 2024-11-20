@@ -8,25 +8,30 @@ class CategoriaDAO extends Conexao
     {
         $conexao = parent::retornarConexao();
 
-        $comando_sql = 'SELECT id_categoria,nome_categoria 
-                            FROM tb_categoria
-                            where id_usuario = ? 
-                            ORDER BY nome_categoria ASC ';
+        $comando_sql = ' SELECT id_categoria, 
+                               nome_categoria 
+                        FROM tb_categoria
+                        where id_usuario = ? 
+                        ORDER BY nome_categoria ASC ';
+
         $sql = new PDOStatement();
+
         $sql = $conexao->prepare($comando_sql);
 
         $sql->bindValue(1, UtilDAO::CodigoLogado());
+
         $sql->setFetchMode(PDO::FETCH_ASSOC);
         $sql->execute();
+
         return $sql->fetchAll();
     }
     public function DetalharCategoria($idCategoria)
     {
         $conexao = parent::retornarConexao();
-        $comando_sql = 'SELECT id_categoria,nome_categoria 
+        $comando_sql = ' SELECT id_categoria,nome_categoria 
                             FROM tb_categoria
                             where id_categoria = ?
-                            AND id_usuario = ?';
+                            AND id_usuario = ? ';
 
         $sql = new PDOStatement();
 
@@ -42,12 +47,12 @@ class CategoriaDAO extends Conexao
     }
     public function AlterarCategoria($idCategoria, $nome)
     {
-        if (trim($idCategoria) == "" || $nome == "") {
+        if (trim($idCategoria) == "" || trim($nome) == "") {
             return FLAG_VAZIO;
         }
 
         $conexao = parent::retornarConexao();
-        $comando_sql = 'UPDATE tb_categoria
+        $comando_sql = ' UPDATE tb_categoria
                             SET nome_categoria = ?
                             WHERE id_categoria = ?
                             AND id_usuario = ?';

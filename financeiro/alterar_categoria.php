@@ -7,20 +7,20 @@ $objdao = new CategoriaDAO();
 
 if (isset($_GET['cod']) && is_numeric($_GET['cod'])) {
     $idCategoria = $_GET['cod'];
-
     $dados = $objdao->DetalharCategoria($idCategoria);
+
     if (count($dados) == 0) {
         header('location: consultar_categoria.php');
         exit;
     }
-} else if (isset($_POST["btn_salvar"])) {
+} else if (isset($_POST['btn_salvar'])) {
     $idCategoria = $_POST['cod'];
-    $nomecategoria =  $_POST['nomecategoria'];
-
-    $ret = $objdao->AlterarCategoria($idCategoria, $nomecategoria);
+    $nome =  $_POST['nomecategoria'];
+    $ret = $objdao->AlterarCategoria($idCategoria, $nome);
+    
     header('location: consultar_categoria.php?ret=' . $ret);
     exit;
-} else if (isset($_POST["btn_excluir"])) {
+} else if (isset($_POST['btn_excluir'])) {
     $idCategoria = $_POST['cod'];
     $ret = $objdao->ExcluirCategoria($idCategoria);
     header('location: consultar_categoria.php?ret=' . $ret);
@@ -55,13 +55,13 @@ include_once '_head.php';
                 </div>
                 <!-- /. ROW  -->
                 <form action="alterar_categoria.php" method="post">
-                    <input type="hidden" name="cod" value="<?= $dados[0]['id_categoria']?>">
-                    <hr/>
+                    <input type="hidden" name="cod" value="<?= $dados[0]['id_categoria'] ?>">
+                    <hr />
                     <div class="form-group">
                         <label>Nome da categoria:</label>
-                        <input name="nomecategoria" value="<?= $dados[0]['nome_categoria']?>" maxlength="35" class="form-control" placeholder="Digite o nome da categoria EX: Conta de luz" id="nome">
+                        <input name="nomecategoria" value="<?= $dados[0]['nome_categoria'] ?>" maxlength="35" class="form-control" placeholder="Digite o nome da categoria EX: Conta de luz" id="nome">
                     </div>
-                    <button name="btn_salvar" type="submit" onclick="return ValidarCategoria()" class="btn btn-success">Salvar alterações</button>
+                    <button name="btn_salvar" type="submit" onclick='return ValidarCategoria()' class="btn btn-success">Salvar alterações</button>
                     <button type="button" data-toggle="modal" data-target="#modalExcluir" class="btn btn-danger">Excluir</button>
                     <div class="modal fade" id="modalExcluir" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
@@ -77,7 +77,7 @@ include_once '_head.php';
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                                    <button name="btn_excluir" type="submit" class="btn btn-success">Sim</button>
+                                    <button name='btn_excluir' type="submit" class="btn btn-success">Sim</button>
                                 </div>
                             </div>
                         </div>
@@ -93,4 +93,5 @@ include_once '_head.php';
 <?php
 include_once '_footer.php';
 ?>
+
 </html>
