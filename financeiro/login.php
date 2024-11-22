@@ -19,7 +19,7 @@ include_once '_head.php';
 
 <body>
     <div class="banner">
-        <img src="./assets/img/moedas2.gif" type="gif">
+        <img src="./assets/img/fundoverde.jpg" type="jpg">
     </div>
     <div class="container">
         <div class="row text-center ">
