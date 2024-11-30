@@ -28,7 +28,7 @@ include_once '_head.php';
 
 <body>
     <div class="banner">
-    <img src="./assets/img/fundo_verde.svg" type="svg">
+    <img src="./assets/img/fundoverde.jpg" type="jpg">
     </div>
     <div class="container">
         <div class="row text-center">
@@ -40,12 +40,11 @@ include_once '_head.php';
                     <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <strong> Redefinir senha do usuário </strong>
+                             Redefinir senha do usuário
                             </div>
                             <div class="panel-body">
                                 <form method="post" action="redefinir_senha.php">
                                     <br />
-                                    <?php include_once "_msg.php" ?>
                                     <div class="form-group input-group">
                                         <span class="input-group-addon"><img src="./assets/img/email.png" width=15 height=15></span>
                                         <input id="email" maxlength="45" type="text" class="form-control" placeholder="Seu e-mail" name="email" value="<?= $email ?>"/>

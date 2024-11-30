@@ -5,11 +5,12 @@ require_once "../DAO/ContaDAO.php";
 
 $dao = new ContaDAO();
 
+
 if (isset($_GET['cod']) && is_numeric($_GET['cod'])) {
 
     $idConta = $_GET['cod'];
     $dados = $dao->DetalharConta($idConta);
-
+    
     if (count($dados) == 0) {
         header('location: consultar_conta.php');
         exit;
@@ -20,7 +21,7 @@ if (isset($_GET['cod']) && is_numeric($_GET['cod'])) {
     $numero = $_POST['agencia'];
     $agencia = $_POST['conta'];
     $saldo = $_POST['saldo'];
-
+    
     $ret = $dao->AlterarConta($idConta, $banco, $numero, $agencia, $saldo);
     header('location: consultar_conta.php?ret=' . $ret);
     exit;
@@ -62,20 +63,20 @@ include_once '_head.php';
                 <form action="alterar_contas.php" method="post">
                     <input type="hidden" name="cod" value="<?= $dados[0]["id_conta"] ?>">
                     <div class="form-group">
-                        <label>Nome do banco * :</label>
+                        <label>Nome do banco<span style="color: #d80000;">*</span>:</label>
                         <input class="form-control" placeholder="Digite o nome do banco" name="nome" id="banco" value="<?= $dados[0]['banco_conta'] ?>" maxlength="20">
                     </div>
                     <div class="form-group">
-                        <label>Agência * :</label>
+                        <label>Agência<span style="color: #d80000;">*</span>:</label>
                         <input class="form-control" placeholder="Digite a agência bancaria" name="agencia" id="agencia" value="<?= $dados[0]['agencia_conta'] ?>" oninput="contarCaracteresAgencia()">
                     </div>
                     <div class="form-group">
-                        <label>Número da conta * :</label>
+                        <label>Número da conta<span style="color: #d80000;">*</span>:</label>
                         <input class="form-control" placeholder="Digite o número da conta" name="conta" id="conta" value="<?= $dados[0]['numero_conta'] ?>" oninput="contarCaracteresNumeroConta()" >
                     </div>
                     <div class="form-group">
-                        <label>Saldo da conta * :</label>
-                        <input class="form-control" placeholder="Digite o saldo da conta" name="saldo" id="saldo" value="<?= $dados[0]['saldo_conta'] ?>" oninput="contarCaracteresSaldoConta()">
+                        <label>Saldo da conta<span style="color: #d80000;">*</span>:</label>
+                        <input class="form-control" placeholder="Digite o saldo da conta" name="saldo" id="saldo" value="<?= number_format($dados[0]['saldo_conta'], 2, ',', '.') ?>" oninput="contarCaracteresSaldoConta()">
                     </div>
                     <button type="submit" class="btn btn-success" onclick="return CriarConta()" name="btn_salvar">Salvar alterações</button>
                     <button type="button" data-toggle="modal" data-target="#modalExcluir" class="btn btn-danger">Excluir</button>

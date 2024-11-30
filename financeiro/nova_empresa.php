@@ -36,7 +36,7 @@ include_once '_head.php';
                         <hr />
                         <form action="nova_empresa.php" method="post">
                             <div class="form-group">
-                                <label>Nome da empresa*:</label>
+                                <label>Nome da empresa<span style="color: #d80000;">*</span>:</label>
                                 <input class="form-control" placeholder="Digite o nome da empresa" name="nome" id="nome" maxlength="45" />
                             </div>
                             <div class="form-group">

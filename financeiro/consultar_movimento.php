@@ -69,13 +69,13 @@ include_once '_head.php';
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Data inicial * :</label>
+                            <label>Data inicial<span style="color: #d80000;">*</span>:</label>
                             <input type="date" class="form-control" name="data_inicial" id="datainicialconsulta" value="<?= $dt_inicial ?>" />
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Data final * :</label>
+                            <label>Data final<span style="color: #d80000;">*</span>:</label>
                             <input type="date" class="form-control" name="data_final" id="datafinalconsulta" value="<?= $dt_final ?>" />
                         </div>
                     </div>

@@ -232,7 +232,7 @@ class UsuarioDAO extends Conexao
         $contar = $sql->fetchAll();
 
         if ($contar[0]['contar'] == 0) {
-            return FLAG_USUARIO1;
+            return FLAG_USUARIO;
         }
 
         $comando_sql = 'SELECT senha_usuario 

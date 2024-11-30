@@ -6,13 +6,13 @@ include_once '_head.php';
         <div class="footer-content">
             <div class="footer-section about">
                 <h2>Sobre nós</h2>
-                <p>Desde 2024, nossa missão é simplificar o controle financeiro, ajudando pessoas e empresas a organizarem suas finanças de forma prática e segura. Oferecemos uma plataforma intuitiva que permite visualizar gastos, definir metas e acompanhar o progresso financeiro em tempo real. Com foco na segurança dos dados e uma experiência amigável, buscamos ser o aliado que facilita suas decisões financeiras e impulsiona você a alcançar seus objetivos.</p>
+                <p>Desde 2023, nossa missão é simplificar o controle financeiro, ajudando pessoas e empresas a organizarem suas finanças de forma prática e segura. Oferecemos uma plataforma intuitiva que permite visualizar gastos, definir metas e acompanhar o progresso financeiro em tempo real. Com foco na segurança dos dados e uma experiência amigável, buscamos ser o aliado que facilita suas decisões financeiras e impulsiona você a alcançar seus objetivos.</p>
             </div>
             <hr>
             <div class="footer-section contact">
                 <h2>Contato</h2>
                 <p>Email: contato@easybank.com</p>
-                <p>Telefone: (62) 9 9369-3788</p>
+                <p>Telefone: (62) 9 9999-9999</p>
             </div>
         </div>
         <div>

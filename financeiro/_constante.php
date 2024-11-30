@@ -9,6 +9,8 @@ const FLAG_EMAIL = -5;
 const FLAG_USUARIO = -6;
 const FLAG_MOVIMENTACAO = -7;
 const FLAG_SENHA = -8;
+const FLAG_EXATAMENTE_9 = -9;
 const FLAG_USUARIO1 = -10;
 const FLAG_INVALIDO = -11;
+const FLAG_EXATAMENTE_4 = -12;
 ?>

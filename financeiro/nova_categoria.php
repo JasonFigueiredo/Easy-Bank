@@ -38,7 +38,7 @@ include_once '_head.php';
                 <hr />
                 <form action="nova_categoria.php" method="post">
                 <div class="form-group">
-                    <label>Nome da categoria:</label>
+                    <label>Nome da categoria<span style="color: #d80000;">*</span>:</label>
                     <input id="nome" class="form-control" placeholder="Informe a categoria desejada: (Exemplo: Conta de luz)" name="nome" maxlength="35" />
                 </div>
                 <button type="submit" onclick="return ValidarCategoria()" name="btn_gravar" class="btn btn-success">Salvar </button> 

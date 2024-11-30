@@ -44,11 +44,11 @@ include_once '_head.php';
                 <hr />
                 <form action="meus_dados.php" method="post">
                     <div class="form-group">
-                        <label>Nome:</label>
+                        <label>Nome<span style="color: #d80000;">*</span>:</label>
                         <input class="form-control" placeholder="Digite o seu nome" name="nome" value="<?= $dados[0]['nome_usuario'] ?>" id="nome" maxlength="45" />
                     </div>
                     <div class="form-group">
-                        <label>E-mail:</label>
+                        <label>E-mail<span style="color: #d80000;">*</span>:</label>
                         <input class="form-control" placeholder="Digite seu e-mail" name="email" value="<?= $dados[0]['email_usuario'] ?>" id="email" maxlength="45" type="email" />
                     </div>
                     <button type="submit" onclick="return ValidarMeusDados()" class="btn btn-success" name="btn_Gravar">Salvar</button>

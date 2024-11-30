@@ -19,9 +19,9 @@ if (isset($ret)) {
                 });
                 Toast.fire({
                 icon: "warning",
-                title: "Preencha o campo obrigatório"
+                title: "Campo obrigatório"
                 });</script>';
-                break;
+            break;
 
         case 1:
             echo '<script> const Toast = Swal.mixin({
@@ -42,62 +42,163 @@ if (isset($ret)) {
             break;
 
         case -1:
-            echo '<script> Swal.fire({
-            title: "Erro",
-            text: "Ocorreu um erro na operação. Tente mais tarde!",
-            icon: "error"
+            echo '<script> const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "error",
+            title: "Ocorreu um erro ao realizar a ação"
             });</script>';
             break;
 
         case -2:
-            echo '<div class="alert alert-danger">
-            Senhas diferentes. Por favor, digite senhas iguais!
-            </div>';
+            echo '<script> const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "warning",
+            title: "Senhas diferentes! Por favor, insira senhas iguais."
+            });</script>';
             break;
 
         case -3:
-            echo '<div class="alert alert-warning">
-            A senha deve conter de 6 a 12 caracteres!
-            </div>';
+            echo '<script> const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "warning",
+            title: "Senha muito fraca! No mínimo 6 caracteres."
+            });</script>';
             break;
 
         case -4:
-            echo '<script> Swal.fire({
-            title: "Erro",
-            text: "O registro não pode ser excluído, pois está em uso!",
-            icon: "error"
+            echo '<script> const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "error",
+            title: "O registro em uso não pode ser excluído!"
             });</script>';
             break;
 
         case -5:
-            echo '<script> Swal.fire({
-            title: "E-mail já cadastrado",
-            text: "Por favor, escolha outro e-mail.",
-            icon: "error"
+            echo '<script> const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "error",
+            title: "E-mail já cadastrado!"
             });</script>';
             break;
 
         case -6:
-            echo '<script> Swal.fire({
-            title: "Usuário não encontrado",
-            text: "Por favor, verifique e-mail e senha.",
-            icon: "error"
+            echo '<script> const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "error",
+            title: "Usuario não encontrado!"
             });</script>';
             break;
 
         case -7:
-            echo '<script> Swal.fire({
-            title: "Sem movimentação",
-            text: "Nenhuma movimentação encontrada.",
-            icon: "question"
+            echo '<script> const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "question",
+            title: "Nenhum registro encontrado!"
             });</script>';
             break;
         case -8:
-            echo '<script> Swal.fire({
-            title: "Insira senhas diferentes",
-            text: "A sua senha não pode ser igual a anterior.",
-            icon: "warning"
+            echo '<script> const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "warning",
+            title: "Insira uma senha diferente da atual"
             });</script>';
+            break;
+        case -9:
+            echo '<script> const Toast = Swal.mixin({
+                toast: true,
+                position: "top",
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
+                }
+                });
+                Toast.fire({
+                icon: "warning",
+                title: "Obrigatoriamente 9 digitos"
+                });</script>';
             break;
         case -10:
             echo '<script> Swal.fire({
@@ -112,6 +213,23 @@ if (isset($ret)) {
             text: "Por favor, insira um e-mail válido.",
             icon: "warning"
             });</script>';
+            break;
+        case -12:
+            echo '<script> const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top",
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.onmouseenter = Swal.stopTimer;
+                        toast.onmouseleave = Swal.resumeTimer;
+                    }
+                    });
+                    Toast.fire({
+                    icon: "warning",
+                    title: "O campo deve conter 4 digitos"
+                    });</script>';
             break;
     }
 }

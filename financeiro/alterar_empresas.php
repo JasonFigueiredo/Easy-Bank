@@ -60,7 +60,7 @@ include_once '_head.php';
                 <form action="alterar_empresas.php" method="post">
                     <input type="hidden" name="cod" value="<?= $dados[0]["id_empresa"] ?>">
                     <div class=" form-group">
-                        <label>Nome da empresa * :</label>
+                        <label>Nome da empresa<span style="color: #d80000;">*</span>:</label>
                         <input class="form-control" value="<?= $dados[0]["nome_empresa"] ?>" placeholder=" Digite o nome da empresa" name="nomeempresa" id="nome" maxlength="45">
                     </div>
                     <div class="form-group">

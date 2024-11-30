@@ -12,7 +12,7 @@ UtilDAO::VerificarLogado();
         </button>
         <center>
             <div class="img2">
-                <img src="./assets/img/easybanklogo2.png" width=290 height=60>
+                <img src="./assets/img/easybanklogo2.png" width=240 height=60>
             </div>
         </center>
     </div>
@@ -20,6 +20,6 @@ UtilDAO::VerificarLogado();
         <div style="color: #fff;
 padding: 30px 50px 10px 50px;
 float: right;
-font-size: 16px;">Olá, <?= UtilDAO::NomeLogado() ?>, Dúvidas ligue para (62) 9 99369-3788 </div>
-    </center>
+font-size: 16px;">Olá, <?= UtilDAO::NomeLogado() ?>, Dúvidas ligue para (62) 9 9999-9999</center>
+
 </nav>

@@ -111,7 +111,7 @@ p {
 }
 
 .bg-color-green {
-    background-color: #146135;
+    background-color: #14613574;
     color: #ffffff;
 }
 
@@ -121,7 +121,7 @@ p {
 }
 
 .bg-color-red {
-    background-color: #ff0000a0;
+    background-color: #ff000049;
     color: #fff;
 }
 
@@ -175,14 +175,14 @@ p {
 }
 
 .back-footer-green {
-    background-color: #009B50;
+    background-color: #009b5093;
     border-top: 0px solid #fff;
     border-bottom-left-radius: 7px;
     border-bottom-right-radius: 7px;
 }
 
 .back-footer-red {
-    background-color: #fd1818;
+    background-color: #fd18187f;
     border-top: 0px solid #fff;
     border-bottom-left-radius: 7px;
     border-bottom-right-radius: 7px;
@@ -299,13 +299,13 @@ p {
 }
 
 .sidebar-collapse>.nav>li {
-    border-bottom: 1px solid rgba(107, 108, 109, 0.19);
+    border-bottom: 1px solid rgb(80, 80, 80);
 }
 
 .sidebar-collapse .nav>li>a:hover,
 .sidebar-collapse .nav>li>a:focus {
 
-    background: #0A0A0A;
+    background: #444444;
     outline: 0;
 }
 

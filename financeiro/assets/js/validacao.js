@@ -16,7 +16,7 @@ function ValidarMeusDados() {
             });
             Toast.fire({
             icon: "warning",
-            title: "Preencha o campo obrigatório ! "
+            title: "Campo obrigatório! "
             });
         $("#nome").focus();
         return false;
@@ -35,17 +35,27 @@ function ValidarMeusDados() {
             });
             Toast.fire({
             icon: "warning",
-            title: "Preencha o campo obrigatório ! "
+            title: "Campo obrigatório!"
             });
         $("#email").focus();
         return false;
     }
     if (!emailvalido.test(email)) {
-        Swal.fire({
-            title: "E-mail inválido",
-            text: "Por favor, insira um e-mail válido.",
-            icon: "warning"
-        });
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "warning",
+            title: "Preencha com um e-mail válido ! "
+            });
         $("#email").focus();
         return false;
     }
@@ -53,11 +63,21 @@ function ValidarMeusDados() {
 
 function ValidarCategoria() {
     if ($("#nome").val().trim() == "") {
-        Swal.fire({
-            title: "Nome da categoria",
-            text: "Por favor, preencha o campo obrigatório.",
-            icon: "warning"
-        });
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "warning",
+            title: "Campo obrigatório!"
+            });
         $("#nome").focus();
         return false;
     }
@@ -65,11 +85,21 @@ function ValidarCategoria() {
 
 function CadastrarEmpresa() {
     if ($("#nome").val().trim() == "") {
-        Swal.fire({
-            title: "Nome da empresa",
-            text: "Por favor, preencha o campo obrigatório.",
-            icon: "warning"
-        });
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "warning",
+            title: "Campo obrigatório! "
+            });
         $("#nome").focus();
         return false;
     }
@@ -82,38 +112,119 @@ function CriarConta() {
     var saldo = document.getElementById("saldo").value;
 
     if (banco.trim() == "") {
-        Swal.fire({
-            title: "Nome do banco",
-            text: "Por favor, preencha o campo obrigatório.",
-            icon: "warning"
-        });
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "warning",
+            title: "Campo obrigatório! "
+            });
         $("#banco").focus();
         return false;
     }
     if (agencia.trim() == "") {
-        Swal.fire({
-            title: "Agência",
-            text: "Por favor, preencha o campo obrigatório.",
-            icon: "warning"
-        });
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "warning",
+            title: "Campo obrigatório! "
+            });
+        $("#agencia").focus();
+        return false;
+    }
+    // verificar se o campo agencia tem 4 digitos
+    if (agencia.trim().length <= 3){
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "warning",
+            title: "O campo deve conter 4 dígitos! "
+            });
         $("#agencia").focus();
         return false;
     }
     if (conta.trim() == "") {
-        Swal.fire({
-            title: "Número da conta",
-            text: "Por favor, preencha o campo obrigatório.",
-            icon: "warning"
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "warning",
+            title: "Campo obrigatório! "
+            });
+        $("#conta").focus();
+        return false;
+    }
+    // verificar se o campo conta tem 9 digitos
+    if (conta.trim().length <= 8) {
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+        });
+        Toast.fire({
+            icon: "warning",
+            title: "O campo deve conter 9 dígitos! "
         });
         $("#conta").focus();
         return false;
     }
+
     if (saldo.trim() == "") {
-        Swal.fire({
-            title: "Saldo da conta",
-            text: "Por favor, preencha o campo obrigatório.",
-            icon: "warning"
-        });
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "warning",
+            title: "Campo obrigatório! "
+            });
         $("#saldo").focus();
         return false;
     }
@@ -137,17 +248,27 @@ function ValidarLogin() {
             });
             Toast.fire({
             icon: "warning",
-            title: "Preencha o campo obrigatório ! "
+            title: "Campo obrigatório ! "
             });
         $("#email").focus();
         return false;
     }
     if (!emailvalido.test(email)) {
-        Swal.fire({
-            title: "E-mail inválido",
-            text: "Por favor, insira um e-mail válido.",
-            icon: "warning"
-        });
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "warning",
+            title: "Preencha com um e-mail válido ! "
+            });
         $("#email").focus();
         return false;
     }
@@ -165,7 +286,7 @@ function ValidarLogin() {
             });
             Toast.fire({
             icon: "warning",
-            title: "Preencha o campo obrigatório ! "
+            title: "Campo obrigatório ! "
             });
         $("#senha").focus();
         return false;
@@ -177,61 +298,125 @@ function ValidarCadastro() {
     var email = document.getElementById("email").value;
     var senha1 = document.getElementById("senha1").value;
     var senha2 = document.getElementById("senha2").value;
+    // expressão regular para verificar se o email é válido
     var emailvalido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (nome.trim() == "") {
-        Swal.fire({
-            title: "Seu nome",
-            text: "Por favor, preencha o campo obrigatório.",
-            icon: "warning"
-        });
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "warning",
+            title: "Campo obrigatório! "
+            });
         $("#nome").focus();
         return false;
     }
     if (email.trim() == "") {
-        Swal.fire({
-            title: "Seu e-mail",
-            text: "Por favor, preencha o campo obrigatório.",
-            icon: "warning"
-        });
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "warning",
+            title: "Campo obrigatório! "
+            });
         $("#email").focus();
         return false;
     }
+    // verificar se o email é válido
     if (!emailvalido.test(email)) {
-        Swal.fire({
-            title: "E-mail inválido",
-            text: "Por favor, insira um e-mail válido.",
-            icon: "warning"
-        });
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "warning",
+            title: "Preencha com um e-mail válido ! "
+            });
         $("#email").focus();
         return false;
     }
     if (senha1.trim() == "") {
-        Swal.fire({
-            title: "Sua senha",
-            text: "Por favor, preencha o campo obrigatório.",
-            icon: "warning"
-        });
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "warning",
+            title: "Campo obrigatório! "
+            });
         $("#senha1").focus();
         return false;
     }
     if (senha2.trim() == "") {
-        Swal.fire({
-            title: "Confirmação de senha",
-            text: "Por favor, preencha o campo obrigatório.",
-            icon: "warning"
-        });
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "warning",
+            title: "Campo obrigatório! "
+            });
         $("#senha2").focus();
         return false;
     }
+    // verificar se as senhas são iguais
     if ($("#senha1").val().trim() != $("#senha2").val().trim()) {
-        Swal.fire({
-            title: "Senhas diferentes",
-            text: "Por favor, certifique-se de que as senhas sejam iguais.",
-            icon: "warning"
-        });
-        $("#senha2").focus();
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "warning",
+            title: "Senhas diferentes! Digite senhas iguais. "
+            });
+        $("#senha1").focus();
         return false;
     }
+    // verificar se a senha tem 6 digitos
     if (senha1.trim().length < 6) {
         Swal.fire({
             title: "Senha muito fraca",
@@ -250,58 +435,117 @@ function ValidarMovimento() {
     var categoria = document.getElementById("categoria").value;
     var empresa = document.getElementById("empresa").value;
     var conta = document.getElementById("conta").value;
-
     if (movimento.trim() == "0") {
-        Swal.fire({
-            title: "Tipo de movimento",
-            text: "Por favor, preencha o campo obrigatório.",
-            icon: "warning"
-        });
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "warning",
+            title: "Selecione o tipo de movimentação! "
+            });
         $("#movimento").focus();
         return false;
     }
     if (data.trim() == "") {
-        Swal.fire({
-            title: "Data da movimentação",
-            text: "Por favor, preencha o campo obrigatório.",
-            icon: "warning"
-        });
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "warning",
+            title: "Campo obrigatório! "
+            });
         $("#data").focus();
         return false;
     }
     if (valor.trim() == "") {
-        Swal.fire({
-            title: "Valor da movimentação",
-            text: "Por favor, preencha o campo obrigatório.",
-            icon: "warning"
-        });
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "warning",
+            title: "Campo obrigatório! "
+            });
         $("#valor").focus();
         return false;
     }
     if (categoria.trim() == "") {
-        Swal.fire({
-            title: "Categoria",
-            text: "Por favor, preencha o campo obrigatório.",
-            icon: "warning"
-        });
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "warning",
+            title: "Campo obrigatório! "
+            });
         $("#categoria").focus();
         return false;
     }
     if (empresa.trim() == "") {
-        Swal.fire({
-            title: "Empresa",
-            text: "Por favor, preencha o campo obrigatório.",
-            icon: "warning"
-        });
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "warning",
+            title: "Campo obrigatório! "
+            });
         $("#empresa").focus();
         return false;
     }
     if (conta.trim() == "") {
-        Swal.fire({
-            title: "Conta",
-            text: "Por favor, preencha o campo obrigatório.",
-            icon: "warning"
-        });
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "warning",
+            title: "Campo obrigatório! "
+            });
         $("#conta").focus();
         return false;
     }
@@ -311,20 +555,40 @@ function ValidarConsulta() {
     var datainicial = document.getElementById("datainicialconsulta").value;
     var datafinal = document.getElementById("datafinalconsulta").value;
     if (datainicial.trim() == "") {
-        Swal.fire({
-            title: "Data inicial",
-            text: "Por favor, preencha o campo obrigatório.",
-            icon: "warning"
-        });
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "warning",
+            title: "Campo obrigatório! "
+            });
         $("#datainicialconsulta").focus();
         return false;
     }
     if (datafinal.trim() == "") {
-        Swal.fire({
-            title: "Data final",
-            text: "Por favor, preencha o campo obrigatório.",
-            icon: "warning"
-        });
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "warning",
+            title: "Campo obrigatório! "
+            });
         $("#datafinalconsulta").focus();
         return false;
     }
@@ -337,65 +601,139 @@ function RedefinirSenha() {
     var emailvalido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (email.trim() == "") {
-        Swal.fire({
-            title: "Seu e-mail",
-            text: "Por favor, preencha o campo obrigatório.",
-            icon: "warning"
-        });
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "warning",
+            title: "Campo obrigatório! "
+            });
         $("#email").focus();
         return false;
     }
     if (senha_atual.trim() == "") {
-        Swal.fire({
-            title: "Sua senha atual",
-            text: "Por favor, preencha o campo obrigatório.",
-            icon: "warning"
-        });
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "warning",
+            title: "Campo obrigatório! "
+            });
         $("#senha_atual").focus();
         return false;
     }
     if (rsenha1.trim() == "") {
-        Swal.fire({
-            title: "Sua nova senha",
-            text: "Por favor, preencha o campo obrigatório.",
-            icon: "warning"
-        });
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "warning",
+            title: "Campo obrigatório! "
+            });
         $("#rsenha1").focus();
         return false;
     }
     if (rsenha2.trim() == "") {
-        Swal.fire({
-            title: "Repita sua nova senha",
-            text: "Por favor, preencha o campo obrigatório.",
-            icon: "warning"
-        });
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "warning",
+            title: "Campo obrigatório! "
+            });
         $("#rsenha2").focus();
         return false;
     }
+    // verificar se as senhas são iguais
     if ($("#rsenha1").val().trim() != $("#rsenha2").val().trim()) {
-        Swal.fire({
-            title: "Senhas diferentes",
-            text: "Por favor, certifique-se de que as novas senhas sejam iguais.",
-            icon: "warning"
-        });
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "warning",
+            title: "Senhas diferentes! Digite senhas iguais. "
+            });
+        $("#rsenha1").focus();
         $("#rsenha2").focus();
         return false;
     }
+    // verificar se a senha tem 6 digitos
     if (rsenha1.trim().length < 6) {
-        Swal.fire({
-            title: "Senha muito fraca",
-            text: "A senha deve conter 6 ou mais caracteres.",
-            icon: "warning"
-        });
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "warning",
+            title: "Senha muito fraca! No mínimo 6 caracteres. "
+            });
         $("#rsenha1").focus();
         return false;
     }
+    // verificar se o email é válido
     if (!emailvalido.test(email)) {
-        Swal.fire({
-            title: "E-mail inválido",
-            text: "Por favor, insira um e-mail válido.",
-            icon: "warning"
-        });
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+            });
+            Toast.fire({
+            icon: "warning",
+            title: "Preencha com um e-mail válido ! "
+            });
         $("#email").focus();
         return false;
     }
@@ -418,13 +756,18 @@ function contarCaracteresNumeroConta() {
     const limiteCaracteres = 9;
     var maxnumber = document.getElementById("conta");
     maxnumber.value = maxnumber.value.replace(/[^0-9]/g, '').slice(0, limiteCaracteres);
+    if (maxnumber.value.length === limiteCaracteres) {
+        maxnumber.value = maxnumber.value.slice(0, -1) + '-' + maxnumber.value.slice(-1);
+    }
     document.getElementById("contador").textContent = maxnumber.value.length;
 }
 function contarCaracteresSaldoConta() {
     const limiteCaracteres = 15;
     var maxnumber = document.getElementById("saldo");
-    maxnumber.value = maxnumber.value.replace(/[^0-9]/g, '').slice(0, limiteCaracteres);
-    document.getElementById("contador").textContent = maxnumber.value.length;
+    maxnumber.value = maxnumber.value.replace(/[^0-9.,]/g, '').slice(0, limiteCaracteres);
+    var visualValue = maxnumber.value.replace(',', '.');
+    document.getElementById("contador").textContent = visualValue.length;
+    maxnumber.value = new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(parseFloat(visualValue.replace(',', '.')));
 }
 function contarCaracteresValorMov() {
     const limiteCaracteres = 15;

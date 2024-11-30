@@ -10,6 +10,12 @@ class ContaDAO extends Conexao
         if (trim($banco) == "" || trim($agencia) == "" || trim($numero) == "" || trim($saldo) == "") {
             return FLAG_VAZIO;
         }
+        if (strlen(trim($numero)) <= 8) {
+            return FLAG_EXATAMENTE_9;
+        }
+        if (strlen(trim($agencia)) <= 3) {
+            return FLAG_EXATAMENTE_4;
+        }
 
         $conexao = parent::retornarConexao();
         $comando_sql = 'INSERT INTO tb_conta

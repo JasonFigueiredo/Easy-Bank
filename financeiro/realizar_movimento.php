@@ -65,7 +65,7 @@ include_once '_head.php';
                 <form action="realizar_movimento.php" method="post">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Tipo de movimento * :</label>
+                            <label>Tipo de movimento<span style="color: #d80000;">*</span>:</label>
                             <select id="movimento" name="movimento" class="form-control">
                                 <option value="0">Selecione</option>
                                 <option value="1">Entrada</option>
@@ -73,18 +73,18 @@ include_once '_head.php';
                             </select>
                         </div>
                         <div class="form-group">
-                            <label>Data da movimentação * :</label>
+                            <label>Data da movimentação<span style="color: #d80000;">*</span>:</label>
                             <input id="data" name="data" type="date" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label>Valor da movimentação * :</label>
+                            <label>Valor da movimentação<span style="color: #d80000;">*</span>:</label>
                             <input id="valor" name="valor" class="form-control"
                                 placeholder="Digite o valor da movimentação" oninput="contarCaracteresValorMov()">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label> Categoria * :</label>
+                            <label> Categoria<span style="color: #d80000;">*</span>:</label>
                             <select id="categoria" name="categoria" class="form-control">
                                 <option value="">Selecione</option>
                                 <?php foreach ($categorias as $item) { ?>
@@ -95,7 +95,7 @@ include_once '_head.php';
                             </select>
                         </div>
                         <div class="form-group">
-                            <label>Empresa * :</label>
+                            <label>Empresa<span style="color: #d80000;">*</span>:</label>
                             <select id="empresa" name="empresa" class="form-control">
                                 <option value="">Selecione</option>
                                 <?php foreach ($empresas as $item) { ?>
@@ -106,7 +106,7 @@ include_once '_head.php';
                             </select>
                         </div>
                         <div class="form-group">
-                            <label>Conta * :</label>
+                            <label>Conta<span style="color: #d80000;">*</span>:</label>
                             <select id="conta" name="conta" class="form-control">
                                 <option value="">Selecione</option>
                                 <?php foreach ($contas as $item) { ?>

@@ -38,19 +38,19 @@ include_once '_head.php';
                 <hr />
                 <form method="post" action="nova_conta.php">
                     <div class="form-group">
-                        <label>Nome do banco * :</label>
+                        <label>Nome do banco<span style="color: #d80000;">*</span>:</label>
                         <input id="banco" name="banco" class="form-control" placeholder="Digite o nome do banco" maxlength="20" />
                     </div>
                     <div class="form-group">
-                        <label>Agência * :</label>
+                        <label>Agência<span style="color: #d80000;">*</span>:</label>
                         <input id="agencia" name="agencia" class="form-control" placeholder="Digite a agência bancária" oninput="contarCaracteresAgencia()"  />
                     </div>
                     <div class="form-group">
-                        <label>Número da conta * :</label>
-                        <input id="conta" name="numero" class="form-control" placeholder="Digite o número da conta" type="number" oninput="contarCaracteresNumeroConta()" />
+                        <label>Número da conta<span style="color: #d80000;">*</span>:</label>
+                        <input id="conta" name="numero" class="form-control" placeholder="Digite o número da conta" oninput="contarCaracteresNumeroConta()" />
                     </div>
                     <div class="form-group">
-                        <label>Saldo da conta * :</label>
+                        <label>Saldo da conta<span style="color: #d80000;">*</span>:</label>
                         <input id="saldo" name="saldo" class="form-control" placeholder="Digite o saldo da conta"  oninput="contarCaracteresSaldoConta()"/>
                     </div>
                 <button onclick="return CriarConta()" class="btn btn-success" name="btn">Salvar</button>

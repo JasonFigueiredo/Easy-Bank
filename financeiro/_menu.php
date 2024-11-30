@@ -10,7 +10,7 @@ if (isset($_GET["close"]) && $_GET['close'] == "1") {
     <div class="sidebar-collapse">
         <ul class="nav" id="main-menu">
             <li>
-                <a href="inicial.php"><img src="./assets/img/home.png" width=40 height=40> Página inicial</a>
+                <a href="inicial.php"><img src="./assets/img/home.png" width=40 height=40> Página inicial </a>
             </li>
             <li>
                 <a href="meus_dados.php"><img src="./assets/img/user.png" width=40 height=40> Meus dados</a>
