@@ -75,7 +75,19 @@ include_once '_head.php';
                         <div class="form-group">
                             <label>Data da movimentação<span style="color: #d80000;">*</span>:</label>
                             <input id="data" name="data" type="date" class="form-control">
+                            <!-- comando em php para validar o dia atual do computador com o fuso horario de são paulo -->
+                            <?php
+                            date_default_timezone_set('America/Sao_Paulo');
+                            $current_date = date('Y-m-d');
+                            ?>
+                            <script>
+                                document.getElementById('data').value = '<?= $current_date ?>';
+                            </script>
                         </div>
+                        <script>
+                            document.getElementById('data').setAttribute('max', '<?= $current_date ?>');
+                            document.getElementById('data').setAttribute('min', '<?= $current_date ?>');
+                        </script>
                         <div class="form-group">
                             <label>Valor da movimentação<span style="color: #d80000;">*</span>:</label>
                             <input id="valor" name="valor" class="form-control"
@@ -139,4 +151,5 @@ include_once '_head.php';
 <?php
 include_once '_footer.php';
 ?>
+
 </html>

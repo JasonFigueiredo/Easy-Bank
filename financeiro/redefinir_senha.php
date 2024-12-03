@@ -28,7 +28,7 @@ include_once '_head.php';
 
 <body>
     <div class="banner">
-    <img src="./assets/img/fundoverde.jpg" type="jpg">
+    <img src="./assets/img/cinza.jpg" type="jpg">
     </div>
     <div class="container">
         <div class="row text-center">

@@ -30,7 +30,7 @@ include_once '_head.php';
 
 <body>
     <div class="banner">
-    <img src="./assets/img/fundoverde.jpg" type="jpfg">
+    <img src="./assets/img/cinza.jpg" type="jpfg">
     </div>
     <div class="container">
         <div class="row text-center">

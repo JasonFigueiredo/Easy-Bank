@@ -2,6 +2,7 @@
 require_once "../DAO/UtilDAO.php";
 UtilDAO::VerificarLogado();
 require_once "../DAO/MovimentoDAO.php";
+date_default_timezone_set('America/Sao_Paulo');
 
 $tipo = "";
 $dt_inicial = "";
@@ -78,6 +79,16 @@ include_once '_head.php';
                             <label>Data final<span style="color: #d80000;">*</span>:</label>
                             <input type="date" class="form-control" name="data_final" id="datafinalconsulta" value="<?= $dt_final ?>" />
                         </div>
+                        <!-- script para desabilitar dias futuros -->
+                        <script>
+                            var today = new Date();
+                            today.setDate(today.getDate() - 1);
+                            today = today.toLocaleString("en-US", { timeZone: "America/Sao_Paulo" });
+                            var date = new Date(today);
+                            document.getElementById('datainicialconsulta').max = date.toISOString().split("T")[0];
+                            document.getElementById('datafinalconsulta').max = date.toISOString().split("T")[0];
+                        </script>
+
                     </div>
                     <center>
                         <button class="btn btn-info" onclick="return ValidarConsulta()" name="btn_pesquisar">Pesquisar</button>
@@ -92,7 +103,7 @@ include_once '_head.php';
                         <div class="col-md-12">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                Resultado processado com sucesso.
+                                    Resultado processado com sucesso.
                                 </div>
                                 <div class="panel-body">
                                     <div class="table-responsive">
@@ -178,7 +189,7 @@ include_once '_head.php';
                             </div>
                         </div>
                     </div>
-                <?php }?>
+                <?php } ?>
             </div>
             <!-- /. PAGE INNER  -->
         </div>
@@ -188,4 +199,5 @@ include_once '_head.php';
 <?php
 include_once '_footer.php';
 ?>
+
 </html>

@@ -136,7 +136,7 @@ footer .footer-section a:hover {
   text-align: center;
 }
 
-.titlle {
+.titulo {
   display: flex;
   justify-content: center;
 }
@@ -147,7 +147,7 @@ footer .footer-section a:hover {
 }
 
 img {
-  border: 20px;
+  border: 90px;
 }
 
 svg:not(:root) {
@@ -1074,7 +1074,7 @@ pre code {
 .col-xs-11,
 .col-xs-12 {
   float: left;
-  margin-top: 4%;
+  margin-top: 16%;
 }
 
 .col-xs-12 {
@@ -1494,7 +1494,7 @@ pre code {
 
   .col-sm-offset-3 {
     margin-left: 25%;
-    margin-top: 4%;
+    margin-top: 12%;
   }
 
   .col-sm-offset-2 {
@@ -2296,7 +2296,7 @@ output {
   font-size: 14px;
   line-height: 1.42857143;
   color: #555;
-  background-color: #ffffff42;
+  background-color: #ffffffac;
   background-image: none;
   border: 1px solid #676767;
   border-radius: 5px;
@@ -4393,7 +4393,7 @@ select[multiple].input-group-sm>.input-group-btn>.btn {
   line-height: 1;
   color: #555;
   text-align: center;
-  background-color: #ffffff42;
+  background-color: #ffffffac;
   border: 1px solid #676767;
   border-radius: 5px;
 }
