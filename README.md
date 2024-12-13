@@ -1,6 +1,6 @@
 # Easy Bank / ControleFinanceiro
 
-![Easy Bank Logo](https://via.placeholder.com/300x100?text=Easy+Bank+Logo)
+![Easy Bank Logo](https://github.com/JasonFigueiredo/Easy-Bank/blob/main/financeiro/assets/img/easybanklogo2.png)
 
 > Um projeto fintech desenvolvido para gerenciar finanças pessoais de forma **fácil** e **intuitiva**. 
 
