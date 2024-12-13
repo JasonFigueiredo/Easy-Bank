@@ -28,9 +28,12 @@ As principais tecnologias usadas no projeto são:
 ## 🖼️ Capturas de Tela
 
 ### Painel Principal
-![Painel Principal](https://via.placeholder.com/800x400?text=Painel+Principal)
+![Painel Principal](https://github.com/JasonFigueiredo/Easy-Bank/blob/main/financeiro/assets/img/pg_login.png)
+![Painel Principal](https://github.com/JasonFigueiredo/Easy-Bank/blob/main/financeiro/assets/img/pg_inicial.png)
+![Painel Principal](https://github.com/JasonFigueiredo/Easy-Bank/blob/main/financeiro/assets/img/pg_consulta.png)
+![Painel Principal](https://github.com/JasonFigueiredo/Easy-Bank/blob/main/financeiro/assets/img/image.png)
 
-### Gráfico de Desempenho
+### Video Demonstrativo
 ![Gráfico de Desempenho](https://via.placeholder.com/800x400?text=Gráfico+de+Desempenho)
 
 ## 📦 Como Instalar
