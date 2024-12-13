@@ -34,7 +34,7 @@ As principais tecnologias usadas no projeto são:
 ![Painel Principal](https://github.com/JasonFigueiredo/Easy-Bank/blob/main/financeiro/assets/img/image.png)
 
 ### Video Demonstrativo
-![Gráfico de Desempenho](https://via.placeholder.com/800x400?text=Gráfico+de+Desempenho)
+![Gráfico de Desempenho](https://github.com/JasonFigueiredo/Easy-Bank/blob/main/financeiro/assets/img/easybank.gif)
 
 ## 📦 Como Instalar
 
@@ -67,4 +67,4 @@ Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](./LIC
 
 ---
 
-_Feito com ❤️ por [Seu Nome](https://github.com/seuusuario)_
+_Feito com ❤️ por Jason Figueiredo (https://github.com/JasonFigueiredo)_
