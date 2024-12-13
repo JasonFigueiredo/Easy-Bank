@@ -67,4 +67,4 @@ Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](./LIC
 
 ---
 
-_Feito com ❤️ por [Seu Nome](https://github.com/seuusuario)_
+_Feito com ❤️ por Jason Figueiredo (https://github.com/JasonFigueiredo)_
