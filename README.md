@@ -10,8 +10,7 @@
 ## 🚀 Funcionalidades Principais
 
 - **Gerenciamento de despesas e receitas**
-- **Gráficos interativos** para visualizar o fluxo financeiro
-- **Alertas personalizados** sobre metas financeiras
+- **Gráficos** para visualizar o fluxo financeiro
 - **Relatórios** de desempenho mensal e anual
 
 ## 🛠️ Tecnologias Utilizadas
