@@ -16,7 +16,33 @@ include_once '_head.php';
 ?>
 
 <body>
+    <!-- Switch de tema para dashboard -->
+    <div class="theme-switch-dashboard">
+        <label class="switch">
+            <input checked="true" id="theme-checkbox" type="checkbox" />
+            <span class="slider">
+                <div class="star star_1"></div>
+                <div class="star star_2"></div>
+                <div class="star star_3"></div>
+                <svg viewBox="0 0 16 16" class="cloud_1 cloud">
+                    <path
+                        transform="matrix(.77976 0 0 .78395-299.99-418.63)"
+                        fill="#fff"
+                        d="m391.84 540.91c-.421-.329-.949-.524-1.523-.524-1.351 0-2.451 1.084-2.485 2.435-1.395.526-2.388 1.88-2.388 3.466 0 1.874 1.385 3.423 3.182 3.667v.034h12.73v-.006c1.775-.104 3.182-1.584 3.182-3.395 0-1.747-1.309-3.186-2.994-3.379.007-.106.011-.214.011-.322 0-2.707-2.271-4.901-5.072-4.901-2.073 0-3.856 1.202-4.643 2.925"
+                    ></path>
+                </svg>
+            </span>
+        </label>
+    </div>
+
     <div id="wrapper">
+        <!-- Botão toggle do menu -->
+        <button id="menu-toggle" class="menu-toggle-btn">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        
         <?php
         include_once '_topo.php';
         include_once '_menu.php';
@@ -33,25 +59,32 @@ include_once '_head.php';
                 </div>
                 <hr>
                 <div class="col-md-6">
-                    <div class="panel panel-primary text-center no-boder bg-color-green">
+                    <div class="panel panel-primary text-center no-boder">
                         <div class="panel-body">
-                            <img src="./assets/img/money_in.png" width=80 height=80>
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: var(--success-color);">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
                             <h3>R$ <?= $total_entrada[0]["total"] != "" ? number_format($total_entrada[0]['total'], 2, ",", ".") : "0" ?></h3>
                         </div>
-                        <div class="panel-footer back-footer-green">
+                        <div class="panel-footer">
                             Total de entrada
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="panel panel-primary text-center no-boder bg-color-red">
+                    <div class="panel panel-primary text-center no-boder">
                         <div class="panel-body">
-                            <img src="./assets/img/money_out.png" width=80 height=80>
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: var(--danger-color);">
+                                <path d="M12 22L2 17L12 12L22 17L12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 7L12 12L22 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
                             <h3>R$ <?= $total_saida[0]["total"] != "" ? number_format($total_saida[0]['total'], 2, ",", ".") : "0" ?></h3>
                         </div>
                         <div class="panel-footer back-footer-red">
                             Total de saída
-
                         </div>
                     </div>
                 </div>

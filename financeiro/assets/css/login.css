@@ -1,24 +1,37 @@
 /* =============================================================
-   LOGIN STYLES - TEMA CLARO/ESCURO E RESPONSIVO
+   LOGIN STYLES - TEMA DINÂMICO COMPLETO
    ============================================================= */
 
-/* Variáveis CSS para temas */
+/* Variáveis CSS para tema dinâmico */
 :root {
-  /* Tema Claro */
+  /* Tema Claro - Padrão */
   --bg-primary: #ffffff;
   --bg-secondary: #f8f9fa;
   --bg-card: #ffffff;
-  --text-primary: #212529;
-  --text-secondary: #6c757d;
-  --text-muted: #adb5bd;
-  --border-color: #dee2e6;
-  --border-focus: #00863a;
-  --shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  --shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
-  --btn-primary: #00863a;
-  --btn-primary-hover: #006b2f;
-  --link-color: #00863a;
-  --link-hover: #006b2f;
+  --text-primary: #000000;
+  --text-secondary: #333333;
+  --text-muted: #666666;
+  --border-color: #e0e0e0;
+  --border-focus: #0d4f3c;
+  --input-bg: #ffffff;
+  --input-border: #e0e0e0;
+  --input-focus: #0d4f3c;
+  --input-text: #000000;
+  --input-placeholder: #666666;
+  --btn-primary: #0d4f3c;
+  --btn-primary-hover: #0a3d2e;
+  --btn-success: #0d4f3c;
+  --btn-success-hover: #0a3d2e;
+  --btn-info: #0dcaf0;
+  --btn-info-hover: #3dd5f3;
+  --btn-danger: #dc3545;
+  --btn-danger-hover: #bb2d3b;
+  --link-color: #0d4f3c;
+  --link-hover: #0a3d2e;
+  --accent-green: #0d4f3c;
+  --accent-yellow: #fbbf24;
+  --white-dynamic: #ffffff;
+  --black-dynamic: #000000;
 }
 
 /* Tema Escuro */
@@ -27,16 +40,29 @@
   --bg-secondary: #2d2d2d;
   --bg-card: #2d2d2d;
   --text-primary: #ffffff;
-  --text-secondary: #b3b3b3;
-  --text-muted: #808080;
+  --text-secondary: #e0e0e0;
+  --text-muted: #a0a0a0;
   --border-color: #404040;
   --border-focus: #4ade80;
-  --shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.5);
+  --input-bg: #2d2d2d;
+  --input-border: #404040;
+  --input-focus: #4ade80;
+  --input-text: #ffffff;
+  --input-placeholder: #a0a0a0;
   --btn-primary: #4ade80;
   --btn-primary-hover: #22c55e;
+  --btn-success: #4ade80;
+  --btn-success-hover: #22c55e;
+  --btn-info: #0dcaf0;
+  --btn-info-hover: #3dd5f3;
+  --btn-danger: #dc3545;
+  --btn-danger-hover: #bb2d3b;
   --link-color: #4ade80;
   --link-hover: #22c55e;
+  --accent-green: #4ade80;
+  --accent-yellow: #fbbf24;
+  --white-dynamic: #1a1a1a;
+  --black-dynamic: #ffffff;
 }
 
 /* Reset e configurações base */
@@ -63,10 +89,39 @@ body {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  background: var(--bg-primary);
+  position: relative;
+  transition: all 0.3s ease;
 }
 
-/* Banner removido - espaço para logo */
+/* Efeito de fundo dinâmico */
+.login-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 30% 20%, rgba(13, 79, 60, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 70% 80%, rgba(13, 79, 60, 0.03) 0%, transparent 50%);
+  opacity: 1;
+  pointer-events: none;
+  z-index: 0;
+}
+
+[data-theme="dark"] .login-container::before {
+  background: 
+    radial-gradient(circle at 30% 20%, rgba(74, 222, 128, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 70% 80%, rgba(74, 222, 128, 0.03) 0%, transparent 50%);
+}
+
+.login-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Logo */
 .logo-section {
   text-align: center;
   margin-bottom: 2rem;
@@ -75,28 +130,57 @@ body {
 .logo-section img {
   max-width: 280px;
   height: auto;
-  filter: drop-shadow(0 4px 8px var(--shadow));
+  filter: none;
 }
 
-/* Card de login */
+/* Card principal */
 .login-card {
   background: var(--bg-card);
   border-radius: 12px;
-  box-shadow: var(--shadow-lg);
   padding: 2rem 1.5rem;
   width: 100%;
   max-width: 380px;
   border: 1px solid var(--border-color);
   transition: all 0.3s ease;
   margin: 0 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efeito sutil no card */
+.login-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(13, 79, 60, 0.02) 0%, 
+    transparent 50%, 
+    rgba(13, 79, 60, 0.01) 100%);
+  opacity: 1;
+  pointer-events: none;
+  z-index: 0;
+}
+
+[data-theme="dark"] .login-card::before {
+  background: linear-gradient(135deg, 
+    rgba(74, 222, 128, 0.02) 0%, 
+    transparent 50%, 
+    rgba(74, 222, 128, 0.01) 100%);
+}
+
+.login-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .login-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
 }
 
-/* Título do formulário */
+/* Título */
 .login-title {
   text-align: center;
   margin-bottom: 1.5rem;
@@ -105,6 +189,7 @@ body {
   font-weight: 600;
   font-family: 'Josefin Sans', sans-serif;
   letter-spacing: 0.5px;
+  transition: color 0.3s ease;
 }
 
 /* Grupos de formulário */
@@ -126,16 +211,20 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  border: 2px solid var(--border-color);
+  border: 2px solid var(--input-border);
   border-radius: 8px;
-  background: var(--bg-card);
+  background: var(--input-bg);
   transition: all 0.3s ease;
   margin: 0.5rem 0;
 }
 
 .login-card .input-group:focus-within {
-  border-color: var(--border-focus);
-  box-shadow: 0 0 0 3px rgba(0, 134, 58, 0.1);
+  border-color: var(--input-focus);
+  box-shadow: 0 0 0 3px rgba(13, 79, 60, 0.1);
+}
+
+[data-theme="dark"] .login-card .input-group:focus-within {
+  box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.1);
 }
 
 .login-card .input-group-addon {
@@ -162,7 +251,8 @@ body {
 .login-card .input-group:focus-within .input-group-addon img,
 .login-card .input-group:focus-within .input-group-addon svg {
   opacity: 1;
-  color: var(--border-focus);
+  color: var(--input-focus);
+  filter: none;
 }
 
 /* Garantir que os SVGs sejam visíveis */
@@ -179,23 +269,38 @@ body {
   stroke: currentColor;
 }
 
+/* Inputs personalizados com tema dinâmico - CRÍTICO */
 .login-card .form-control {
   flex: 1;
   border: none;
-  background: transparent;
-  padding: 0.75rem 1.25rem 0.75rem 0.5rem;
+  background: var(--input-bg);
   font-size: 1.1rem;
-  color: var(--text-primary);
+  color: var(--input-text);
   outline: none;
   font-weight: 400;
   font-family: 'Josefin Sans', sans-serif;
+  transition: all 0.3s ease;
 }
 
 .login-card .form-control::placeholder {
-  color: var(--text-muted);
+  color: var(--input-placeholder);
   font-size: 1.05rem;
   font-weight: 300;
   font-family: 'Josefin Sans', sans-serif;
+  transition: color 0.3s ease;
+}
+
+/* CRÍTICO: Manter cores do tema quando focado */
+.login-card .form-control:focus {
+  color: var(--input-text) !important;
+  background: var(--input-bg) !important;
+  border: none !important;
+  outline: none !important;
+}
+
+.login-card .form-control:active {
+  color: var(--input-text) !important;
+  background: var(--input-bg) !important;
 }
 
 /* Botões */
@@ -217,13 +322,46 @@ body {
 
 .btn-primary {
   background-color: var(--btn-primary);
-  color: white;
+  color: #fff;
 }
 
 .btn-primary:hover {
   background-color: var(--btn-primary-hover);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 134, 58, 0.3);
+  color: #fff;
+}
+
+.btn-success {
+  background-color: var(--btn-success);
+  color: #fff;
+}
+
+.btn-success:hover {
+  background-color: var(--btn-success-hover);
+  transform: translateY(-1px);
+  color: #fff;
+}
+
+.btn-info {
+  background-color: var(--btn-info);
+  color: #000;
+}
+
+.btn-info:hover {
+  background-color: var(--btn-info-hover);
+  transform: translateY(-1px);
+  color: #000;
+}
+
+.btn-danger {
+  background-color: var(--btn-danger);
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background-color: var(--btn-danger-hover);
+  transform: translateY(-1px);
+  color: #fff;
 }
 
 /* Links */
@@ -239,6 +377,7 @@ body {
   color: var(--text-secondary);
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 400;
+  transition: color 0.3s ease;
 }
 
 .login-links a {
@@ -258,32 +397,40 @@ body {
 /* Switch de tema personalizado */
 .theme-switch-container {
   position: fixed;
-  top: 20px;
-  right: 20px;
+  top: 15px;
+  right: 15px;
   z-index: 1000;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 5px;
+  transition: all 0.3s ease;
 }
 
-/* From Uiverse.io by JustCode14 */
-/* Theme Switch */
-/* The switch - the box around the slider */
+[data-theme="dark"] .theme-switch-container {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.theme-switch-container:hover {
+  transform: scale(1.05);
+}
+
+/* Switch */
 .switch {
-  font-size: 17px;
+  font-size: 12px;
   position: relative;
   display: inline-block;
-  width: 4em;
-  height: 2.2em;
-  border-radius: 30px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 3em;
+  height: 1.6em;
+  border-radius: 20px;
 }
 
-/* Hide default HTML checkbox */
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-/* The slider */
 .slider {
   position: absolute;
   cursor: pointer;
@@ -291,56 +438,56 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #2a2a2a;
-  transition: 0.4s;
-  border-radius: 30px;
+  background-color: var(--border-color);
+  transition: all 0.4s ease;
+  border-radius: 20px;
   overflow: hidden;
 }
 
 .slider:before {
   position: absolute;
   content: "";
-  height: 1.2em;
-  width: 1.2em;
-  border-radius: 20px;
-  left: 0.5em;
-  bottom: 0.5em;
+  height: 0.8em;
+  width: 0.8em;
+  border-radius: 15px;
+  left: 0.4em;
+  bottom: 0.4em;
   transition: 0.4s;
   transition-timing-function: cubic-bezier(0.81, -0.04, 0.38, 1.5);
-  box-shadow: inset 8px -4px 0px 0px #fff;
+  background-color: #fff;
 }
 
 .switch input:checked + .slider {
-  background-color: #00a6ff;
+  background-color: var(--accent-green);
 }
 
 .switch input:checked + .slider:before {
-  transform: translateX(1.8em);
-  box-shadow: inset 15px -4px 0px 15px #ffcf48;
+  transform: translateX(1.2em);
+  background-color: var(--accent-yellow);
 }
 
 .star {
-  background-color: #fff;
+  background-color: var(--white-dynamic);
   border-radius: 50%;
   position: absolute;
-  width: 5px;
+  width: 3px;
   transition: all 0.4s;
-  height: 5px;
+  height: 3px;
 }
 
 .star_1 {
-  left: 2.5em;
-  top: 0.5em;
+  left: 1.8em;
+  top: 0.3em;
 }
 
 .star_2 {
-  left: 2.2em;
-  top: 1.2em;
+  left: 1.6em;
+  top: 0.8em;
 }
 
 .star_3 {
-  left: 3em;
-  top: 0.9em;
+  left: 2.2em;
+  top: 0.6em;
 }
 
 .switch input:checked ~ .slider .star {
@@ -348,10 +495,10 @@ body {
 }
 
 .cloud {
-  width: 3.5em;
+  width: 2.5em;
   position: absolute;
-  bottom: -1.4em;
-  left: -1.1em;
+  bottom: -1em;
+  left: -0.8em;
   opacity: 0;
   transition: all 0.4s;
 }
@@ -375,21 +522,14 @@ body {
     max-width: 200px;
   }
   
-  .theme-toggle {
+  .theme-switch-container {
     top: 10px;
     right: 10px;
     padding: 0.4rem;
   }
   
-  .theme-toggle img {
-    width: 20px;
-    height: 20px;
-  }
-  
   .login-title {
     font-size: 1.6rem;
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 600;
   }
   
   .login-links p,
@@ -405,7 +545,7 @@ body {
   }
   
   .form-control {
-    font-size: 18px; /* Evita zoom no iOS e melhora legibilidade */
+    font-size: 18px;
   }
   
   .btn {
@@ -415,8 +555,6 @@ body {
   
   .login-title {
     font-size: 1.5rem;
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 600;
   }
   
   .login-links p,
@@ -455,8 +593,6 @@ body {
   }
 }
 
-/* Estilos unificados para todas as páginas de formulário */
-
 /* Suporte para modo escuro do sistema */
 @media (prefers-color-scheme: dark) {
   :root {
@@ -468,11 +604,21 @@ body {
     --text-muted: #808080;
     --border-color: #404040;
     --border-focus: #4ade80;
-    --shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.3);
-    --shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.5);
+    --input-bg: #2d2d2d;
+    --input-border: #404040;
+    --input-focus: #4ade80;
+    --input-text: #ffffff;
+    --input-placeholder: #a0a0a0;
     --btn-primary: #4ade80;
     --btn-primary-hover: #22c55e;
+    --btn-success: #4ade80;
+    --btn-success-hover: #22c55e;
+    --btn-info: #0dcaf0;
+    --btn-info-hover: #3dd5f3;
+    --btn-danger: #dc3545;
+    --btn-danger-hover: #bb2d3b;
     --link-color: #4ade80;
     --link-hover: #22c55e;
+    --accent-green: #4ade80;
   }
 }

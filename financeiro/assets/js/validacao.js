@@ -801,8 +801,22 @@ function contarCaracteresValorMov() {
 document.addEventListener('DOMContentLoaded', function() {
     const savedTheme = localStorage.getItem('theme');
     const themeCheckbox = document.getElementById('theme-checkbox');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
+    // Definir tema inicial
+    if (savedTheme) {
     if (savedTheme === 'dark') {
+            document.body.setAttribute('data-theme', 'dark');
+            if (themeCheckbox) {
+                themeCheckbox.checked = true;
+            }
+        } else {
+            if (themeCheckbox) {
+                themeCheckbox.checked = false;
+            }
+        }
+    } else if (prefersDark) {
+        // Se não há tema salvo, usar preferência do sistema
         document.body.setAttribute('data-theme', 'dark');
         if (themeCheckbox) {
             themeCheckbox.checked = true;
@@ -819,4 +833,185 @@ document.addEventListener('DOMContentLoaded', function() {
             toggleTheme();
         });
     }
+    
+    // Detectar mudanças no sistema (modo escuro/claro)
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+        if (!localStorage.getItem('theme')) {
+            if (e.matches) {
+                document.body.setAttribute('data-theme', 'dark');
+                if (themeCheckbox) {
+                    themeCheckbox.checked = true;
+                }
+            } else {
+                document.body.removeAttribute('data-theme');
+                if (themeCheckbox) {
+                    themeCheckbox.checked = false;
+                }
+            }
+        }
+    });
+    
+    // Funcionalidade do menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const sidebar = document.querySelector('.navbar-side');
+    const pageWrapper = document.getElementById('page-wrapper');
+    const footer = document.querySelector('.footer');
+    
+    if (menuToggle && sidebar && pageWrapper) {
+        // Estado inicial do menu (salvo no localStorage)
+        const menuState = localStorage.getItem('menuState');
+        const isCollapsed = menuState === 'collapsed';
+        
+        if (isCollapsed) {
+            sidebar.classList.add('collapsed');
+            pageWrapper.classList.add('expanded');
+            if (footer) footer.classList.add('expanded');
+            menuToggle.classList.add('active');
+            menuToggle.classList.add('menu-collapsed');
+            menuToggle.classList.remove('menu-expanded');
+        } else {
+            menuToggle.classList.add('menu-expanded');
+            menuToggle.classList.remove('menu-collapsed');
+        }
+        
+        // Event listener para o botão toggle
+        menuToggle.addEventListener('click', function() {
+            const isCurrentlyCollapsed = sidebar.classList.contains('collapsed');
+            
+            if (isCurrentlyCollapsed) {
+                // Abrir menu
+                sidebar.classList.remove('collapsed');
+                pageWrapper.classList.remove('expanded');
+                if (footer) footer.classList.remove('expanded');
+                menuToggle.classList.remove('active');
+                menuToggle.classList.remove('menu-collapsed');
+                menuToggle.classList.add('menu-expanded');
+                localStorage.setItem('menuState', 'expanded');
+            } else {
+                // Fechar menu
+                sidebar.classList.add('collapsed');
+                pageWrapper.classList.add('expanded');
+                if (footer) footer.classList.add('expanded');
+                menuToggle.classList.add('active');
+                menuToggle.classList.add('menu-collapsed');
+                menuToggle.classList.remove('menu-expanded');
+                localStorage.setItem('menuState', 'collapsed');
+            }
+        });
+        
+        
+        // Fechar menu ao redimensionar para desktop (se estava fechado)
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                const menuState = localStorage.getItem('menuState');
+                if (menuState === 'collapsed') {
+                    sidebar.classList.add('collapsed');
+                    pageWrapper.classList.add('expanded');
+                    if (footer) footer.classList.add('expanded');
+                    menuToggle.classList.add('active');
+                    menuToggle.classList.add('menu-collapsed');
+                    menuToggle.classList.remove('menu-expanded');
+                } else {
+                    menuToggle.classList.add('menu-expanded');
+                    menuToggle.classList.remove('menu-collapsed');
+                }
+            }
+        });
+    }
+    
+    // Funcionalidade dos dropdowns do menu
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const parentLi = this.parentElement;
+            const submenu = parentLi.querySelector('.nav-second-level');
+            const arrow = this.querySelector('.dropdown-arrow');
+            
+            // Verificar se há página ativa no submenu
+            const hasActivePage = submenu && submenu.querySelector('.current-page');
+            
+            // Se não há página ativa, fechar outros dropdowns
+            if (!hasActivePage) {
+                dropdownToggles.forEach(otherToggle => {
+                    if (otherToggle !== this) {
+                        const otherParentLi = otherToggle.parentElement;
+                        const otherSubmenu = otherParentLi.querySelector('.nav-second-level');
+                        const otherArrow = otherToggle.querySelector('.dropdown-arrow');
+                        
+                        // Não fechar se tem página ativa
+                        const otherHasActivePage = otherSubmenu && otherSubmenu.querySelector('.current-page');
+                        if (!otherHasActivePage && otherSubmenu && otherSubmenu.classList.contains('active')) {
+                            otherSubmenu.classList.remove('active');
+                            if (otherArrow) {
+                                otherArrow.classList.remove('rotated');
+                            }
+                        }
+                    }
+                });
+            }
+            
+            // Toggle do dropdown atual
+            if (submenu) {
+                submenu.classList.toggle('active');
+                if (arrow) {
+                    arrow.classList.toggle('rotated');
+                }
+            }
+        });
+    });
+    
+    // Detectar página ativa e abrir dropdown correspondente
+    function detectActivePage() {
+        const currentPage = window.location.pathname.split('/').pop();
+        const menuLinks = document.querySelectorAll('#main-menu a[href]');
+        
+        menuLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && href.includes(currentPage)) {
+                link.classList.add('current-page');
+                
+                // Se é um link do submenu, abrir o dropdown pai
+                const parentLi = link.closest('li');
+                const parentDropdown = parentLi.parentElement.closest('li');
+                if (parentDropdown) {
+                    const dropdownToggle = parentDropdown.querySelector('.dropdown-toggle');
+                    const submenu = parentDropdown.querySelector('.nav-second-level');
+                    const arrow = dropdownToggle.querySelector('.dropdown-arrow');
+                    
+                    if (dropdownToggle && submenu) {
+                        submenu.classList.add('active');
+                        if (arrow) {
+                            arrow.classList.add('rotated');
+                        }
+                    }
+                }
+            }
+        });
+    }
+    
+    // Executar detecção de página ativa
+    detectActivePage();
+    
+    // Fechar dropdowns ao clicar fora (exceto se tem página ativa)
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.dropdown-toggle') && !e.target.closest('.nav-second-level')) {
+            dropdownToggles.forEach(toggle => {
+                const parentLi = toggle.parentElement;
+                const submenu = parentLi.querySelector('.nav-second-level');
+                const arrow = toggle.querySelector('.dropdown-arrow');
+                
+                // Não fechar se tem página ativa
+                const hasActivePage = submenu && submenu.querySelector('.current-page');
+                if (!hasActivePage && submenu && submenu.classList.contains('active')) {
+                    submenu.classList.remove('active');
+                    if (arrow) {
+                        arrow.classList.remove('rotated');
+                    }
+                }
+            });
+        }
+    });
 });
