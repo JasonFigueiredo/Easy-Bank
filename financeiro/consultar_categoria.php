@@ -24,8 +24,7 @@ include_once '_head.php';
                     <path
                         transform="matrix(.77976 0 0 .78395-299.99-418.63)"
                         fill="#fff"
-                        d="m391.84 540.91c-.421-.329-.949-.524-1.523-.524-1.351 0-2.451 1.084-2.485 2.435-1.395.526-2.388 1.88-2.388 3.466 0 1.874 1.385 3.423 3.182 3.667v.034h12.73v-.006c1.775-.104 3.182-1.584 3.182-3.395 0-1.747-1.309-3.186-2.994-3.379.007-.106.011-.214.011-.322 0-2.707-2.271-4.901-5.072-4.901-2.073 0-3.856 1.202-4.643 2.925"
-                    ></path>
+                        d="m391.84 540.91c-.421-.329-.949-.524-1.523-.524-1.351 0-2.451 1.084-2.485 2.435-1.395.526-2.388 1.88-2.388 3.466 0 1.874 1.385 3.423 3.182 3.667v.034h12.73v-.006c1.775-.104 3.182-1.584 3.182-3.395 0-1.747-1.309-3.186-2.994-3.379.007-.106.011-.214.011-.322 0-2.707-2.271-4.901-5.072-4.901-2.073 0-3.856 1.202-4.643 2.925"></path>
                 </svg>
             </span>
         </label>
@@ -38,7 +37,7 @@ include_once '_head.php';
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
         </button>
-        
+
         <?php
         include_once '_topo.php';
         include_once '_menu.php';
@@ -46,43 +45,53 @@ include_once '_head.php';
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
             <div id="page-inner">
-                <div class="row">
-                    <div class="col-md-12">
-                        <?php include_once "_msg.php"; ?>
+                <div class="page-header-container">
+                    <?php include_once "_msg.php"; ?>
+                    <div class="page-header-content">
                         <h2><strong>Consultar categoria</strong></h2>
                         <h5>Aqui, você tem controle total para consultar e alterar suas categorias.</h5>
                     </div>
                 </div>
                 <!-- /. ROW  -->
-                <hr />
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        Categorias cadastradas. Caso deseje realizar alterações, clique no botão 'Alterar'.
-                    </div>
-                    <div class="panel-body">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                <thead>
-                                    <tr>
-                                        <th>Nome da categoria</th>
-                                        <th>Ação</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                    <?php foreach ($categorias as $item) { ?>
-                                        <tr class="odd gradeX">
-                                            <td>
-                                                <?= $item['nome_categoria'] ?>
-                                            </td>
-                                            <td>
-                                                <a href="alterar_categoria.php?cod=<?= $item["id_categoria"] ?>" class="btn btn-primary" class="fa fa-edit ">Alterar</a>
-                                            </td>
+                <div class="table-container">
+                    <div class="table-panel">
+                        <div class="table-header">
+                            Categorias cadastradas
+                        </div>
+                        <div class="table-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Nome da categoria</th>
+                                            <th>Ação</th>
                                         </tr>
-                                    <?php } ?>
-
-                                </tbody>
-                            </table>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($categorias as $item) { ?>
+                                            <tr class="odd gradeX">
+                                            <td class="category-cell">
+                                                <div class="category-name">
+                                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: var(--success-color);">
+                                                        <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg>
+                                                    <span><?= $item['nome_categoria'] ?></span>
+                                                </div>
+                                            </td>
+                                                <td class="action-cell">
+                                                    <a href="alterar_categoria.php?cod=<?= $item["id_categoria"] ?>" class="btn btn-primary btn-xs">
+                                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            <path d="M18.5 2.50023C18.8978 2.1024 19.4374 1.87891 20 1.87891C20.5626 1.87891 21.1022 2.1024 21.5 2.50023C21.8978 2.89805 22.1213 3.43762 22.1213 4.00023C22.1213 4.56284 21.8978 5.1024 21.5 5.50023L12 15.0002L8 16.0002L9 12.0002L18.5 2.50023Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        </svg>
+                                                        Alterar
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        <?php } ?>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>

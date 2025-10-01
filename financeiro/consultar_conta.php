@@ -49,45 +49,64 @@ include_once '_head.php';
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
             <div id="page-inner">
-                <div class="row">
-                    <div class="col-md-12">
-                        <?php include_once "_msg.php"?>
+                <div class="page-header-container">
+                    <?php include_once "_msg.php"?>
+                    <div class="page-header-content">
                         <h2><strong>Consultar contas</strong></h2>
                         <h5>Consulte aqui o saldo completo de todas as suas contas.</h5>
                     </div>
                 </div>
                 <!-- /. ROW  -->
-                <hr />
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                    Contas cadastradas. Caso deseje realizar alterações, clique no botão 'Alterar'.
-                    </div>
-                    <div class="panel-body">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                <thead>
-                                    <tr>
-                                        <th>Banco</th>
-                                        <th>Agência</th>
-                                        <th>Número da conta</th>
-                                        <th>Saldo</th>
-                                        <th>Ação</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php foreach($contas as $item) {?>
-                                    <tr class="odd gradeX">
-                                        <td><?= $item['banco_conta'] ?></td>
-                                        <td>Nº <?= $item['agencia_conta'] ?></td>
-                                        <td>Nº <?= $item['numero_conta'] ?></td>
-                                        <td>R$ <?= number_format($item['saldo_conta'], 2 ,",","."); ?></td>
-                                        <td>
-                                            <a href="alterar_contas.php?cod=<?= $item['id_conta']?>" class="btn btn-primary" class="fa fa-edit ">Alterar</a>
-                                        </td>
-                                    </tr>
-                                    <?php }?>
-                                </tbody>
-                            </table>
+
+                <div class="table-container">
+                    <div class="table-panel">
+                        <div class="table-header">
+                            Contas cadastradas
+                        </div>
+                        <div class="table-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Banco</th>
+                                            <th>Agência</th>
+                                            <th>Número da conta</th>
+                                            <th>Saldo</th>
+                                            <th>Ação</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach($contas as $item) {?>
+                                        <tr class="odd gradeX">
+                                            <td class="bank-cell">
+                                                <div class="account-info">
+                                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: var(--success-color);">
+                                                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg>
+                                                    <span><?= $item['banco_conta'] ?></span>
+                                                </div>
+                                            </td>
+                                            <td class="agency-cell">Nº <?= $item['agencia_conta'] ?></td>
+                                            <td class="account-number-cell">Nº <?= $item['numero_conta'] ?></td>
+                                            <td class="balance-cell">
+                                                <span class="value-positive">R$ <?= number_format($item['saldo_conta'], 2 ,",","."); ?></span>
+                                            </td>
+                                            <td class="action-cell">
+                                                <a href="alterar_contas.php?cod=<?= $item['id_conta']?>" class="btn btn-primary btn-xs">
+                                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        <path d="M18.5 2.50023C18.8978 2.1024 19.4374 1.87891 20 1.87891C20.5626 1.87891 21.1022 2.1024 21.5 2.50023C21.8978 2.89805 22.1213 3.43762 22.1213 4.00023C22.1213 4.56284 21.8978 5.1024 21.5 5.50023L12 15.0002L8 16.0002L9 12.0002L18.5 2.50023Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg>
+                                                    Alterar
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <?php }?>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -96,7 +115,6 @@ include_once '_head.php';
         </div>
         <!-- /. PAGE WRAPPER  -->
     </div>
-
 </body>
 <?php
 include_once '_footer.php';

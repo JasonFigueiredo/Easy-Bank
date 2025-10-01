@@ -32,8 +32,7 @@ include_once '_head.php';
                     <path
                         transform="matrix(.77976 0 0 .78395-299.99-418.63)"
                         fill="#fff"
-                        d="m391.84 540.91c-.421-.329-.949-.524-1.523-.524-1.351 0-2.451 1.084-2.485 2.435-1.395.526-2.388 1.88-2.388 3.466 0 1.874 1.385 3.423 3.182 3.667v.034h12.73v-.006c1.775-.104 3.182-1.584 3.182-3.395 0-1.747-1.309-3.186-2.994-3.379.007-.106.011-.214.011-.322 0-2.707-2.271-4.901-5.072-4.901-2.073 0-3.856 1.202-4.643 2.925"
-                    ></path>
+                        d="m391.84 540.91c-.421-.329-.949-.524-1.523-.524-1.351 0-2.451 1.084-2.485 2.435-1.395.526-2.388 1.88-2.388 3.466 0 1.874 1.385 3.423 3.182 3.667v.034h12.73v-.006c1.775-.104 3.182-1.584 3.182-3.395 0-1.747-1.309-3.186-2.994-3.379.007-.106.011-.214.011-.322 0-2.707-2.271-4.901-5.072-4.901-2.073 0-3.856 1.202-4.643 2.925"></path>
                 </svg>
             </span>
         </label>
@@ -46,7 +45,7 @@ include_once '_head.php';
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
         </button>
-        
+
         <?php
         include_once '_topo.php';
         include_once '_menu.php';
@@ -54,37 +53,78 @@ include_once '_head.php';
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
             <div id="page-inner">
-                <div class="row">
-                    <div class="col-md-12">
+                <div class="form-container nova-empresa">
+                    <div class="page-header">
                         <?php include_once "_msg.php" ?>
                         <h2><strong>Cadastrar empresa</strong></h2>
                         <h5>Neste campo, por favor, registre todas as empresas de seu interesse.</h5>
-                        <hr />
-                        <form action="nova_empresa.php" method="post">
+                    </div>
+                    <div class="form-card">
+                        <form action="nova_empresa.php" method="post" class="user-form">
                             <div class="form-group">
-                                <label>Nome da empresa<span style="color: #d80000;">*</span>:</label>
-                                <input class="form-control" placeholder="Digite o nome da empresa" name="nome" id="nome" maxlength="45" />
+                                <label for="nome">Nome da empresa <span class="required">*</span></label>
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3 21H21M5 21V7L12 3L19 7V21M9 9H10M14 9H15M9 13H10M14 13H15M9 17H10M14 17H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <input class="form-control" placeholder="Digite o nome da empresa" name="nome" id="nome" maxlength="45" required />
+                                </div>
                             </div>
+
                             <div class="form-group">
-                                <label>Telefone:</label>
-                                <input class="form-control" placeholder="Digite o telefone (DDD) Número" name="telefone" type="number" id='maxnumber' oninput="contarCaracteres()" />
+                                <label for="telefone">Telefone</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M22 16.92V19.92C22 20.52 21.52 21 20.92 21C10.93 21 3 13.07 3 3.08C3 2.48 3.48 2 4.08 2H7.08C7.68 2 8.16 2.48 8.16 3.08C8.16 4.08 8.35 5.05 8.72 5.92C8.83 6.18 8.77 6.47 8.58 6.66L7.09 8.15C8.51 10.59 10.94 13.02 13.38 14.44L14.87 12.95C15.06 12.76 15.35 12.7 15.61 12.81C16.48 13.18 17.45 13.37 18.45 13.37C19.05 13.37 19.53 13.85 19.53 14.45L19.52 17.45C19.52 18.05 19.04 18.53 18.44 18.53H17.44" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <input class="form-control" placeholder="(XX) XXXXX-XXXX" name="telefone" type="text" id="telefone" maxlength="15" oninput="aplicarMascaraTelefone(this)" />
+                                </div>
                             </div>
+
                             <div class="form-group">
-                                <label>Endereço da empresa:</label>
-                                <input class="form-control" placeholder="Digite o endereço da empresa" name="endereco" maxlength="60" />
+                                <label for="endereco">Endereço da empresa</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21 10C21 17L12 23L3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10C17 11.1046 17.8954 12 19 12C20.1046 12 21 11.1046 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            <circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <input class="form-control" placeholder="Digite o endereço da empresa" name="endereco" maxlength="60" />
+                                </div>
                             </div>
-                            <button class="btn btn-success" name="gravarempresa" onclick="return CadastrarEmpresa()">Salvar</button>
-                            <a href="consultar_empresa.php" class="btn btn-info">Empresas cadastradas</a>
+
+                            <div class="form-actions">
+                                <button class="btn btn-success" name="gravarempresa" onclick="return CadastrarEmpresa()">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3H16L21 8V19C21 20.1046 20.1046 21 19 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        <polyline points="17,21 17,13 7,13 7,21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        <polyline points="7,3 7,8 15,8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    Salvar Empresa
+                                </button>
+                                <a href="consultar_empresa.php" class="btn btn-info">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    Empresas Cadastradas
+                                </a>
+                            </div>
                         </form>
-                        <hr>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 </body>
+
 <?php
 include_once '_footer.php'
 ?>
+
 </html>

@@ -1028,3 +1028,49 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// ===== MÁSCARA DE TELEFONE =====
+// Função para aplicar máscara de telefone no formato (XX) XXXXX-XXXX
+function aplicarMascaraTelefone(input) {
+    // Remove tudo que não é dígito
+    let valor = input.value.replace(/\D/g, '');
+    
+    // Aplica a máscara (XX) XXXXX-XXXX
+    if (valor.length <= 2) {
+        input.value = valor;
+    } else if (valor.length <= 7) {
+        input.value = '(' + valor.substring(0, 2) + ') ' + valor.substring(2);
+    } else if (valor.length <= 11) {
+        input.value = '(' + valor.substring(0, 2) + ') ' + valor.substring(2, 7) + '-' + valor.substring(7);
+    } else {
+        // Limita a 11 dígitos
+        valor = valor.substring(0, 11);
+        input.value = '(' + valor.substring(0, 2) + ') ' + valor.substring(2, 7) + '-' + valor.substring(7);
+    }
+}
+
+// Função para remover a máscara antes de enviar o formulário
+function removerMascaraTelefone() {
+    const campoTelefone = document.getElementById('telefone');
+    if (campoTelefone) {
+        // Remove tudo que não é dígito antes de enviar
+        campoTelefone.value = campoTelefone.value.replace(/\D/g, '');
+    }
+}
+
+// Interceptar o envio do formulário para limpar a máscara
+document.addEventListener('DOMContentLoaded', function() {
+    // Verificar se existe um formulário na página
+    const form = document.querySelector('form');
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            removerMascaraTelefone();
+        });
+    }
+    
+    // Aplicar máscara no valor inicial se existir (para páginas de edição)
+    const campoTelefone = document.getElementById('telefone');
+    if (campoTelefone && campoTelefone.value) {
+        aplicarMascaraTelefone(campoTelefone);
+    }
+});

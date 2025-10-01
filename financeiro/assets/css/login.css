@@ -11,10 +11,10 @@
   --text-primary: #000000;
   --text-secondary: #333333;
   --text-muted: #666666;
-  --border-color: #e0e0e0;
+  --border-color: #d0d0d0;
   --border-focus: #0d4f3c;
   --input-bg: #ffffff;
-  --input-border: #e0e0e0;
+  --input-border: #d0d0d0;
   --input-focus: #0d4f3c;
   --input-text: #000000;
   --input-placeholder: #666666;
@@ -36,19 +36,19 @@
 
 /* Tema Escuro */
 [data-theme="dark"] {
-  --bg-primary: #1a1a1a;
-  --bg-secondary: #2d2d2d;
-  --bg-card: #2d2d2d;
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --bg-card: #1e1e1e;
   --text-primary: #ffffff;
   --text-secondary: #e0e0e0;
-  --text-muted: #a0a0a0;
+  --text-muted: #b0b0b0;
   --border-color: #404040;
   --border-focus: #4ade80;
-  --input-bg: #2d2d2d;
+  --input-bg: #1e1e1e;
   --input-border: #404040;
   --input-focus: #4ade80;
   --input-text: #ffffff;
-  --input-placeholder: #a0a0a0;
+  --input-placeholder: #b0b0b0;
   --btn-primary: #4ade80;
   --btn-primary-hover: #22c55e;
   --btn-success: #4ade80;
@@ -61,7 +61,7 @@
   --link-hover: #22c55e;
   --accent-green: #4ade80;
   --accent-yellow: #fbbf24;
-  --white-dynamic: #1a1a1a;
+  --white-dynamic: #121212;
   --black-dynamic: #ffffff;
 }
 
@@ -145,6 +145,11 @@ body {
   margin: 0 1rem;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .login-card {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 /* Efeito sutil no card */
@@ -329,6 +334,11 @@ body {
   background-color: var(--btn-primary-hover);
   transform: translateY(-1px);
   color: #fff;
+  box-shadow: 0 4px 12px rgba(13, 79, 60, 0.3);
+}
+
+[data-theme="dark"] .btn-primary:hover {
+  box-shadow: 0 4px 12px rgba(74, 222, 128, 0.3);
 }
 
 .btn-success {
@@ -344,13 +354,15 @@ body {
 
 .btn-info {
   background-color: var(--btn-info);
-  color: #000;
+  color: #000000;
+  font-weight: 600;
 }
 
 .btn-info:hover {
   background-color: var(--btn-info-hover);
   transform: translateY(-1px);
-  color: #000;
+  color: #000000;
+  box-shadow: 0 4px 12px rgba(13, 202, 240, 0.3);
 }
 
 .btn-danger {
@@ -387,11 +399,18 @@ body {
   font-family: 'Josefin Sans', sans-serif;
   transition: color 0.3s ease;
   font-size: 1.05rem;
+  padding: 2px 4px;
+  border-radius: 4px;
 }
 
 .login-links a:hover {
   color: var(--link-hover);
   text-decoration: underline;
+  background-color: rgba(13, 79, 60, 0.1);
+}
+
+[data-theme="dark"] .login-links a:hover {
+  background-color: rgba(74, 222, 128, 0.1);
 }
 
 /* Switch de tema personalizado */
@@ -400,15 +419,19 @@ body {
   top: 15px;
   right: 15px;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(8px);
   border-radius: 12px;
   padding: 5px;
   transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 [data-theme="dark"] .theme-switch-container {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .theme-switch-container:hover {
@@ -596,19 +619,19 @@ body {
 /* Suporte para modo escuro do sistema */
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-primary: #1a1a1a;
-    --bg-secondary: #2d2d2d;
-    --bg-card: #2d2d2d;
+    --bg-primary: #121212;
+    --bg-secondary: #1e1e1e;
+    --bg-card: #1e1e1e;
     --text-primary: #ffffff;
-    --text-secondary: #b3b3b3;
-    --text-muted: #808080;
+    --text-secondary: #e0e0e0;
+    --text-muted: #b0b0b0;
     --border-color: #404040;
     --border-focus: #4ade80;
-    --input-bg: #2d2d2d;
+    --input-bg: #1e1e1e;
     --input-border: #404040;
     --input-focus: #4ade80;
     --input-text: #ffffff;
-    --input-placeholder: #a0a0a0;
+    --input-placeholder: #b0b0b0;
     --btn-primary: #4ade80;
     --btn-primary-hover: #22c55e;
     --btn-success: #4ade80;

@@ -56,7 +56,6 @@ include_once '_head.php';
                         <h2><strong>Página inicial</strong></h2>
                         <h5>Aqui, você tem acesso a um resumo completo de todas as operações realizadas.</h5>
                     </div>
-                    <hr>
                     <div class="cards-row">
                         <div class="card-column">
                             <div class="panel panel-primary text-center no-boder">
@@ -89,7 +88,6 @@ include_once '_head.php';
                             </div>
                         </div>
                     </div>
-                <hr>
                 <?php if (count($movs) && is_array($movs) && count($movs) > 0) { ?>
                     <div class="table-container">
                         <div class="table-panel">
@@ -156,7 +154,6 @@ include_once '_head.php';
                                                 ?>
                                             </tbody>
                                         </table>
-                                        <hr>
                                         <center class="value">
                                             <label style='color: <?= $total < 0 ? '#ff0000' : '#00db5f' ?>; '> Montante total movimentado: R$
                                                 <?= number_format($total, 2, ",", "."); ?> </label>

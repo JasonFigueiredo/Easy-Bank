@@ -53,24 +53,47 @@ include_once '_head.php';
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
             <div id="page-inner">
-                <div class="row">
-                    <div class="col-md-12">
+                <div class="form-container nova-categoria">
+                    <div class="page-header">
                         <?php include_once "_msg.php" ?>
                         <h2><strong>Nova categoria</strong></h2>
                         <h5>Aqui, você tem a possibilidade de criar categorias personalizadas para seus dados financeiros.</h5>
                     </div>
+
+                    <div class="form-card">
+                        <form action="nova_categoria.php" method="post" class="user-form">
+                            <div class="form-group">
+                                <label for="nome">Nome da categoria <span class="required">*</span></label>
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <input id="nome" class="form-control" placeholder="Informe a categoria desejada: (Exemplo: Conta de luz)" name="nome" maxlength="35" required />
+                                </div>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" onclick="return ValidarCategoria()" name="btn_gravar" class="btn btn-success">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3H16L21 8V19C21 20.1046 20.1046 21 19 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <polyline points="17,21 17,13 7,13 7,21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <polyline points="7,3 7,8 15,8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    Salvar Categoria
+                                </button>
+                                <a href="consultar_categoria.php" class="btn btn-info">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    Consultar Categorias
+                                </a>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <!-- /. ROW  -->
-                <hr />
-                <form action="nova_categoria.php" method="post">
-                <div class="form-group">
-                    <label>Nome da categoria<span style="color: #d80000;">*</span>:</label>
-                    <input id="nome" class="form-control" placeholder="Informe a categoria desejada: (Exemplo: Conta de luz)" name="nome" maxlength="35" />
-                </div>
-                <button type="submit" onclick="return ValidarCategoria()" name="btn_gravar" class="btn btn-success">Salvar </button> 
-                <a href="consultar_categoria.php" class="btn btn-info">Consultar categorias</a>
-                </form>
-                <hr>
             </div>
             <!-- /. PAGE INNER  -->
         </div>

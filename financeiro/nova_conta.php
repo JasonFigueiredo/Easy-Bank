@@ -54,35 +54,86 @@ include_once '_head.php';
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
             <div id="page-inner">
-                <div class="row">
-                    <div class="col-md-12">
+                <div class="form-container nova-conta">
+                    <div class="page-header">
                         <?php include_once "_msg.php"?>
                         <h2><strong>Nova conta</strong></h2>
                         <h5>Cadastre aqui todas as suas contas para um gerenciamento centralizado.</h5>
                     </div>
+                    <div class="form-card">
+                        <form method="post" action="nova_conta.php" class="user-form">
+                            <div class="form-group">
+                                <label for="banco">Nome do banco <span class="required">*</span></label>
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <input id="banco" name="banco" class="form-control" placeholder="Digite o nome do banco" maxlength="20" required />
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="agencia">Agência <span class="required">*</span></label>
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <input id="agencia" name="agencia" class="form-control" placeholder="Digite a agência bancária" oninput="contarCaracteresAgencia()" required />
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="conta">Número da conta <span class="required">*</span></label>
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <input id="conta" name="numero" class="form-control" placeholder="Digite o número da conta" oninput="contarCaracteresNumeroConta()" required />
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="saldo">Saldo da conta <span class="required">*</span></label>
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <line x1="12" y1="1" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M17 5H9.5C8.11929 5 7 6.11929 7 7.5C7 8.88071 8.11929 10 9.5 10H14.5C15.8807 10 17 11.1193 17 12.5C17 13.8807 15.8807 15 14.5 15H7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <input id="saldo" name="saldo" class="form-control" placeholder="Digite o saldo da conta" oninput="contarCaracteresSaldoConta()" required />
+                                </div>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button onclick="return CriarConta()" class="btn btn-success" name="btn">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3H16L21 8V19C21 20.1046 20.1046 21 19 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <polyline points="17,21 17,13 7,13 7,21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <polyline points="7,3 7,8 15,8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    Salvar Conta
+                                </button>
+                                <a href="consultar_conta.php" class="btn btn-info">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    Consultar Contas
+                                </a>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <hr />
-                <form method="post" action="nova_conta.php">
-                    <div class="form-group">
-                        <label>Nome do banco<span style="color: #d80000;">*</span>:</label>
-                        <input id="banco" name="banco" class="form-control" placeholder="Digite o nome do banco" maxlength="20" />
-                    </div>
-                    <div class="form-group">
-                        <label>Agência<span style="color: #d80000;">*</span>:</label>
-                        <input id="agencia" name="agencia" class="form-control" placeholder="Digite a agência bancária" oninput="contarCaracteresAgencia()"  />
-                    </div>
-                    <div class="form-group">
-                        <label>Número da conta<span style="color: #d80000;">*</span>:</label>
-                        <input id="conta" name="numero" class="form-control" placeholder="Digite o número da conta" oninput="contarCaracteresNumeroConta()" />
-                    </div>
-                    <div class="form-group">
-                        <label>Saldo da conta<span style="color: #d80000;">*</span>:</label>
-                        <input id="saldo" name="saldo" class="form-control" placeholder="Digite o saldo da conta"  oninput="contarCaracteresSaldoConta()"/>
-                    </div>
-                <button onclick="return CriarConta()" class="btn btn-success" name="btn">Salvar</button>
-                <a href="consultar_conta.php" class="btn btn-info">Consultar suas contas</a>    
-            </form>
-                <hr>
             </div>
         </div>
     </div>
