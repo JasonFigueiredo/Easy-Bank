@@ -859,62 +859,75 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (menuToggle && sidebar && pageWrapper) {
         // Estado inicial do menu (salvo no localStorage)
-        const menuState = localStorage.getItem('menuState');
-        const isCollapsed = menuState === 'collapsed';
+        const menuState = localStorage.getItem('menuState') || 'expanded';
         
-        if (isCollapsed) {
+        // Limpar todas as classes primeiro
+        sidebar.classList.remove('collapsed', 'expanded');
+        pageWrapper.classList.remove('collapsed', 'expanded');
+        if (footer) footer.classList.remove('collapsed', 'expanded');
+        menuToggle.classList.remove('active', 'menu-collapsed', 'menu-expanded');
+        
+        if (menuState === 'collapsed') {
             sidebar.classList.add('collapsed');
+            pageWrapper.classList.add('collapsed');
+            if (footer) footer.classList.add('collapsed');
+            menuToggle.classList.add('active', 'menu-collapsed');
+        } else {
+            sidebar.classList.add('expanded');
             pageWrapper.classList.add('expanded');
             if (footer) footer.classList.add('expanded');
-            menuToggle.classList.add('active');
-            menuToggle.classList.add('menu-collapsed');
-            menuToggle.classList.remove('menu-expanded');
-        } else {
             menuToggle.classList.add('menu-expanded');
-            menuToggle.classList.remove('menu-collapsed');
         }
         
         // Event listener para o botão toggle
         menuToggle.addEventListener('click', function() {
             const isCurrentlyCollapsed = sidebar.classList.contains('collapsed');
             
+            // Limpar todas as classes primeiro
+            sidebar.classList.remove('collapsed', 'expanded');
+            pageWrapper.classList.remove('collapsed', 'expanded');
+            if (footer) footer.classList.remove('collapsed', 'expanded');
+            menuToggle.classList.remove('active', 'menu-collapsed', 'menu-expanded');
+            
             if (isCurrentlyCollapsed) {
                 // Abrir menu
-                sidebar.classList.remove('collapsed');
-                pageWrapper.classList.remove('expanded');
-                if (footer) footer.classList.remove('expanded');
-                menuToggle.classList.remove('active');
-                menuToggle.classList.remove('menu-collapsed');
+                sidebar.classList.add('expanded');
+                pageWrapper.classList.add('expanded');
+                if (footer) footer.classList.add('expanded');
                 menuToggle.classList.add('menu-expanded');
                 localStorage.setItem('menuState', 'expanded');
             } else {
                 // Fechar menu
                 sidebar.classList.add('collapsed');
-                pageWrapper.classList.add('expanded');
-                if (footer) footer.classList.add('expanded');
-                menuToggle.classList.add('active');
-                menuToggle.classList.add('menu-collapsed');
-                menuToggle.classList.remove('menu-expanded');
+                pageWrapper.classList.add('collapsed');
+                if (footer) footer.classList.add('collapsed');
+                menuToggle.classList.add('active', 'menu-collapsed');
                 localStorage.setItem('menuState', 'collapsed');
             }
         });
         
         
-        // Fechar menu ao redimensionar para desktop (se estava fechado)
+        // Menu sempre funciona como sidebar, independente do tamanho da tela
         window.addEventListener('resize', function() {
-            if (window.innerWidth > 768) {
-                const menuState = localStorage.getItem('menuState');
-                if (menuState === 'collapsed') {
-                    sidebar.classList.add('collapsed');
-                    pageWrapper.classList.add('expanded');
-                    if (footer) footer.classList.add('expanded');
-                    menuToggle.classList.add('active');
-                    menuToggle.classList.add('menu-collapsed');
-                    menuToggle.classList.remove('menu-expanded');
-                } else {
-                    menuToggle.classList.add('menu-expanded');
-                    menuToggle.classList.remove('menu-collapsed');
-                }
+            const menuState = localStorage.getItem('menuState') || 'expanded';
+            
+            // Limpar todas as classes primeiro
+            sidebar.classList.remove('collapsed', 'expanded');
+            pageWrapper.classList.remove('collapsed', 'expanded');
+            if (footer) footer.classList.remove('collapsed', 'expanded');
+            menuToggle.classList.remove('menu-collapsed', 'menu-expanded');
+            
+            // Aplicar estado correto
+            if (menuState === 'collapsed') {
+                sidebar.classList.add('collapsed');
+                pageWrapper.classList.add('collapsed');
+                if (footer) footer.classList.add('collapsed');
+                menuToggle.classList.add('menu-collapsed');
+            } else {
+                sidebar.classList.add('expanded');
+                pageWrapper.classList.add('expanded');
+                if (footer) footer.classList.add('expanded');
+                menuToggle.classList.add('menu-expanded');
             }
         });
     }

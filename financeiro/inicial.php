@@ -50,55 +50,55 @@ include_once '_head.php';
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
             <div id="page-inner">
-                <div class="row">
-                    <div class="col-md-12">
+                <div class="cards-container">
+                    <div class="page-header">
                         <?php include_once "_msg.php"; ?>
                         <h2><strong>Página inicial</strong></h2>
                         <h5>Aqui, você tem acesso a um resumo completo de todas as operações realizadas.</h5>
                     </div>
-                </div>
-                <hr>
-                <div class="col-md-6">
-                    <div class="panel panel-primary text-center no-boder">
-                        <div class="panel-body">
-                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: var(--success-color);">
-                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <h3>R$ <?= $total_entrada[0]["total"] != "" ? number_format($total_entrada[0]['total'], 2, ",", ".") : "0" ?></h3>
+                    <hr>
+                    <div class="cards-row">
+                        <div class="card-column">
+                            <div class="panel panel-primary text-center no-boder">
+                                <div class="panel-body">
+                                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: var(--success-color);">
+                                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <h3>R$ <?= $total_entrada[0]["total"] != "" ? number_format($total_entrada[0]['total'], 2, ",", ".") : "0" ?></h3>
+                                </div>
+                                <div class="panel-footer">
+                                    Total de entrada
+                                </div>
+                            </div>
                         </div>
-                        <div class="panel-footer">
-                            Total de entrada
+                        <div class="card-column">
+                            <div class="panel panel-primary text-center no-boder">
+                                <div class="panel-body">
+                                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: var(--danger-color);">
+                                        <path d="M12 22L2 17L12 12L22 17L12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M2 7L12 12L22 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <h3>R$ <?= $total_saida[0]["total"] != "" ? number_format($total_saida[0]['total'], 2, ",", ".") : "0" ?></h3>
+                                </div>
+                                <div class="panel-footer back-footer-red">
+                                    Total de saída
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="panel panel-primary text-center no-boder">
-                        <div class="panel-body">
-                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: var(--danger-color);">
-                                <path d="M12 22L2 17L12 12L22 17L12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 7L12 12L22 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <h3>R$ <?= $total_saida[0]["total"] != "" ? number_format($total_saida[0]['total'], 2, ",", ".") : "0" ?></h3>
-                        </div>
-                        <div class="panel-footer back-footer-red">
-                            Total de saída
-                        </div>
-                    </div>
-                </div>
                 <hr>
                 <?php if (count($movs) && is_array($movs) && count($movs) > 0) { ?>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    Últimos 10 lançamentos de movimento
-                                </div>
-                                <div class="panel-body">
-                                    <div class="table-responsive">
-                                        <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                    <div class="table-container">
+                        <div class="table-panel">
+                            <div class="table-header">
+                                Últimos 10 lançamentos de movimento
+                            </div>
+                            <div class="table-body">
+                                <div class="table-responsive">
+                                    <table class="table">
                                             <thead>
                                                 <tr>
                                                     <th>Data do movimento</th>
@@ -122,11 +122,33 @@ include_once '_head.php';
                                                 ?>
                                                     <tr class="odd gradeX">
                                                         <td><?= $movs[$i]["data_movimento"] ?></td>
-                                                        <td><?= $movs[$i]["tipo_movimento"] == 1 ? 'Entrada' : 'Saída' ?></td>
+                                                        <td>
+                                                            <?php if ($movs[$i]["tipo_movimento"] == 1) { ?>
+                                                                <div class="arrow-container">
+                                                                    <svg viewBox="0 0 24 24" fill="none" style="color: #00db5f;">
+                                                                        <path d="M12 19V5M5 12L12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                    </svg>
+                                                                    <span>Entrada</span>
+                                                                </div>
+                                                            <?php } else { ?>
+                                                                <div class="arrow-container">
+                                                                    <svg viewBox="0 0 24 24" fill="none" style="color: #ff0000;">
+                                                                        <path d="M12 5V19M19 12L12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                    </svg>
+                                                                    <span>Saída</span>
+                                                                </div>
+                                                            <?php } ?>
+                                                        </td>
                                                         <td><?= $movs[$i]["nome_categoria"] ?></td>
                                                         <td><?= $movs[$i]["nome_empresa"] ?></td>
                                                         <td><?= $movs[$i]["banco_conta"] ?> / Ag. <?= $movs[$i]["agencia_conta"] ?> - Nº <?= $movs[$i]["numero_conta"] ?></td>
-                                                        <td>R$ <?= number_format($movs[$i]["valor_movimento"], 2, ",", ".");  ?></td>
+                                                        <td>
+                                                            <?php if ($movs[$i]["tipo_movimento"] == 1) { ?>
+                                                                <span class="value-positive">+R$ <?= number_format($movs[$i]["valor_movimento"], 2, ",", "."); ?></span>
+                                                            <?php } else { ?>
+                                                                <span class="value-negative">-R$ <?= number_format($movs[$i]["valor_movimento"], 2, ",", "."); ?></span>
+                                                            <?php } ?>
+                                                        </td>
                                                         <td style="word-break: break-all;"><?= $movs[$i]["obs_movimento"] ?></td>
                                                     </tr>
                                                 <?php
