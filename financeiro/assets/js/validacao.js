@@ -775,3 +775,48 @@ function contarCaracteresValorMov() {
     maxnumber.value = maxnumber.value.replace(/[^0-9]/g, '').slice(0, limiteCaracteres);
     document.getElementById("contador").textContent = maxnumber.value.length;
 }
+
+ // Função para alternar tema
+ function toggleTheme() {
+    const body = document.body;
+    const themeCheckbox = document.getElementById('theme-checkbox');
+    const currentTheme = body.getAttribute('data-theme');
+    
+    if (currentTheme === 'dark') {
+        body.removeAttribute('data-theme');
+        if (themeCheckbox) {
+            themeCheckbox.checked = false;
+        }
+        localStorage.setItem('theme', 'light');
+    } else {
+        body.setAttribute('data-theme', 'dark');
+        if (themeCheckbox) {
+            themeCheckbox.checked = true;
+        }
+        localStorage.setItem('theme', 'dark');
+    }
+}
+
+// Carregar tema salvo ao carregar a página
+document.addEventListener('DOMContentLoaded', function() {
+    const savedTheme = localStorage.getItem('theme');
+    const themeCheckbox = document.getElementById('theme-checkbox');
+    
+    if (savedTheme === 'dark') {
+        document.body.setAttribute('data-theme', 'dark');
+        if (themeCheckbox) {
+            themeCheckbox.checked = true;
+        }
+    } else {
+        if (themeCheckbox) {
+            themeCheckbox.checked = false;
+        }
+    }
+    
+    // Adicionar evento de clique no switch
+    if (themeCheckbox) {
+        themeCheckbox.addEventListener('change', function() {
+            toggleTheme();
+        });
+    }
+});

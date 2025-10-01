@@ -8,8 +8,10 @@
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
     <!-- CUSTOM STYLES-->
     <link href="assets/css/custom.css" rel="stylesheet" />
-    <!-- GOOGLE FONTS-->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <!-- LOGIN STYLES-->
+    <link href="assets/css/login.css" rel="stylesheet" />
+    <!-- GOOGLE FONTS - JOSEFIN SANS-->
+    <link href='https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap' rel='stylesheet' type='text/css' />
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
     <!-- JQUERY SCRIPTS -->
     <script src="assets/js/jquery-1.10.2.js"></script>
