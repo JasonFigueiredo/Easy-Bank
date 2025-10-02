@@ -2,10 +2,13 @@
 require_once "../DAO/UtilDAO.php";
 UtilDAO::VerificarLogado();
 require_once '../DAO/MovimentoDAO.php';
+require_once '../DAO/ContaDAO.php';
 
 $dao = new MovimentoDAO();
+$contaDAO = new ContaDAO();
 $total_entrada = $dao->TotalEntrada();
 $total_saida = $dao->TotalSaida();
+$saldo_total_contas = $contaDAO->SaldoTotalContas();
 $movs = $dao->MostrarUltimosLancamentos();
 ?>
 
@@ -37,11 +40,12 @@ include_once '_head.php';
 
     <div id="wrapper">
         <!-- Botão toggle do menu -->
-        <button id="menu-toggle" class="menu-toggle-btn">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
+        <input id="menu-toggle-checkbox" type="checkbox">
+        <label class="menu-toggle-btn" for="menu-toggle-checkbox">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+        </label>
         
         <?php
         include_once '_topo.php';
@@ -60,11 +64,7 @@ include_once '_head.php';
                         <div class="card-column">
                             <div class="panel panel-primary text-center no-boder">
                                 <div class="panel-body">
-                                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: var(--success-color);">
-                                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
+                                    <i class="fi fi-rr-usd-circle" style="font-size: 60px; color: var(--success-color);"></i>
                                     <h3>R$ <?= $total_entrada[0]["total"] != "" ? number_format($total_entrada[0]['total'], 2, ",", ".") : "0" ?></h3>
                                 </div>
                                 <div class="panel-footer">
@@ -75,15 +75,22 @@ include_once '_head.php';
                         <div class="card-column">
                             <div class="panel panel-primary text-center no-boder">
                                 <div class="panel-body">
-                                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: var(--danger-color);">
-                                        <path d="M12 22L2 17L12 12L22 17L12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M2 7L12 12L22 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
+                                    <i class="fi fi-rr-usd-circle" style="font-size: 60px; color: var(--danger-color);"></i>
                                     <h3>R$ <?= $total_saida[0]["total"] != "" ? number_format($total_saida[0]['total'], 2, ",", ".") : "0" ?></h3>
                                 </div>
                                 <div class="panel-footer back-footer-red">
                                     Total de saída
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-column">
+                            <div class="panel panel-primary text-center no-boder">
+                                <div class="panel-body">
+                                    <i class="fi fi-rr-credit-card" style="font-size: 60px; color: var(--info-color);"></i>
+                                    <h3>R$ <?= $saldo_total_contas[0]["total_saldo"] != "" ? number_format($saldo_total_contas[0]['total_saldo'], 2, ",", ".") : "0" ?></h3>
+                                </div>
+                                <div class="panel-footer back-footer-blue">
+                                    Saldo total das contas
                                 </div>
                             </div>
                         </div>

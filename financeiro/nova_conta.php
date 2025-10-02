@@ -110,7 +110,7 @@ include_once '_head.php';
                                             <path d="M17 5H9.5C8.11929 5 7 6.11929 7 7.5C7 8.88071 8.11929 10 9.5 10H14.5C15.8807 10 17 11.1193 17 12.5C17 13.8807 15.8807 15 14.5 15H7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
                                     </div>
-                                    <input id="saldo" name="saldo" class="form-control" placeholder="Digite o saldo da conta" oninput="contarCaracteresSaldoConta()" required />
+                                    <input id="saldo" name="saldo" class="form-control" placeholder="Digite o saldo da conta (ex: 1.500,00)" type="text" oninput="aplicarMascaraMonetaria(this)" required />
                                 </div>
                             </div>
                             

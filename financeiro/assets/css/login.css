@@ -4,20 +4,20 @@
 
 /* Variáveis CSS para tema dinâmico */
 :root {
-  /* Tema Claro - Padrão */
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fa;
-  --bg-card: #ffffff;
-  --text-primary: #000000;
-  --text-secondary: #333333;
-  --text-muted: #666666;
-  --border-color: #d0d0d0;
+  /* Tema Claro - Fundo Cinza */
+  --bg-primary: #f5f5f5; /* Fundo primário */
+  --bg-secondary: #e0e0e0; /* Fundo cinza para container */
+  --bg-card: #ffffff; /* Branco puro para o card */
+  --text-primary: #2c2c2c;
+  --text-secondary: #4a4a4a;
+  --text-muted: #7a7a7a;
+  --border-color: #e0e0e0;
   --border-focus: #0d4f3c;
-  --input-bg: #ffffff;
-  --input-border: #d0d0d0;
+  --input-bg: transparent; /* Transparente para inputs */
+  --input-border: #e0e0e0;
   --input-focus: #0d4f3c;
-  --input-text: #000000;
-  --input-placeholder: #666666;
+  --input-text: #2c2c2c;
+  --input-placeholder: #9a9a9a;
   --btn-primary: #0d4f3c;
   --btn-primary-hover: #0a3d2e;
   --btn-success: #0d4f3c;
@@ -26,12 +26,21 @@
   --btn-info-hover: #3dd5f3;
   --btn-danger: #dc3545;
   --btn-danger-hover: #bb2d3b;
-  --link-color: #0d4f3c;
-  --link-hover: #0a3d2e;
+  --link-color: #004d3a;
+  --link-hover: #003d2e;
   --accent-green: #0d4f3c;
   --accent-yellow: #fbbf24;
   --white-dynamic: #ffffff;
-  --black-dynamic: #000000;
+  --black-dynamic: #2c2c2c;
+}
+
+/* Forçar fundo cinza no tema claro */
+:root body {
+  background-color: #868686 !important;
+}
+
+:root .login-container {
+  background: #868686 !important;
 }
 
 /* Tema Escuro */
@@ -89,12 +98,12 @@ body {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background: var(--bg-primary);
+  background: var(--bg-secondary);
   position: relative;
   transition: all 0.3s ease;
 }
 
-/* Efeito de fundo dinâmico */
+/* Efeito de fundo dinâmico - Sutil com fundo quase cinza */
 .login-container::before {
   content: '';
   position: absolute;
@@ -103,8 +112,8 @@ body {
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 30% 20%, rgba(13, 79, 60, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 70% 80%, rgba(13, 79, 60, 0.03) 0%, transparent 50%);
+    radial-gradient(circle at 30% 20%, rgba(13, 79, 60, 0.015) 0%, transparent 50%),
+    radial-gradient(circle at 70% 80%, rgba(13, 79, 60, 0.008) 0%, transparent 50%);
   opacity: 1;
   pointer-events: none;
   z-index: 0;
@@ -145,14 +154,70 @@ body {
   margin: 0 1rem;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
 }
 
+/* Tema Claro - Card branco com texto preto */
+:root .login-card {
+  background: #d3d3d3 !important;
+  color: #000000 !important;
+}
+
+:root .login-title {
+  color: #000000 !important;
+}
+
+/* Tema Claro - Inputs brancos com texto preto */
+:root .form-control,
+:root .input-group {
+  background: transparent !important;
+  color: #000000 !important;
+}
+
+:root .input-group-addon {
+  background: transparent !important;
+}
+
+:root .form-control::placeholder {
+  color: #666666 !important;
+}
+
+/* Tema Claro - Links verdes escuros para destaque */
+:root .login-links a {
+  color: #004d3a !important;
+}
+
+:root .login-links a:hover {
+  color: #003d2e !important;
+  background-color: rgba(0, 77, 58, 0.1) !important;
+}
+
+/* Tema Escuro - Card e inputs escuros com texto claro */
 [data-theme="dark"] .login-card {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  background: #1e1e1e !important;
+  color: #ffffff !important;
 }
 
-/* Efeito sutil no card */
+[data-theme="dark"] .login-title {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .form-control,
+[data-theme="dark"] .input-group {
+  background: #1e1e1e !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .input-group-addon {
+  background: transparent !important;
+}
+
+[data-theme="dark"] .form-control::placeholder {
+  color: #b0b0b0 !important;
+}
+
+/* Card branco puro no tema claro - sem efeitos */
 .login-card::before {
   content: '';
   position: absolute;
@@ -160,11 +225,8 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, 
-    rgba(13, 79, 60, 0.02) 0%, 
-    transparent 50%, 
-    rgba(13, 79, 60, 0.01) 100%);
-  opacity: 1;
+  background: transparent;
+  opacity: 0;
   pointer-events: none;
   z-index: 0;
 }
@@ -308,6 +370,20 @@ body {
   background: var(--input-bg) !important;
 }
 
+/* Tema Claro - Inputs transparentes mesmo quando focados */
+:root .form-control:focus,
+:root .form-control:active {
+  background: transparent !important;
+  color: #000000 !important;
+}
+
+/* Tema Escuro - Inputs escuros mesmo quando focados */
+[data-theme="dark"] .form-control:focus,
+[data-theme="dark"] .form-control:active {
+  background: #1e1e1e !important;
+  color: #ffffff !important;
+}
+
 /* Botões */
 .btn {
   display: inline-block;
@@ -327,13 +403,13 @@ body {
 
 .btn-primary {
   background-color: var(--btn-primary);
-  color: #fff;
+  color: #444444;
 }
 
 .btn-primary:hover {
   background-color: var(--btn-primary-hover);
   transform: translateY(-1px);
-  color: #fff;
+  color: #303030;
   box-shadow: 0 4px 12px rgba(13, 79, 60, 0.3);
 }
 
@@ -406,39 +482,39 @@ body {
 .login-links a:hover {
   color: var(--link-hover);
   text-decoration: underline;
-  background-color: rgba(13, 79, 60, 0.1);
+  background-color: rgba(13, 79, 60, 0.05);
 }
 
 [data-theme="dark"] .login-links a:hover {
   background-color: rgba(74, 222, 128, 0.1);
 }
 
-/* Switch de tema personalizado */
+/* Switch de tema personalizado - SEM BORDA */
 .theme-switch-container {
   position: fixed;
   top: 15px;
   right: 15px;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(8px);
-  border-radius: 12px;
-  padding: 5px;
+  background: transparent;
+  backdrop-filter: none;
+  border-radius: 0;
+  padding: 0;
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: none;
+  box-shadow: none;
 }
 
 [data-theme="dark"] .theme-switch-container {
-  background: rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 .theme-switch-container:hover {
-  transform: scale(1.05);
+  transform: none;
 }
 
-/* Switch */
+/* Switch - Visual Limpo */
 .switch {
   font-size: 12px;
   position: relative;
@@ -461,10 +537,12 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--border-color);
+  background-color: #000000;
   transition: all 0.4s ease;
   border-radius: 20px;
   overflow: hidden;
+  border: none;
+  box-shadow: none;
 }
 
 .slider:before {
@@ -477,20 +555,20 @@ body {
   bottom: 0.4em;
   transition: 0.4s;
   transition-timing-function: cubic-bezier(0.81, -0.04, 0.38, 1.5);
-  background-color: #fff;
+  background-color: #ffffff;
 }
 
 .switch input:checked + .slider {
-  background-color: var(--accent-green);
+  background-color: #007bff;
 }
 
 .switch input:checked + .slider:before {
   transform: translateX(1.2em);
-  background-color: var(--accent-yellow);
+  background-color: #fbbf24;
 }
 
 .star {
-  background-color: var(--white-dynamic);
+  background-color: #ffffff;
   border-radius: 50%;
   position: absolute;
   width: 3px;
@@ -642,6 +720,15 @@ body {
     --btn-danger-hover: #bb2d3b;
     --link-color: #4ade80;
     --link-hover: #22c55e;
-    --accent-green: #4ade80;
-  }
+  --accent-green: #4ade80;
+}
+
+/* Garantir fundo escuro no tema escuro */
+[data-theme="dark"] body {
+  background-color: #121212 !important;
+}
+
+[data-theme="dark"] .login-container {
+  background: #1e1e1e !important;
+}
 }

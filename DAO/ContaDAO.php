@@ -121,6 +121,22 @@ class ContaDAO extends Conexao
         }
     }
 
+    public function SaldoTotalContas()
+    {
+        $conexao = parent::retornarConexao();
+        $comando_sql = 'SELECT SUM(saldo_conta) AS total_saldo
+                        FROM tb_conta
+                        WHERE id_usuario = ?';
+        
+        $sql = new PDOStatement();
+        $sql = $conexao->prepare($comando_sql);
+        $sql->bindValue(1, UtilDAO::CodigoLogado());
+        $sql->setFetchMode(PDO::FETCH_ASSOC);
+        $sql->execute();
+        
+        return $sql->fetchAll();
+    }
+
     public function ExcluirConta($idConta)
     // esse METODO SE CHAMA "Excluir Conta " busca somente o valor que precisa deletar por isso chama comente o $IDconta = PARAMETRO
     {

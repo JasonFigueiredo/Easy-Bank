@@ -1,0 +1,486 @@
+/* =============================================================
+   TRANSIÇÕES AJAX - CARREGAMENTO DE TELAS
+   ============================================================= */
+
+/* Prevenir flash branco - Aplicar imediatamente */
+html, body {
+    background-color: #f8f9fa !important;
+    transition: background-color 0.3s ease !important;
+}
+
+/* Prevenir flash branco no carregamento inicial */
+html:not([data-theme]), 
+body:not([data-theme]) {
+    background-color: #f8f9fa !important;
+}
+
+/* Garantir que não haja flash branco em nenhum elemento */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
+}
+
+/* Remover qualquer sombra verde dos inputs */
+.form-control, input, textarea, select {
+    box-shadow: none !important;
+    background-color: var(--input-bg, #ffffff) !important;
+}
+
+/* Remover sombras específicas do input-group */
+.input-group, .input-group:focus-within {
+    box-shadow: none !important;
+}
+
+/* Tema escuro - inputs */
+[data-theme="dark"] .form-control,
+[data-theme="dark"] input,
+[data-theme="dark"] textarea,
+[data-theme="dark"] select {
+    background-color: var(--input-bg, #1e1e1e) !important;
+    box-shadow: none !important;
+}
+
+[data-theme="dark"] .input-group,
+[data-theme="dark"] .input-group:focus-within {
+    box-shadow: none !important;
+}
+
+/* Prevenir flash em elementos específicos */
+.navbar-cls-top, .navbar-side, .footer, #page-wrapper {
+    background-color: inherit !important;
+}
+
+/* Tema escuro - Prevenir flash branco */
+body[data-theme="dark"], 
+html[data-theme="dark"] {
+    background-color: #292929 !important;
+    transition: background-color 0.3s ease !important;
+}
+
+/* Transições suaves para mudança de páginas */
+#page-wrapper {
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    background-color: inherit !important;
+}
+
+/* Garantir que elementos principais não tenham flash */
+.navbar-cls-top, .navbar-side, .footer, .panel, .card, .form-card {
+    transition: background-color 0.3s ease !important;
+}
+
+/* Tema claro - cores específicas */
+body:not([data-theme]) .navbar-cls-top {
+    background-color: #ffffff !important;
+}
+
+body:not([data-theme]) .navbar-side {
+    background-color: #ffffff !important;
+}
+
+body:not([data-theme]) .footer {
+    background-color: #ffffff !important;
+}
+
+body:not([data-theme]) .panel,
+body:not([data-theme]) .card,
+body:not([data-theme]) .form-card {
+    background-color: #ffffff !important;
+}
+
+/* Tema escuro - cores específicas */
+body[data-theme="dark"] .navbar-cls-top {
+    background-color: #2d2d2d !important;
+}
+
+body[data-theme="dark"] .navbar-side {
+    background-color: #2d2d2d !important;
+}
+
+body[data-theme="dark"] .footer {
+    background-color: #2d2d2d !important;
+}
+
+body[data-theme="dark"] .panel,
+body[data-theme="dark"] .card,
+body[data-theme="dark"] .form-card {
+    background-color: #2d2d2d !important;
+}
+
+/* Overlay de loading */
+#ajax-loading-overlay {
+    display: flex !important;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Tema claro */
+#ajax-loading-overlay {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* Tema escuro */
+[data-theme="dark"] #ajax-loading-overlay {
+    background: rgba(45, 45, 45, 0.9) !important;
+}
+
+/* Spinner de loading */
+.loading-spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid var(--success-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    width: 60px;
+    height: 60px;
+}
+
+[data-theme="dark"] .loading-spinner {
+    border-top-color: #4ade80 !important;
+}
+
+/* Texto de loading */
+#ajax-loading-overlay p {
+    color: var(--success-color);
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+[data-theme="dark"] #ajax-loading-overlay p {
+    color: #4ade80 !important;
+}
+
+/* Animação do spinner */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Transições para elementos da página */
+.panel, .card, .form-card {
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.panel:hover, .card:hover, .form-card:hover {
+    transform: translateY(-2px);
+}
+
+/* Transições para botões */
+.btn {
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+/* Transições para links do menu */
+#main-menu a {
+    transition: all 0.3s ease;
+}
+
+#main-menu a:hover {
+    transform: translateX(5px);
+}
+
+/* Transições para formulários */
+.form-control {
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-control:focus {
+    transform: translateY(-1px);
+}
+
+/* Transições para tabelas */
+.table {
+    transition: opacity 0.3s ease;
+}
+
+.table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+/* Transições para modais */
+.modal {
+    transition: opacity 0.3s ease;
+}
+
+.modal-content {
+    transition: transform 0.3s ease;
+}
+
+/* Transições para dropdowns */
+.dropdown-menu {
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* Transições para elementos específicos do dashboard */
+.cards-row {
+    transition: opacity 0.3s ease;
+}
+
+.table-container {
+    transition: opacity 0.3s ease;
+}
+
+.form-container {
+    transition: opacity 0.3s ease;
+}
+
+/* Transições para elementos que aparecem/desaparecem */
+.fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+.fade-out {
+    animation: fadeOut 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(10px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+@keyframes fadeOut {
+    from { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+    to { 
+        opacity: 0; 
+        transform: translateY(-10px); 
+    }
+}
+
+/* Transições para elementos que deslizam */
+.slide-in-left {
+    animation: slideInLeft 0.3s ease-out;
+}
+
+.slide-in-right {
+    animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+/* Transições para elementos que escalam */
+.scale-in {
+    animation: scaleIn 0.3s ease-out;
+}
+
+@keyframes scaleIn {
+    from { 
+        transform: scale(0.8); 
+        opacity: 0; 
+    }
+    to { 
+        transform: scale(1); 
+        opacity: 1; 
+    }
+}
+
+/* Transições para navbar */
+.navbar {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Transições para sidebar */
+.navbar-side {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Transições para footer */
+.footer {
+    transition: margin-left 0.3s ease;
+}
+
+/* Transições para tema */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Transições para ícones */
+i, svg {
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+i:hover, svg:hover {
+    transform: scale(1.1);
+}
+
+/* Transições para imagens */
+img {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+/* Transições responsivas */
+@media (max-width: 768px) {
+    .panel:hover, .card:hover, .form-card:hover {
+        transform: none;
+    }
+    
+    .btn:hover {
+        transform: none;
+    }
+    
+    #main-menu a:hover {
+        transform: translateX(3px);
+    }
+    
+    .loading-spinner {
+        width: 50px;
+        height: 50px;
+    }
+    
+    #ajax-loading-overlay p {
+        font-size: 16px;
+    }
+}
+
+/* Transições para elementos específicos do tema */
+[data-theme="dark"] .form-control:focus {
+    box-shadow: 0 2px 8px rgba(74, 222, 128, 0.2);
+}
+
+[data-theme="dark"] .panel:hover, 
+[data-theme="dark"] .card:hover, 
+[data-theme="dark"] .form-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .btn:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Estados de loading para elementos */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+    position: relative;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid var(--success-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Transições para alertas */
+.alert {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.alert.show {
+    transform: translateY(0);
+}
+
+/* Transições para progress bars */
+.progress-bar {
+    transition: width 0.6s ease;
+}
+
+/* Transições para badges */
+.badge {
+    transition: transform 0.2s ease;
+}
+
+.badge:hover {
+    transform: scale(1.1);
+}
+
+/* Transições para tooltips */
+.tooltip {
+    transition: opacity 0.2s ease;
+}
+
+/* Efeitos especiais para carregamento */
+.page-loading {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+/* Transições para elementos de formulário */
+.input-group {
+    transition: transform 0.2s ease;
+}
+
+.input-group:focus-within {
+    transform: translateY(-1px);
+}
+
+/* Transições para elementos de tabela */
+.table th, .table td {
+    transition: background-color 0.2s ease;
+}
+
+.table tbody tr:hover {
+    transform: scale(1.01);
+}
+
+/* Transições para elementos de navegação */
+.nav-link {
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+    transform: translateX(3px);
+}
+
+/* Transições para elementos de card */
+.card-header, .card-body, .card-footer {
+    transition: opacity 0.2s ease;
+}
+
+/* Transições para elementos de lista */
+.list-group-item {
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.list-group-item:hover {
+    transform: translateX(5px);
+}
+
+/* Transições para elementos de paginação */
+.pagination {
+    transition: opacity 0.2s ease;
+}
+
+.pagination .page-link {
+    transition: all 0.2s ease;
+}
+
+.pagination .page-link:hover {
+    transform: scale(1.1);
+}

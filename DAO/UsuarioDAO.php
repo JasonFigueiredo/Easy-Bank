@@ -50,6 +50,10 @@ class UsuarioDAO extends Conexao
 
         try {
             $sql->execute();
+            
+            // Atualizar a sessão com o novo nome
+            UtilDAO::CriarSessao(UtilDAO::CodigoLogado(), $nome);
+            
             return FLAG_SUCESSO;
         } catch (Exception $ex) {
             echo $ex->getMessage();
