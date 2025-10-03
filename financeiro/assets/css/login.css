@@ -32,15 +32,44 @@
   --accent-yellow: #fbbf24;
   --white-dynamic: #ffffff;
   --black-dynamic: #2c2c2c;
+  
+  /* Variáveis específicas para tema claro - botões de confirmação */
+  --btn-confirm-bg: #2ca057;
+  --btn-confirm-hover: #0f8d3d;
+  --btn-confirm-text: #ffffff;
+  --btn-confirm-shadow: 0 4px 12px rgba(74, 222, 128, 0.3);
+  --btn-confirm-hover-shadow: 0 6px 16px rgba(34, 197, 94, 0.4);
 }
 
-/* Forçar fundo cinza no tema claro */
+/* Tema Claro - Fundo com gradientes duplos azuis */
 :root body {
-  background-color: #868686 !important;
+  background: 
+    linear-gradient(135deg, #A8D8FF 10%, #0080FF 25%, #0066CC 40%, #004499 60%, #003366 80%, #001A33 100%),
+    linear-gradient(315deg, #A8D8FF 10%, #0080FF 25%, #0066CC 40%, #004499 60%, #003366 80%, #001A33 100%) !important;
+  background-size: 400% 400%, 400% 400% !important;
+  animation: gradientShift 15s ease infinite, gradientShiftReverse 15s ease infinite !important;
 }
 
 :root .login-container {
-  background: #868686 !important;
+  background: 
+    linear-gradient(135deg, #A8D8FF 10%, #0080FF 25%, #0066CC 40%, #004499 60%, #003366 80%, #001A33 100%),
+    linear-gradient(315deg, #A8D8FF 10%, #0080FF 25%, #0066CC 40%, #004499 60%, #003366 80%, #001A33 100%) !important;
+  background-size: 400% 400%, 400% 400% !important;
+  animation: gradientShift 15s ease infinite, gradientShiftReverse 15s ease infinite !important;
+}
+
+/* Animação do gradiente */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Animação reversa do gradiente */
+@keyframes gradientShiftReverse {
+  0% { background-position: 100% 50%; }
+  50% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }
 
 /* Tema Escuro */
@@ -150,27 +179,80 @@ body {
   width: 100%;
   max-width: 380px;
   border: 1px solid var(--border-color);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin: 0 1rem;
   position: relative;
   overflow: hidden;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
 }
 
-/* Tema Claro - Card branco com texto preto */
+/* Tema Claro - Card com efeito Glassmorphism mais transparente e brilhoso */
 :root .login-card {
-  background: #d3d3d3 !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(30px) !important;
+  -webkit-backdrop-filter: blur(30px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 
+    0 25px 70px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.2),
+    inset 1px 0 0 rgba(255, 255, 255, 0.3),
+    inset -1px 0 0 rgba(255, 255, 255, 0.3) !important;
   color: #000000 !important;
+  position: relative !important;
+}
+
+/* Efeito de brilho interno mais intenso para glassmorphism */
+:root .login-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.6), 
+    transparent);
+  z-index: 1;
+}
+
+/* Efeito de brilho lateral para glassmorphism */
+:root .login-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.5), 
+    transparent);
+  z-index: 1;
 }
 
 :root .login-title {
   color: #000000 !important;
 }
 
-/* Tema Claro - Inputs brancos com texto preto */
-:root .form-control,
+/* Tema Claro - Inputs com efeito glassmorphism padronizado */
 :root .input-group {
+  background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #000000 !important;
+  box-shadow: 
+    0 15px 45px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+:root .form-control {
   background: transparent !important;
+  border: none !important;
   color: #000000 !important;
 }
 
@@ -179,17 +261,68 @@ body {
 }
 
 :root .form-control::placeholder {
-  color: #666666 !important;
+  color: #383838 !important;
 }
 
-/* Tema Claro - Links verdes escuros para destaque */
+/* Tema Claro - Links personalizados com animação de barra */
 :root .login-links a {
-  color: #004d3a !important;
+  color: #000000 !important;
+  background: transparent !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+  display: inline-block !important;
+}
+
+:root .login-links a::before {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background: #000000;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+:root .login-links a:hover::before {
+  width: 100%;
 }
 
 :root .login-links a:hover {
-  color: #003d2e !important;
-  background-color: rgba(0, 77, 58, 0.1) !important;
+  color: #000000 !important;
+  background: transparent !important;
+  text-decoration: none !important;
+}
+
+/* Tema Claro - Botões de confirmação personalizados */
+:root .btn-primary,
+:root .btn-success {
+  background: var(--btn-confirm-bg) !important;
+  color: var(--btn-confirm-text) !important;
+  border: none !important;
+  box-shadow: var(--btn-confirm-shadow) !important;
+  transition: all 0.3s ease !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+}
+
+:root .btn-primary:hover,
+:root .btn-success:hover {
+  background: var(--btn-confirm-hover) !important;
+  color: var(--btn-confirm-text) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: var(--btn-confirm-hover-shadow) !important;
+}
+
+:root .btn-primary:focus,
+:root .btn-success:focus {
+  background: var(--btn-confirm-hover) !important;
+  color: var(--btn-confirm-text) !important;
+  box-shadow: var(--btn-confirm-hover-shadow) !important;
+  outline: none !important;
 }
 
 /* Tema Escuro - Card e inputs escuros com texto claro */
@@ -244,7 +377,8 @@ body {
 }
 
 .login-card:hover {
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Título */
@@ -338,7 +472,6 @@ body {
 
 /* Inputs personalizados com tema dinâmico - CRÍTICO */
 .login-card .form-control {
-  flex: 1;
   border: none;
   background: var(--input-bg);
   font-size: 1.1rem;
@@ -370,11 +503,33 @@ body {
   background: var(--input-bg) !important;
 }
 
-/* Tema Claro - Inputs transparentes mesmo quando focados */
+/* Tema Claro - Inputs com glassmorphism padronizado quando focados */
 :root .form-control:focus,
-:root .form-control:active {
+:root .form-control:active,
+:root .form-control:hover {
   background: transparent !important;
+  border: none !important;
   color: #000000 !important;
+  box-shadow: none !important;
+}
+
+:root .input-group:hover {
+  transform: translateY(-1px);
+  box-shadow: 
+    0 18px 48px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+:root .input-group:focus-within {
+  background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 
+    0 20px 50px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1) !important;
 }
 
 /* Tema Escuro - Inputs escuros mesmo quando focados */
@@ -397,7 +552,6 @@ body {
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
-  width: 100%;
   letter-spacing: 0.3px;
 }
 
@@ -452,6 +606,14 @@ body {
   color: #fff;
 }
 
+/* Centralizar botões */
+.btn-center {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 200px;
+}
+
 /* Links */
 .login-links {
   text-align: center;
@@ -473,20 +635,71 @@ body {
   text-decoration: none;
   font-weight: 600;
   font-family: 'Josefin Sans', sans-serif;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
   font-size: 1.05rem;
   padding: 2px 4px;
   border-radius: 4px;
+  background: transparent;
+  position: relative;
+  display: inline-block;
+}
+
+.login-links a::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--link-color);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.login-links a:hover::before {
+  width: 100%;
 }
 
 .login-links a:hover {
-  color: var(--link-hover);
-  text-decoration: underline;
-  background-color: rgba(13, 79, 60, 0.05);
+  color: var(--link-color);
+  text-decoration: none;
+  background: transparent;
+}
+
+[data-theme="dark"] .login-links a::before {
+  background: var(--link-color);
 }
 
 [data-theme="dark"] .login-links a:hover {
-  background-color: rgba(74, 222, 128, 0.1);
+  background: transparent;
+}
+
+/* Tema Escuro - Botões de confirmação personalizados */
+[data-theme="dark"] .btn-primary,
+[data-theme="dark"] .btn-success {
+  background: var(--btn-confirm-bg-dark) !important;
+  color: var(--btn-confirm-text-dark) !important;
+  border: none !important;
+  box-shadow: var(--btn-confirm-shadow-dark) !important;
+  transition: all 0.3s ease !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+}
+
+[data-theme="dark"] .btn-primary:hover,
+[data-theme="dark"] .btn-success:hover {
+  background: var(--btn-confirm-hover-dark) !important;
+  color: var(--btn-confirm-text-dark) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: var(--btn-confirm-hover-shadow-dark) !important;
+}
+
+[data-theme="dark"] .btn-primary:focus,
+[data-theme="dark"] .btn-success:focus {
+  background: var(--btn-confirm-hover-dark) !important;
+  color: var(--btn-confirm-text-dark) !important;
+  box-shadow: var(--btn-confirm-hover-shadow-dark) !important;
+  outline: none !important;
 }
 
 /* Switch de tema personalizado - SEM BORDA */
@@ -716,11 +929,18 @@ body {
     --btn-success-hover: #22c55e;
     --btn-info: #0dcaf0;
     --btn-info-hover: #3dd5f3;
-    --btn-danger: #dc3545;
-    --btn-danger-hover: #bb2d3b;
-    --link-color: #4ade80;
-    --link-hover: #22c55e;
+  --btn-danger: #dc3545;
+  --btn-danger-hover: #bb2d3b;
+  --link-color: #4ade80;
+  --link-hover: #22c55e;
   --accent-green: #4ade80;
+  
+  /* Variáveis específicas para tema escuro - botões de confirmação */
+  --btn-confirm-bg-dark: #298a4c;
+  --btn-confirm-hover-dark: #107736;
+  --btn-confirm-text-dark: #ffffff;
+  --btn-confirm-shadow-dark: 0 4px 12px rgba(29, 141, 70, 0.3);
+  --btn-confirm-hover-shadow-dark: 0 6px 16px rgba(16, 102, 47, 0.4);
 }
 
 /* Garantir fundo escuro no tema escuro */

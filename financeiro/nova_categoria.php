@@ -39,12 +39,8 @@ include_once '_head.php';
     </div>
 
     <div id="wrapper">
-        <!-- Botão toggle do menu -->
-        <button id="menu-toggle" class="menu-toggle-btn">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
+        <!-- Menu Toggle Component -->
+        <?php include_once '_menu-toggle.php'; ?>
         
         <?php
         include_once '_topo.php';
@@ -66,28 +62,19 @@ include_once '_head.php';
                                 <label for="nome">Nome da categoria <span class="required">*</span></label>
                                 <div class="input-group">
                                     <div class="input-group-addon">
-                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
+                                        <i class="fi fi-rr-tags" style="font-size: 18px;"></i>
                                     </div>
                                     <input id="nome" class="form-control" placeholder="Informe a categoria desejada: (Exemplo: Conta de luz)" name="nome" maxlength="35" required />
                                 </div>
                             </div>
                             
                             <div class="form-actions">
-                                <button type="submit" onclick="return ValidarCategoria()" name="btn_gravar" class="btn btn-success">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3H16L21 8V19C21 20.1046 20.1046 21 19 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <polyline points="17,21 17,13 7,13 7,21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <polyline points="7,3 7,8 15,8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
+                                <button type="submit" onclick="return ValidarCategoria()" name="btn_gravar" class="btn btn-success btn-green">
+                                    <i class="fi fi-rr-disk" style="font-size: 16px; padding-right: 8px;"></i>
                                     Salvar Categoria
                                 </button>
-                                <a href="consultar_categoria.php" class="btn btn-info">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
+                                <a href="consultar_categoria.php" class="btn btn-info btn-blue">
+                                    <i class="fi fi-rr-search" style="font-size: 16px; padding-right: 8px;"></i>
                                     Consultar Categorias
                                 </a>
                             </div>

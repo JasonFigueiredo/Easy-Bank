@@ -1,0 +1,203 @@
+/* =============================================================
+   MENU TOGGLE - CSS OTIMIZADO E LIMPO
+   ============================================================= */
+
+/* Menu Toggle Checkbox (oculto) */
+#menu-toggle-checkbox {
+    display: none;
+}
+
+/* Botão do Menu Toggle */
+.menu-toggle-btn {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    width: 40px;
+    height: 40px;
+    background: #0d4f3c;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 1002;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.menu-toggle-btn:hover {
+    background: #0a3d2e;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+/* Linhas do Hambúrguer */
+.hamburger-line {
+    width: 20px;
+    height: 2px;
+    background: white;
+    border-radius: 1px;
+    transition: all 0.3s ease;
+}
+
+/* Animação quando menu está ativo - apenas quando o usuário clica */
+.menu-toggle-btn.clicked {
+    transform: rotate(180deg);
+}
+
+#menu-toggle-checkbox:checked + .menu-toggle-btn .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    width: 60%;
+}
+
+#menu-toggle-checkbox:checked + .menu-toggle-btn .hamburger-line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+#menu-toggle-checkbox:checked + .menu-toggle-btn .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+    width: 60%;
+}
+
+/* Sidebar */
+.navbar-side {
+    position: fixed;
+    top: 100px;
+    left: 10px;
+    width: auto;
+    height: auto;
+    background: var(--sidebar-bg, #ffffff);
+    z-index: 1001;
+    transition: transform 0.3s ease;
+    overflow-y: none;
+    border-radius: 10px;
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* Estados da Sidebar */
+.navbar-side.expanded {
+    transform: translateX(0);
+}
+
+.navbar-side.collapsed {
+    transform: translateX(-105%);
+}
+
+/* Page Wrapper */
+#page-wrapper {
+    transition: margin-left 0.3s ease;
+}
+
+#page-wrapper.expanded {
+    margin-left: 250px;
+}
+
+#page-wrapper.collapsed {
+    margin-left: 0;
+}
+
+/* Footer - Removido para manter fixo */
+
+/* Topo da página */
+.navbar-cls-top {
+    transition: left 0.3s ease, width 0.3s ease;
+}
+
+.navbar-side.expanded ~ .navbar-cls-top {
+    left: 250px;
+    width: calc(100% - 250px);
+}
+
+.navbar-side.collapsed ~ .navbar-cls-top {
+    left: 0;
+    width: 100%;
+}
+
+/* Tema Escuro */
+[data-theme="dark"] .menu-toggle-btn {
+    background: #0c5527;
+}
+
+[data-theme="dark"] .menu-toggle-btn:hover {
+    background: #0a3d2e;
+}
+
+[data-theme="dark"] .navbar-side {
+    background: #2d2d2d;
+    border-radius: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .menu-toggle-btn {
+        top: 25px;
+        left: 30px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .hamburger-line {
+        width: 18px;
+    }
+    
+    /* Em mobile, o menu sempre funciona como overlay */
+    .navbar-side {
+        transform: translateX(-105%);
+    }
+    
+    .navbar-side.expanded {
+        transform: translateX(0);
+    }
+    
+    .navbar-side.collapsed {
+        transform: translateX(-105%);
+    }
+    
+    /* Em mobile, o conteúdo não se move */
+    #page-wrapper.expanded,
+    #page-wrapper.collapsed {
+        margin-left: 0;
+    }
+    
+    /* Footer removido - mantém fixo */
+    
+    .navbar-side.expanded ~ .navbar-cls-top,
+    .navbar-side.collapsed ~ .navbar-cls-top {
+        left: 0;
+        width: 100%;
+    }
+}
+
+/* Scrollbar personalizada para sidebar */
+.navbar-side::-webkit-scrollbar {
+    width: 6px;
+}
+
+.navbar-side::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+.navbar-side::-webkit-scrollbar-thumb {
+    background: #e0e0e0;
+    border-radius: 3px;
+}
+
+.navbar-side::-webkit-scrollbar-thumb:hover {
+    background: #d0d0d0;
+}
+
+[data-theme="dark"] .navbar-side::-webkit-scrollbar-track {
+    background: #2d2d2d;
+}
+
+[data-theme="dark"] .navbar-side::-webkit-scrollbar-thumb {
+    background: #404040;
+}
+
+[data-theme="dark"] .navbar-side::-webkit-scrollbar-thumb:hover {
+    background: #505050;
+}

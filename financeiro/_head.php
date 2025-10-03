@@ -6,6 +6,8 @@
     <link href="assets/css/login.css" rel="stylesheet" />
     <!-- DASHBOARD STYLES-->
     <link href="assets/css/dashboard.css" rel="stylesheet" />
+    <!-- MENU TOGGLE STYLES -->
+    <link href="assets/css/menu-toggle.css" rel="stylesheet" />
     <!-- GOOGLE FONTS - JOSEFIN SANS-->
     <link href='https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap' rel='stylesheet' type='text/css' />
     <!-- FLATICONS -->
@@ -16,9 +18,8 @@
     <script src="assets/js/jquery-1.10.2.js"></script>
     <!-- METISMENU SCRIPTS -->
     <script src="assets/js/jquery.metisMenu.js"></script>
-    <!-- AJAX NAVIGATION -->
-    <script src="assets/js/ajax-navigation.js"></script>
-    <link href="assets/css/ajax-transitions.css" rel="stylesheet" />
+    <!-- MENU TOGGLE OTIMIZADO -->
+    <script src="assets/js/menu-toggle-optimized.js"></script>
     <!-- CUSTOM SCRIPTS -->
     <script src="assets/js/validacao.js"></script>
     <script src="assets/dist/sweetalert2.all.min.js"></script>

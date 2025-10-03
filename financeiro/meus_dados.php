@@ -45,12 +45,8 @@ include_once '_head.php';
         </label>
     </div>
     <div id="wrapper">
-        <!-- Botão toggle do menu -->
-        <button id="menu-toggle" class="menu-toggle-btn">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
+        <!-- Menu Toggle Component -->
+        <?php include_once '_menu-toggle.php'; ?>
         
         <?php
         include_once '_topo.php';
@@ -71,9 +67,7 @@ include_once '_head.php';
                                 <label for="nome">Nome <span class="required">*</span></label>
                                 <div class="input-group">
                                     <div class="input-group-addon">
-                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M20 21V19C20 17.1362 18.7252 15.5701 17 15.126M15 7C15 9.20914 13.2091 11 11 11C8.79086 11 7 9.20914 7 7C7 4.79086 8.79086 3 11 3C13.2091 3 15 4.79086 15 7ZM5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
+                                        <i class="fi fi-rr-user" style="font-size: 18px;"></i>
                                     </div>
                                     <input class="form-control" placeholder="Digite o seu nome" name="nome" value="<?= $dados[0]['nome_usuario'] ?>" id="nome" maxlength="45" required />
                                 </div>
@@ -83,22 +77,15 @@ include_once '_head.php';
                                 <label for="email">E-mail <span class="required">*</span></label>
                                 <div class="input-group">
                                     <div class="input-group-addon">
-                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
+                                        <i class="fi fi-rr-envelope" style="font-size: 18px;"></i>
                                     </div>
                                     <input class="form-control" placeholder="Digite seu e-mail" name="email" value="<?= $dados[0]['email_usuario'] ?>" id="email" maxlength="45" type="email" required />
                                 </div>
                             </div>
                             
                             <div class="form-actions">
-                                <button type="submit" onclick="return ValidarMeusDados()" class="btn btn-success" name="btn_Gravar">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3H16L21 8V19C21 20.1046 20.1046 21 19 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <polyline points="17,21 17,13 7,13 7,21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <polyline points="7,3 7,8 15,8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
+                                <button type="submit" onclick="return ValidarMeusDados()" class="btn btn-success btn-green" name="btn_Gravar">
+                                    <i class="fi fi-rr-disk" style="font-size: 16px; padding-right: 8px;"></i>
                                     Salvar Alterações
                                 </button>
                             </div>

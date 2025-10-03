@@ -39,13 +39,8 @@ include_once '_head.php';
     </div>
 
     <div id="wrapper">
-        <!-- Botão toggle do menu -->
-        <input id="menu-toggle-checkbox" type="checkbox">
-        <label class="menu-toggle-btn" for="menu-toggle-checkbox">
-            <div class="hamburger-line"></div>
-            <div class="hamburger-line"></div>
-            <div class="hamburger-line"></div>
-        </label>
+        <!-- Menu Toggle Component -->
+        <?php include_once '_menu-toggle.php'; ?>
         
         <?php
         include_once '_topo.php';
@@ -161,14 +156,15 @@ include_once '_head.php';
                                                 ?>
                                             </tbody>
                                         </table>
-                                        <center class="value">
-                                            <label style='color: <?= $total < 0 ? '#ff0000' : '#00db5f' ?>; '> Montante total movimentado: R$
-                                                <?= number_format($total, 2, ",", "."); ?> </label>
-                                        </center>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <!-- Montante total movimentado - fora da tabela -->
+                    <div class="value">
+                        <label style='color: <?= $total < 0 ? '#ff0000' : '#00db5f' ?>; '> Montante total movimentado: R$
+                            <?= number_format($total, 2, ",", "."); ?> </label>
                     </div>
                 <?php } else { ?>
                     <div class="alert alert-info col-md-12">

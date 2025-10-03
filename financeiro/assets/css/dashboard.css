@@ -28,11 +28,189 @@
   --accent-yellow: #fbbf24;
   --white-dynamic: #ffffff;
   --black-dynamic: #000000;
+
+  /* Variáveis específicas para tema claro - menu glassmorphism */
+  --menu-glass-bg: rgba(255, 255, 255, 0.08);
+  --menu-glass-blur: blur(30px);
+  --menu-glass-border: rgba(255, 255, 255, 0.3);
+  --menu-glass-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+  --menu-glass-inset-top: inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  --menu-glass-inset-bottom: inset 0 -1px 0 rgba(255, 255, 255, 0.2);
+  --menu-glass-inset-left: inset 1px 0 0 rgba(255, 255, 255, 0.3);
+  --menu-glass-inset-right: inset -1px 0 0 rgba(255, 255, 255, 0.3);
+
+  /* Variáveis específicas para tema claro - cards glassmorphism */
+  --card-glass-bg: rgba(255, 255, 255, 0.1);
+  --card-glass-blur: blur(20px);
+  --card-glass-border: rgba(255, 255, 255, 0.2);
+  --card-glass-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  --card-glass-inset-top: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  --card-glass-inset-bottom: inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+  --card-glass-inset-left: inset 1px 0 0 rgba(255, 255, 255, 0.2);
+  --card-glass-inset-right: inset -1px 0 0 rgba(255, 255, 255, 0.2);
+
+  /* Variáveis específicas para tema claro - botão toggle verde glassmorphism */
+  --toggle-glass-bg: rgba(13, 79, 60, 0.25);
+  --toggle-glass-blur: blur(20px);
+  --toggle-glass-border: rgba(13, 79, 60, 0.6);
+  --toggle-glass-shadow: 0 15px 35px rgba(13, 79, 60, 0.5);
+  --toggle-glass-inset-top: inset 0 1px 0 rgba(13, 79, 60, 0.7);
+  --toggle-glass-inset-bottom: inset 0 -1px 0 rgba(13, 79, 60, 0.3);
+  --toggle-glass-inset-left: inset 1px 0 0 rgba(13, 79, 60, 0.6);
+  --toggle-glass-inset-right: inset -1px 0 0 rgba(13, 79, 60, 0.6);
+
+  /* Variáveis específicas para tema claro - efeitos de navegação verde glassmorphism */
+  --nav-glass-bg: rgba(13, 79, 60, 0.2);
+  --nav-glass-blur: blur(15px);
+  --nav-glass-border: rgba(13, 79, 60, 0.5);
+  --nav-glass-shadow: 0 8px 25px rgba(13, 79, 60, 0.4);
+  --nav-glass-inset-top: inset 0 1px 0 rgba(13, 79, 60, 0.6);
+  --nav-glass-inset-bottom: inset 0 -1px 0 rgba(13, 79, 60, 0.3);
+  --nav-glass-inset-left: inset 1px 0 0 rgba(13, 79, 60, 0.5);
+  --nav-glass-inset-right: inset -1px 0 0 rgba(13, 79, 60, 0.5);
+
+  /* Variáveis específicas para tema claro - footer glassmorphism */
+  --footer-glass-bg: rgba(255, 255, 255, 0.1);
+  --footer-glass-blur: blur(20px);
+  --footer-glass-border: rgba(255, 255, 255, 0.2);
+  --footer-glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  --footer-glass-inset-top: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  --footer-glass-inset-bottom: inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+  --footer-glass-inset-left: inset 1px 0 0 rgba(255, 255, 255, 0.2);
+  --footer-glass-inset-right: inset -1px 0 0 rgba(255, 255, 255, 0.2);
+
+  /* Variáveis específicas para tema claro - tabela glassmorphism */
+  --table-glass-bg: rgba(255, 255, 255, 0.08);
+  --table-glass-blur: blur(30px);
+  --table-glass-border: rgba(255, 255, 255, 0.3);
+  --table-glass-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+  --table-glass-inset-top: inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  --table-glass-inset-bottom: inset 0 -1px 0 rgba(255, 255, 255, 0.2);
+  --table-glass-inset-left: inset 1px 0 0 rgba(255, 255, 255, 0.3);
+  --table-glass-inset-right: inset -1px 0 0 rgba(255, 255, 255, 0.3);
+  
+  /* Variáveis específicas para tema claro - footers dos cards glassmorphism */
+  --footer-green-glass-bg: rgba(13, 79, 60, 0.8);
+  --footer-green-glass-blur: blur(20px);
+  --footer-green-glass-border: rgba(13, 79, 60, 0.9);
+  --footer-green-glass-shadow: 0 10px 30px rgba(13, 79, 60, 0.5);
+  --footer-green-glass-inset-top: inset 0 1px 0 rgba(13, 79, 60, 1);
+  --footer-green-glass-inset-bottom: inset 0 -1px 0 rgba(13, 79, 60, 0.7);
+  --footer-green-glass-inset-left: inset 1px 0 0 rgba(13, 79, 60, 0.8);
+  --footer-green-glass-inset-right: inset -1px 0 0 rgba(13, 79, 60, 0.8);
+  
+  --footer-red-glass-bg: rgba(220, 53, 69, 0.8);
+  --footer-red-glass-blur: blur(20px);
+  --footer-red-glass-border: rgba(220, 53, 69, 0.9);
+  --footer-red-glass-shadow: 0 10px 30px rgba(220, 53, 69, 0.5);
+  --footer-red-glass-inset-top: inset 0 1px 0 rgba(220, 53, 69, 1);
+  --footer-red-glass-inset-bottom: inset 0 -1px 0 rgba(220, 53, 69, 0.7);
+  --footer-red-glass-inset-left: inset 1px 0 0 rgba(220, 53, 69, 0.8);
+  --footer-red-glass-inset-right: inset -1px 0 0 rgba(220, 53, 69, 0.8);
+  
+  --footer-blue-glass-bg: rgba(23, 162, 184, 0.8);
+  --footer-blue-glass-blur: blur(20px);
+  --footer-blue-glass-border: rgba(23, 162, 184, 0.9);
+  --footer-blue-glass-shadow: 0 10px 30px rgba(23, 162, 184, 0.5);
+  --footer-blue-glass-inset-top: inset 0 1px 0 rgba(23, 162, 184, 1);
+  --footer-blue-glass-inset-bottom: inset 0 -1px 0 rgba(23, 162, 184, 0.7);
+  --footer-blue-glass-inset-left: inset 1px 0 0 rgba(23, 162, 184, 0.8);
+  --footer-blue-glass-inset-right: inset -1px 0 0 rgba(23, 162, 184, 0.8);
+  
+  /* Variáveis específicas para tema claro - modais glassmorphism */
+  --modal-glass-bg: rgba(255, 255, 255, 0.1);
+  --modal-glass-blur: blur(25px);
+  --modal-glass-border: rgba(255, 255, 255, 0.2);
+  --modal-glass-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  --modal-glass-inset-top: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  --modal-glass-inset-bottom: inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+  --modal-glass-inset-left: inset 1px 0 0 rgba(255, 255, 255, 0.2);
+  --modal-glass-inset-right: inset -1px 0 0 rgba(255, 255, 255, 0.2);
+  
+  /* Variáveis específicas para tema claro - alertas glassmorphism */
+  --alert-glass-bg: rgba(255, 255, 255, 0.08);
+  --alert-glass-blur: blur(20px);
+  --alert-glass-border: rgba(255, 255, 255, 0.15);
+  --alert-glass-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  --alert-glass-inset-top: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  --alert-glass-inset-bottom: inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+  --alert-glass-inset-left: inset 1px 0 0 rgba(255, 255, 255, 0.15);
+  --alert-glass-inset-right: inset -1px 0 0 rgba(255, 255, 255, 0.15);
+  
+  /* Variáveis específicas para tema claro - form-card glassmorphism */
+  --form-card-glass-bg: rgba(255, 255, 255, 0.1);
+  --form-card-glass-blur: blur(25px);
+  --form-card-glass-border: rgba(255, 255, 255, 0.2);
+  --form-card-glass-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  --form-card-glass-inset-top: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  --form-card-glass-inset-bottom: inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+  --form-card-glass-inset-left: inset 1px 0 0 rgba(255, 255, 255, 0.2);
+  --form-card-glass-inset-right: inset -1px 0 0 rgba(255, 255, 255, 0.2);
+  
+  /* Variáveis específicas para tema claro - botões glassmorphism */
+  --btn-glass-bg: rgba(255, 255, 255, 0.1);
+  --btn-glass-blur: blur(15px);
+  --btn-glass-border: rgba(255, 255, 255, 0.2);
+  --btn-glass-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  --btn-glass-inset-top: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  --btn-glass-inset-bottom: inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+  --btn-glass-inset-left: inset 1px 0 0 rgba(255, 255, 255, 0.2);
+  --btn-glass-inset-right: inset -1px 0 0 rgba(255, 255, 255, 0.2);
+  
+  /* Variáveis específicas para tema claro - botões coloridos glassmorphism */
+  --btn-success-glass-bg: rgba(40, 167, 69, 0.6);
+  --btn-success-glass-border: rgba(40, 167, 69, 0.8);
+  --btn-success-glass-shadow: 0 8px 25px rgba(40, 167, 69, 0.7);
+  --btn-success-glass-inset-top: inset 0 1px 0 rgba(40, 167, 69, 0.9);
+  --btn-success-glass-inset-bottom: inset 0 -1px 0 rgba(40, 167, 69, 0.4);
+  --btn-success-glass-inset-left: inset 1px 0 0 rgba(40, 167, 69, 0.7);
+  --btn-success-glass-inset-right: inset -1px 0 0 rgba(40, 167, 69, 0.7);
+  
+  --btn-info-glass-bg: rgba(255, 193, 7, 0.6);
+  --btn-info-glass-border: rgba(255, 193, 7, 0.8);
+  --btn-info-glass-shadow: 0 8px 25px rgba(255, 193, 7, 0.7);
+  --btn-info-glass-inset-top: inset 0 1px 0 rgba(255, 193, 7, 0.9);
+  --btn-info-glass-inset-bottom: inset 0 -1px 0 rgba(255, 193, 7, 0.4);
+  --btn-info-glass-inset-left: inset 1px 0 0 rgba(255, 193, 7, 0.7);
+  --btn-info-glass-inset-right: inset -1px 0 0 rgba(255, 193, 7, 0.7);
+  
+  --btn-danger-glass-bg: rgba(220, 53, 69, 0.6);
+  --btn-danger-glass-border: rgba(220, 53, 69, 0.8);
+  --btn-danger-glass-shadow: 0 8px 25px rgba(220, 53, 69, 0.7);
+  --btn-danger-glass-inset-top: inset 0 1px 0 rgba(220, 53, 69, 0.9);
+  --btn-danger-glass-inset-bottom: inset 0 -1px 0 rgba(220, 53, 69, 0.4);
+  --btn-danger-glass-inset-left: inset 1px 0 0 rgba(220, 53, 69, 0.7);
+  --btn-danger-glass-inset-right: inset -1px 0 0 rgba(220, 53, 69, 0.7);
+  
+  --btn-warning-glass-bg: rgba(255, 193, 7, 0.6);
+  --btn-warning-glass-border: rgba(255, 193, 7, 0.8);
+  --btn-warning-glass-shadow: 0 8px 25px rgba(255, 193, 7, 0.7);
+  --btn-warning-glass-inset-top: inset 0 1px 0 rgba(255, 193, 7, 0.9);
+  --btn-warning-glass-inset-bottom: inset 0 -1px 0 rgba(255, 193, 7, 0.4);
+  --btn-warning-glass-inset-left: inset 1px 0 0 rgba(255, 193, 7, 0.7);
+  --btn-warning-glass-inset-right: inset -1px 0 0 rgba(255, 193, 7, 0.7);
+  
+  /* Variáveis específicas para tema claro - botão de alteração de dados */
+  --btn-alterar-glass-bg: rgba(255, 193, 7, 0.6);
+  --btn-alterar-glass-border: rgba(255, 193, 7, 0.8);
+  --btn-alterar-glass-shadow: 0 8px 25px rgba(255, 193, 7, 0.7);
+  --btn-alterar-glass-inset-top: inset 0 1px 0 rgba(255, 193, 7, 0.9);
+  --btn-alterar-glass-inset-bottom: inset 0 -1px 0 rgba(255, 193, 7, 0.4);
+  --btn-alterar-glass-inset-left: inset 1px 0 0 rgba(255, 193, 7, 0.7);
+  --btn-alterar-glass-inset-right: inset -1px 0 0 rgba(255, 193, 7, 0.7);
+  
+  /* Variáveis específicas para tema claro - botão de consultar (azul) */
+  --btn-consultar-glass-bg: rgba(23, 162, 184, 0.6);
+  --btn-consultar-glass-border: rgba(23, 162, 184, 0.8);
+  --btn-consultar-glass-shadow: 0 8px 25px rgba(23, 162, 184, 0.7);
+  --btn-consultar-glass-inset-top: inset 0 1px 0 rgba(23, 162, 184, 0.9);
+  --btn-consultar-glass-inset-bottom: inset 0 -1px 0 rgba(23, 162, 184, 0.4);
+  --btn-consultar-glass-inset-left: inset 1px 0 0 rgba(23, 162, 184, 0.7);
+  --btn-consultar-glass-inset-right: inset -1px 0 0 rgba(23, 162, 184, 0.7);
 }
 
 [data-theme="dark"] {
   /* Dashboard - Tema Escuro */
-  --dashboard-bg: #292929;
   --sidebar-bg: #2d2d2d;
   --sidebar-border: #404040;
   --sidebar-text: #ffffff;
@@ -55,6 +233,75 @@
   --accent-yellow: #fbbf24;
   --white-dynamic: #121212;
   --black-dynamic: #ffffff;
+
+  /* Variáveis específicas para tema escuro - menu e elementos */
+  --menu-dark-bg: #2d2d2d;
+  --menu-dark-border: #404040;
+  --menu-dark-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --topbar-dark-bg: #2d2d2d;
+  --topbar-dark-border: #404040;
+  --topbar-dark-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --footer-dark-bg: #2d2d2d;
+  --footer-dark-border: #404040;
+  --footer-dark-shadow: 0 2px 4px rgba(0, 0, 0, 0.568);
+
+  /* Variáveis específicas para tema escuro - botão toggle verde glassmorphism */
+  --toggle-dark-glass-bg: rgba(12, 85, 39, 0.2);
+  --toggle-dark-glass-blur: blur(20px);
+  --toggle-dark-glass-border: rgba(255, 255, 255, 0.2);
+  --toggle-dark-glass-shadow: 0 15px 35px rgba(12, 85, 39, 0.4);
+  --toggle-dark-glass-inset-top: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  --toggle-dark-glass-inset-bottom: inset 0 -1px 0 rgba(255, 255, 255, 0.15);
+  --toggle-dark-glass-inset-left: inset 1px 0 0 rgba(255, 255, 255, 0.2);
+  --toggle-dark-glass-inset-right: inset -1px 0 0 rgba(255, 255, 255, 0.2);
+
+  /* Variáveis específicas para tema escuro - cards sem glassmorphism */
+  --card-dark-bg: #2d2d2db2;
+  --card-dark-border: none;
+  --card-dark-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+  /* Variáveis específicas para tema escuro - plano de fundo cinza e chumbo */
+  --dark-bg-gradient: linear-gradient(135deg, #2c2c2c 0%, #3a3a3a 25%, #4a4a4a 50%, #5a5a5a 75%, #6a6a6a 100%);
+
+  /* Variáveis específicas para tema escuro - glassmorphism preto e escuro */
+  --dark-glass-bg: rgba(0, 0, 0, 0.3);
+  --dark-glass-blur: blur(20px);
+  --dark-glass-border: rgba(255, 255, 255, 0.15);
+  --dark-glass-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  --dark-glass-inset-top: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  --dark-glass-inset-bottom: inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+  --dark-glass-inset-left: inset 1px 0 0 rgba(255, 255, 255, 0.15);
+  --dark-glass-inset-right: inset -1px 0 0 rgba(255, 255, 255, 0.15);
+
+  /* Variáveis específicas para tema escuro - form-card glassmorphism */
+  --form-card-dark-glass-bg: rgba(0, 0, 0, 0.4);
+  --form-card-dark-glass-blur: blur(25px);
+  --form-card-dark-glass-border: rgba(255, 255, 255, 0.2);
+  --form-card-dark-glass-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+  --form-card-dark-glass-inset-top: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  --form-card-dark-glass-inset-bottom: inset 0 -1px 0 rgba(255, 255, 255, 0.15);
+  --form-card-dark-glass-inset-left: inset 1px 0 0 rgba(255, 255, 255, 0.2);
+  --form-card-dark-glass-inset-right: inset -1px 0 0 rgba(255, 255, 255, 0.2);
+
+  /* Variáveis específicas para tema escuro - botões glassmorphism */
+  --btn-dark-glass-bg: rgba(0, 0, 0, 0.3);
+  --btn-dark-glass-blur: blur(15px);
+  --btn-dark-glass-border: rgba(255, 255, 255, 0.15);
+  --btn-dark-glass-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  --btn-dark-glass-inset-top: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  --btn-dark-glass-inset-bottom: inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+  --btn-dark-glass-inset-left: inset 1px 0 0 rgba(255, 255, 255, 0.15);
+  --btn-dark-glass-inset-right: inset -1px 0 0 rgba(255, 255, 255, 0.15);
+
+  /* Variáveis específicas para tema escuro - tabela glassmorphism preto */
+  --table-dark-glass-bg: rgba(0, 0, 0, 0.3);
+  --table-dark-glass-blur: blur(20px);
+  --table-dark-glass-border: rgba(255, 255, 255, 0.15);
+  --table-dark-glass-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  --table-dark-glass-inset-top: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  --table-dark-glass-inset-bottom: inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+  --table-dark-glass-inset-left: inset 1px 0 0 rgba(255, 255, 255, 0.15);
+  --table-dark-glass-inset-right: inset -1px 0 0 rgba(255, 255, 255, 0.15);
 }
 
 /* Reset e configurações base */
@@ -65,11 +312,22 @@
 
 body {
   font-family: 'Josefin Sans', sans-serif;
-  background-color: var(--dashboard-bg);
   color: var(--text-primary);
   margin: 0;
   padding: 0;
-  transition: all 0.3s ease;
+  transition: none;
+}
+
+
+
+/* Tema Escuro - Gradiente de fundo cinza e chumbo */
+[data-theme="dark"] html,
+[data-theme="dark"] body,
+[data-theme="dark"] #wrapper,
+[data-theme="dark"] #page-wrapper {
+  background: linear-gradient(135deg, #2c2c2c 0%, #3a3a3a 25%, #4a4a4a 50%, #5a5a5a 75%, #6a6a6a 100%) !important;
+  background-attachment: fixed !important;
+  min-height: 100vh !important;
 }
 
 /* Layout principal */
@@ -84,20 +342,13 @@ body {
   margin-left: 250px;
   padding: 0;
   min-height: 100vh;
-  transition: all 0.3s ease;
+  transition: none;
   padding-top: 80px;
 }
 
-#page-wrapper.expanded {
-  margin-left: 250px;
-}
-
-#page-wrapper.collapsed {
-  margin-left: 0;
-}
+/* Page wrapper styles movidos para menu-toggle.css */
 
 #page-inner {
-  background: var(--dashboard-bg);
   padding-bottom: 30px;
   min-height: calc(100vh - 80px);
   width: 100%;
@@ -110,112 +361,6 @@ body {
   justify-content: flex-start;
 }
 
-#menu-toggle-checkbox {
-  display: none;
-}
-
-.menu-toggle-btn {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  width: 45px;
-  height: 45px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  transition-duration: .5s;
-  z-index: 1002;
-  background: var(--success-color);
-  border: none;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-.menu-toggle-btn:hover {
-  background: #0a3d2e;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  transform: scale(1.05);
-}
-
-[data-theme="dark"] .menu-toggle-btn:hover {
-  background: #0c55278c;
-}
-
-.hamburger-line {
-  width: 70%;
-  height: 3px;
-  background-color: #ffffff;
-  border-radius: 2px;
-  transition-duration: .5s;
-}
-
-.hamburger-line:nth-child(2) {
-  transition-duration: .8s;
-}
-
-.hamburger-line:nth-child(1),
-.hamburger-line:nth-child(3) {
-  width: 40%;
-}
-
-#menu-toggle-checkbox:checked + .menu-toggle-btn .hamburger-line {
-  position: absolute;
-  transition-duration: .5s;
-}
-
-#menu-toggle-checkbox:checked + .menu-toggle-btn .hamburger-line:nth-child(2) {
-  transform: scaleX(0);
-  transition-duration: .5s;
-}
-
-#menu-toggle-checkbox:checked + .menu-toggle-btn .hamburger-line:nth-child(1) {
-  width: 60%;
-  transform: rotate(45deg);
-  transition-duration: .5s;
-}
-
-#menu-toggle-checkbox:checked + .menu-toggle-btn .hamburger-line:nth-child(3) {
-  width: 60%;
-  transform: rotate(-45deg);
-  transition-duration: .5s;
-}
-
-#menu-toggle-checkbox:checked + .menu-toggle-btn {
-  transition-duration: .5s;
-  transform: rotate(180deg);
-}
-
-/* Sidebar - Menu lateral */
-.navbar-side {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 250px;
-  height: 100vh;
-  background: var(--sidebar-bg);
-  border-right: 1px solid var(--sidebar-border);
-  z-index: 1000;
-  transition: all 0.3s ease;
-  overflow-y: auto;
-  transform: translateX(0);
-}
-
-/* Menu sempre visível por padrão */
-.navbar-side.expanded {
-  transform: translateX(0);
-}
-
-.navbar-side.collapsed {
-  transform: translateX(-100%);
-}
-
-
-.sidebar-collapse {
-  padding: 80px 0 20px 0;
-}
 
 #main-menu {
   list-style: none;
@@ -225,7 +370,6 @@ body {
 
 #main-menu li {
   margin: 0;
-  border-bottom: 1px solid var(--sidebar-border);
 }
 
 #main-menu li:last-child {
@@ -235,51 +379,102 @@ body {
 #main-menu li a {
   display: flex;
   align-items: center;
-  padding: 15px 20px;
+  padding: 14px 17px;
   color: var(--sidebar-text);
   text-decoration: none;
   font-weight: 500;
   font-size: 1rem;
-  transition: all 0.3s ease;
+  transition: none;
   border-left: 3px solid transparent;
 }
 
 #main-menu li a:hover {
-  background: rgba(13, 79, 60, 0.1);
+  background: var(--nav-glass-bg, rgba(13, 79, 60, 0.2)) !important;
+  backdrop-filter: var(--nav-glass-blur, blur(15px)) !important;
+  -webkit-backdrop-filter: var(--nav-glass-blur, blur(15px)) !important;
+  border: 1px solid var(--nav-glass-border, rgba(13, 79, 60, 0.5)) !important;
   color: var(--sidebar-hover);
   border-left-color: var(--sidebar-hover);
   transform: translateX(5px);
+  border-radius: 10px;
+  box-shadow:
+    var(--nav-glass-shadow, 0 8px 25px rgba(13, 79, 60, 0.4)),
+    var(--nav-glass-inset-top, inset 0 1px 0 rgba(13, 79, 60, 0.6)),
+    var(--nav-glass-inset-bottom, inset 0 -1px 0 rgba(13, 79, 60, 0.3)),
+    var(--nav-glass-inset-left, inset 1px 0 0 rgba(13, 79, 60, 0.5)),
+    var(--nav-glass-inset-right, inset -1px 0 0 rgba(13, 79, 60, 0.5)) !important;
 }
 
 [data-theme="dark"] #main-menu li a:hover {
   background: rgba(74, 222, 128, 0.1);
+  border-radius: 10px;
 }
 
 #main-menu li a.active {
-  background: var(--sidebar-active);
+  background: var(--nav-glass-bg, rgba(13, 79, 60, 0.2)) !important;
+  backdrop-filter: var(--nav-glass-blur, blur(15px)) !important;
+  -webkit-backdrop-filter: var(--nav-glass-blur, blur(15px)) !important;
+  border: 1px solid var(--nav-glass-border, rgba(13, 79, 60, 0.5)) !important;
   color: #ffffff;
   border-left-color: var(--sidebar-active);
+  border-radius: 10px;
+  box-shadow:
+    var(--nav-glass-shadow, 0 8px 25px rgba(13, 79, 60, 0.4)),
+    var(--nav-glass-inset-top, inset 0 1px 0 rgba(13, 79, 60, 0.6)),
+    var(--nav-glass-inset-bottom, inset 0 -1px 0 rgba(13, 79, 60, 0.3)),
+    var(--nav-glass-inset-left, inset 1px 0 0 rgba(13, 79, 60, 0.5)),
+    var(--nav-glass-inset-right, inset -1px 0 0 rgba(13, 79, 60, 0.5)) !important;
 }
 
 /* Indicador de página ativa - Tema claro */
 #main-menu li a.current-page {
-  background: rgba(13, 79, 60, 0.1);
+  background: var(--nav-glass-bg, rgba(13, 79, 60, 0.2)) !important;
+  backdrop-filter: var(--nav-glass-blur, blur(15px)) !important;
+  -webkit-backdrop-filter: var(--nav-glass-blur, blur(15px)) !important;
+  border: 1px solid var(--nav-glass-border, rgba(13, 79, 60, 0.5)) !important;
   color: var(--sidebar-active);
   border-left-color: var(--sidebar-active);
+  border-radius: 10px;
+  box-shadow:
+    var(--nav-glass-shadow, 0 8px 25px rgba(13, 79, 60, 0.4)),
+    var(--nav-glass-inset-top, inset 0 1px 0 rgba(13, 79, 60, 0.6)),
+    var(--nav-glass-inset-bottom, inset 0 -1px 0 rgba(13, 79, 60, 0.3)),
+    var(--nav-glass-inset-left, inset 1px 0 0 rgba(13, 79, 60, 0.5)),
+    var(--nav-glass-inset-right, inset -1px 0 0 rgba(13, 79, 60, 0.5)) !important;
 }
 
 #main-menu li a.current-page:hover {
-  background: rgba(13, 79, 60, 0.1);
+  background: var(--nav-glass-bg, rgba(13, 79, 60, 0.2)) !important;
+  backdrop-filter: var(--nav-glass-blur, blur(15px)) !important;
+  -webkit-backdrop-filter: var(--nav-glass-blur, blur(15px)) !important;
+  border: 1px solid var(--nav-glass-border, rgba(13, 79, 60, 0.5)) !important;
   color: var(--sidebar-active);
   border-left-color: var(--sidebar-active);
+  border-radius: 10px;
+  box-shadow:
+    var(--nav-glass-shadow, 0 8px 25px rgba(13, 79, 60, 0.4)),
+    var(--nav-glass-inset-top, inset 0 1px 0 rgba(13, 79, 60, 0.6)),
+    var(--nav-glass-inset-bottom, inset 0 -1px 0 rgba(13, 79, 60, 0.3)),
+    var(--nav-glass-inset-left, inset 1px 0 0 rgba(13, 79, 60, 0.5)),
+    var(--nav-glass-inset-right, inset -1px 0 0 rgba(13, 79, 60, 0.5)) !important;
 }
 
 /* Submenu ativo - Tema claro */
 .nav-second-level li a.current-page {
-  background: rgba(13, 79, 60, 0.1);
+  background: var(--nav-glass-bg, rgba(13, 79, 60, 0.2)) !important;
+  backdrop-filter: var(--nav-glass-blur, blur(15px)) !important;
+  -webkit-backdrop-filter: var(--nav-glass-blur, blur(15px)) !important;
+  border: 1px solid var(--nav-glass-border, rgba(13, 79, 60, 0.5)) !important;
   color: var(--sidebar-active);
   border-left: 3px solid var(--sidebar-active);
   transform: translateX(3px);
+  border-radius: 10px;
+  box-shadow:
+    var(--nav-glass-shadow, 0 8px 25px rgba(13, 79, 60, 0.4)),
+    var(--nav-glass-inset-top, inset 0 1px 0 rgba(13, 79, 60, 0.6)),
+    var(--nav-glass-inset-bottom, inset 0 -1px 0 rgba(13, 79, 60, 0.3)),
+    var(--nav-glass-inset-left, inset 1px 0 0 rgba(13, 79, 60, 0.5)),
+    var(--nav-glass-inset-right, inset -1px 0 0 rgba(13, 79, 60, 0.5)) !important;
 }
 
 /* Tema escuro - cores especiais para página ativa */
@@ -300,6 +495,7 @@ body {
   color: var(--sidebar-active);
   border-left: 3px solid var(--sidebar-active);
   transform: translateX(3px);
+  border-radius: 10px;
 }
 
 #main-menu li a img,
@@ -307,7 +503,7 @@ body {
   margin-right: 12px;
   width: 24px;
   height: 24px;
-  transition: all 0.3s ease;
+  transition: none;
   color: var(--sidebar-text);
   display: block;
   fill: none;
@@ -369,7 +565,7 @@ body {
   background: rgba(13, 79, 60, 0.05);
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease, opacity 0.3s ease;
+  transition: none;
   opacity: 0;
 }
 
@@ -391,12 +587,23 @@ body {
 }
 
 .nav-second-level li a:hover {
-  background: rgba(13, 79, 60, 0.1);
+  background: var(--nav-glass-bg, rgba(13, 79, 60, 0.2)) !important;
+  backdrop-filter: var(--nav-glass-blur, blur(15px)) !important;
+  -webkit-backdrop-filter: var(--nav-glass-blur, blur(15px)) !important;
+  border: 1px solid var(--nav-glass-border, rgba(13, 79, 60, 0.5)) !important;
   transform: translateX(3px);
+  border-radius: 10px;
+  box-shadow:
+    var(--nav-glass-shadow, 0 8px 25px rgba(13, 79, 60, 0.4)),
+    var(--nav-glass-inset-top, inset 0 1px 0 rgba(13, 79, 60, 0.6)),
+    var(--nav-glass-inset-bottom, inset 0 -1px 0 rgba(13, 79, 60, 0.3)),
+    var(--nav-glass-inset-left, inset 1px 0 0 rgba(13, 79, 60, 0.5)),
+    var(--nav-glass-inset-right, inset -1px 0 0 rgba(13, 79, 60, 0.5)) !important;
 }
 
 [data-theme="dark"] .nav-second-level li a:hover {
   background: rgba(74, 222, 128, 0.1);
+  border-radius: 10px;
 }
 
 /* Topbar - Barra superior unificada */
@@ -406,28 +613,28 @@ body {
   margin-bottom: 0;
   padding: 0;
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
+  top: 10px;
+  left: 10px;
+  right: 10px;
   height: 80px;
   z-index: 1001;
-  transition: all 0.3s ease;
+  transition: none;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 /* Topo se move quando menu abre */
-#page-wrapper.expanded ~ .navbar-cls-top,
-.navbar-side.expanded ~ .navbar-cls-top {
+#page-wrapper.expanded~.navbar-cls-top,
+.navbar-side.expanded~.navbar-cls-top {
   left: 250px;
   width: calc(100% - 250px);
 }
 
 /* Quando menu está fechado */
-.navbar-side.collapsed ~ .navbar-cls-top {
+.navbar-side.collapsed~.navbar-cls-top {
   left: 0;
   width: 100%;
 }
@@ -443,17 +650,18 @@ body {
   width: 100%;
   padding: 0 30px;
   position: relative;
-  transition: all 0.3s ease;
+  transition: none;
 }
 
 /* Quando menu está aberto, logo se move para centralizar */
-.navbar-side.expanded ~ .navbar-cls-top .navbar-header {
+.navbar-side.expanded~.navbar-cls-top .navbar-header {
   justify-content: center;
-  margin-left: 125px; /* Move para compensar o espaço do menu */
+  margin-left: 125px;
+  /* Move para compensar o espaço do menu */
 }
 
 /* Quando menu está fechado, layout normal */
-.navbar-side.collapsed ~ .navbar-cls-top .navbar-header {
+.navbar-side.collapsed~.navbar-cls-top .navbar-header {
   justify-content: space-between;
   margin-left: 0;
 }
@@ -463,12 +671,13 @@ body {
   align-items: center;
   justify-content: center;
   flex: 1;
+  padding-left: 214px;
 }
 
 .navbar-logo {
   max-height: 100px;
   width: auto;
-  transition: all 0.3s ease;
+  transition: none;
 }
 
 .navbar-logo:hover {
@@ -548,11 +757,39 @@ body {
   border: 1px solid var(--card-border);
   border-radius: 12px;
   box-shadow: var(--card-shadow);
-  transition: all 0.3s ease;
+  transition: none;
   overflow: hidden;
   width: auto;
   flex: 1;
   flex-direction: column;
+}
+
+/* Tema Claro - Efeito Glassmorphism nos Cards */
+:root .panel {
+  background: var(--card-glass-bg, rgba(255, 255, 255, 0.1)) !important;
+  backdrop-filter: var(--card-glass-blur, blur(20px)) !important;
+  -webkit-backdrop-filter: var(--card-glass-blur, blur(20px)) !important;
+  border: 1px solid var(--card-glass-border, rgba(255, 255, 255, 0.2)) !important;
+  box-shadow:
+    var(--card-glass-shadow, 0 15px 35px rgba(0, 0, 0, 0.2)),
+    var(--card-glass-inset-top, inset 0 1px 0 rgba(255, 255, 255, 0.3)),
+    var(--card-glass-inset-bottom, inset 0 -1px 0 rgba(255, 255, 255, 0.1)),
+    var(--card-glass-inset-left, inset 1px 0 0 rgba(255, 255, 255, 0.2)),
+    var(--card-glass-inset-right, inset -1px 0 0 rgba(255, 255, 255, 0.2)) !important;
+}
+
+/* Tema Escuro - Cards com glassmorphism preto e escuro */
+[data-theme="dark"] .panel {
+  background: var(--dark-glass-bg, rgba(0, 0, 0, 0.3)) !important;
+  backdrop-filter: var(--dark-glass-blur, blur(20px)) !important;
+  -webkit-backdrop-filter: var(--dark-glass-blur, blur(20px)) !important;
+  border: 1px solid var(--dark-glass-border, rgba(0, 0, 0, 0.5)) !important;
+  box-shadow:
+    var(--dark-glass-shadow, 0 15px 35px rgba(0, 0, 0, 0.6)),
+    var(--dark-glass-inset-top, inset 0 1px 0 rgba(255, 255, 255, 0.1)),
+    var(--dark-glass-inset-bottom, inset 0 -1px 0 rgba(0, 0, 0, 0.3)),
+    var(--dark-glass-inset-left, inset 1px 0 0 rgba(0, 0, 0, 0.4)),
+    var(--dark-glass-inset-right, inset -1px 0 0 rgba(0, 0, 0, 0.4)) !important;
 }
 
 .panel:hover {
@@ -583,7 +820,7 @@ body {
   width: clamp(30px, 8vw, 50px);
   height: clamp(30px, 8vw, 50px);
   margin-bottom: 10px;
-  transition: all 0.3s ease;
+  transition: none;
   flex-shrink: 0;
 }
 
@@ -621,18 +858,78 @@ body {
   color: white !important;
 }
 
+/* Tema Claro - Efeito Glassmorphism nos Footers dos Cards */
+:root .panel-footer {
+  background: var(--footer-green-glass-bg, rgba(13, 79, 60, 0.8)) !important;
+  backdrop-filter: var(--footer-green-glass-blur, blur(20px)) !important;
+  -webkit-backdrop-filter: var(--footer-green-glass-blur, blur(20px)) !important;
+  border: 1px solid var(--footer-green-glass-border, rgba(13, 79, 60, 0.9)) !important;
+  box-shadow: 
+    var(--footer-green-glass-shadow, 0 10px 30px rgba(13, 79, 60, 0.5)),
+    var(--footer-green-glass-inset-top, inset 0 1px 0 rgba(13, 79, 60, 1)),
+    var(--footer-green-glass-inset-bottom, inset 0 -1px 0 rgba(13, 79, 60, 0.7)),
+    var(--footer-green-glass-inset-left, inset 1px 0 0 rgba(13, 79, 60, 0.8)),
+    var(--footer-green-glass-inset-right, inset -1px 0 0 rgba(13, 79, 60, 0.8)) !important;
+}
+
+:root .back-footer-red {
+  background: var(--footer-red-glass-bg, rgba(220, 53, 69, 0.8)) !important;
+  backdrop-filter: var(--footer-red-glass-blur, blur(20px)) !important;
+  -webkit-backdrop-filter: var(--footer-red-glass-blur, blur(20px)) !important;
+  border: 1px solid var(--footer-red-glass-border, rgba(220, 53, 69, 0.9)) !important;
+  box-shadow: 
+    var(--footer-red-glass-shadow, 0 10px 30px rgba(220, 53, 69, 0.5)),
+    var(--footer-red-glass-inset-top, inset 0 1px 0 rgba(220, 53, 69, 1)),
+    var(--footer-red-glass-inset-bottom, inset 0 -1px 0 rgba(220, 53, 69, 0.7)),
+    var(--footer-red-glass-inset-left, inset 1px 0 0 rgba(220, 53, 69, 0.8)),
+    var(--footer-red-glass-inset-right, inset -1px 0 0 rgba(220, 53, 69, 0.8)) !important;
+}
+
+:root .back-footer-blue {
+  background: var(--footer-blue-glass-bg, rgba(23, 162, 184, 0.8)) !important;
+  backdrop-filter: var(--footer-blue-glass-blur, blur(20px)) !important;
+  -webkit-backdrop-filter: var(--footer-blue-glass-blur, blur(20px)) !important;
+  border: 1px solid var(--footer-blue-glass-border, rgba(23, 162, 184, 0.9)) !important;
+  box-shadow: 
+    var(--footer-blue-glass-shadow, 0 10px 30px rgba(23, 162, 184, 0.5)),
+    var(--footer-blue-glass-inset-top, inset 0 1px 0 rgba(23, 162, 184, 1)),
+    var(--footer-blue-glass-inset-bottom, inset 0 -1px 0 rgba(23, 162, 184, 0.7)),
+    var(--footer-blue-glass-inset-left, inset 1px 0 0 rgba(23, 162, 184, 0.8)),
+    var(--footer-blue-glass-inset-right, inset -1px 0 0 rgba(23, 162, 184, 0.8)) !important;
+}
+
 /* Tabela de movimentos - auto redimensionamento */
 .table-responsive {
-  background: var(--card-bg) !important;
-  overflow: hidden !important;
-  box-shadow: var(--card-shadow) !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
   width: auto !important;
   max-width: 100% !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: var(--success-color) transparent !important;
+}
+
+/* Scrollbar personalizada para tabela */
+.table-responsive::-webkit-scrollbar {
+  height: 8px !important;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 4px !important;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  background: var(--success-color) !important;
+  border-radius: 4px !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover {
+  background: rgba(13, 79, 60, 0.8) !important;
 }
 
 .table {
   margin: 0 !important;
-  background: var(--card-bg) !important;
   color: var(--text-primary) !important;
   width: auto !important;
   max-width: 100% !important;
@@ -642,7 +939,7 @@ body {
 }
 
 .table thead th {
-  background: var(--success-color) !important;
+  background: #1f5032ad !important;
   color: #ffffff !important;
   padding: 12px 10px !important;
   font-weight: 600 !important;
@@ -651,6 +948,7 @@ body {
   white-space: nowrap !important;
   font-family: 'Josefin Sans', sans-serif !important;
   text-align: center !important;
+  /* Espaçamento interno à esquerda */
 }
 
 .table thead th:last-child {
@@ -942,6 +1240,354 @@ body {
   margin: 20px 0;
 }
 
+/* Tema Claro - Efeito Glassmorphism no Form-Card */
+:root .form-card {
+  background: var(--form-card-glass-bg, rgba(255, 255, 255, 0.1)) !important;
+  backdrop-filter: var(--form-card-glass-blur, blur(25px)) !important;
+  -webkit-backdrop-filter: var(--form-card-glass-blur, blur(25px)) !important;
+  border: 1px solid var(--form-card-glass-border, rgba(255, 255, 255, 0.2)) !important;
+  box-shadow: 
+    var(--form-card-glass-shadow, 0 20px 40px rgba(0, 0, 0, 0.2)),
+    var(--form-card-glass-inset-top, inset 0 1px 0 rgba(255, 255, 255, 0.3)),
+    var(--form-card-glass-inset-bottom, inset 0 -1px 0 rgba(255, 255, 255, 0.1)),
+    var(--form-card-glass-inset-left, inset 1px 0 0 rgba(255, 255, 255, 0.2)),
+    var(--form-card-glass-inset-right, inset -1px 0 0 rgba(255, 255, 255, 0.2)) !important;
+}
+
+/* Tema Escuro - Efeito Glassmorphism no Form-Card */
+[data-theme="dark"] .form-card {
+  background: var(--form-card-dark-glass-bg, rgba(0, 0, 0, 0.4)) !important;
+  backdrop-filter: var(--form-card-dark-glass-blur, blur(25px)) !important;
+  -webkit-backdrop-filter: var(--form-card-dark-glass-blur, blur(25px)) !important;
+  border: 1px solid var(--form-card-dark-glass-border, rgba(255, 255, 255, 0.2)) !important;
+  box-shadow: 
+    var(--form-card-dark-glass-shadow, 0 20px 40px rgba(0, 0, 0, 0.7)),
+    var(--form-card-dark-glass-inset-top, inset 0 1px 0 rgba(255, 255, 255, 0.25)),
+    var(--form-card-dark-glass-inset-bottom, inset 0 -1px 0 rgba(255, 255, 255, 0.15)),
+    var(--form-card-dark-glass-inset-left, inset 1px 0 0 rgba(255, 255, 255, 0.2)),
+    var(--form-card-dark-glass-inset-right, inset -1px 0 0 rgba(255, 255, 255, 0.2)) !important;
+}
+
+/* Tema Claro - Inputs padronizados como na tela de login */
+:root .form-control {
+  background: transparent !important;
+  border: none !important;
+  color: #000000 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+:root .form-control:hover {
+  background: transparent !important;
+  border: none !important;
+  color: #000000 !important;
+  box-shadow: none !important;
+}
+
+:root .form-control:focus {
+  background: transparent !important;
+  border: none !important;
+  color: #000000 !important;
+  box-shadow: none !important;
+}
+
+:root .form-control:active {
+  background: transparent !important;
+  border: none !important;
+  color: #000000 !important;
+  box-shadow: none !important;
+}
+
+/* Tema Claro - Sobrescrever estilos específicos do user-form */
+:root .user-form .form-control {
+  background: transparent !important;
+  color: #000000 !important;
+  border: none !important;
+}
+
+:root .user-form .form-control:focus {
+  background: transparent !important;
+  color: #000000 !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+:root .user-form .form-control:active {
+  background: transparent !important;
+  color: #000000 !important;
+  border: none !important;
+}
+
+/* Tema Escuro - Inputs com efeito glassmorphism transparente */
+[data-theme="dark"] .form-control {
+  color: #ffffff !important;
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+[data-theme="dark"] .form-control:hover {
+  color: #ffffff !important;
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+[data-theme="dark"] .form-control:focus {
+  color: #ffffff !important;
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+[data-theme="dark"] .form-control:active {
+  color: #ffffff !important;
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Tema Claro - Placeholders padronizados como na tela de login */
+:root .form-control::placeholder {
+  color: #383838 !important;
+}
+
+:root .form-control::-webkit-input-placeholder {
+  color: #383838 !important;
+}
+
+:root .form-control::-moz-placeholder {
+  color: #383838 !important;
+}
+
+:root .form-control:-ms-input-placeholder {
+  color: #383838 !important;
+}
+
+/* Tema Escuro - Placeholders padronizados como na tela de login */
+[data-theme="dark"] .form-control::placeholder {
+  color: #b0b0b0 !important;
+}
+
+[data-theme="dark"] .form-control::-webkit-input-placeholder {
+  color: #b0b0b0 !important;
+}
+
+[data-theme="dark"] .form-control::-moz-placeholder {
+  color: #b0b0b0 !important;
+}
+
+[data-theme="dark"] .form-control:-ms-input-placeholder {
+  color: #b0b0b0 !important;
+}
+
+/* Tema Claro - Input-Groups padronizados como na tela de login */
+:root .input-group {
+  background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 8px !important;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+:root .input-group:hover {
+  transform: translateY(-1px);
+  box-shadow: 
+    0 18px 48px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+:root .input-group:focus-within {
+  background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 
+    0 18px 48px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Tema Claro - Sobrescrever estilos específicos do user-form */
+:root .user-form .input-group {
+  background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 8px !important;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+:root .user-form .input-group:hover {
+  transform: translateY(-1px);
+  box-shadow: 
+    0 18px 48px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+:root .user-form .input-group:focus-within {
+  background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 
+    0 18px 48px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Tema Escuro - Input-Groups com efeito glassmorphism transparente */
+[data-theme="dark"] .input-group {
+  background: rgba(0, 0, 0, 0.15) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 8px !important;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.05),
+    inset 1px 0 0 rgba(255, 255, 255, 0.08),
+    inset -1px 0 0 rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-theme="dark"] .input-group:focus-within {
+  background: rgba(0, 0, 0, 0.15) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.08),
+    inset 1px 0 0 rgba(255, 255, 255, 0.12),
+    inset -1px 0 0 rgba(255, 255, 255, 0.12) !important;
+}
+
+/* Tema Claro - Input-Group-Addon padronizado como na tela de login */
+:root .input-group-addon {
+  background: transparent !important;
+  border: none !important;
+}
+
+:root .input-group-addon i {
+  color: #4a4a4a !important;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+:root .input-group:focus-within .input-group-addon i {
+  opacity: 1;
+  color: #0d4f3c !important;
+}
+
+/* Tema Claro - Sobrescrever estilos específicos do user-form */
+:root .user-form .input-group-addon {
+  background: transparent !important;
+  border: none !important;
+}
+
+:root .user-form .input-group-addon i {
+  color: #ffffff !important;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+:root .user-form .input-group:focus-within .input-group-addon i {
+  opacity: 1;
+  color: #0d4f3c !important;
+}
+
+/* Tema Escuro - Input-Group-Addon com efeito glassmorphism transparente */
+[data-theme="dark"] .input-group-addon {
+  background: rgba(0, 0, 0, 0.15) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: none !important;
+}
+
+[data-theme="dark"] .input-group-addon i {
+  color: rgba(255, 255, 255, 0.8) !important;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .input-group:focus-within .input-group-addon i {
+  opacity: 1;
+  color: rgba(255, 255, 255, 1) !important;
+}
+
+/* Tema Escuro - Sobrescrever estilos específicos do user-form */
+[data-theme="dark"] .user-form .input-group {
+  background: rgba(0, 0, 0, 0.15) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 8px !important;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.05),
+    inset 1px 0 0 rgba(255, 255, 255, 0.08),
+    inset -1px 0 0 rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-theme="dark"] .user-form .input-group:focus-within {
+  background: rgba(0, 0, 0, 0.15) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.08),
+    inset 1px 0 0 rgba(255, 255, 255, 0.12),
+    inset -1px 0 0 rgba(255, 255, 255, 0.12) !important;
+}
+
+[data-theme="dark"] .user-form .input-group-addon {
+  background: rgba(0, 0, 0, 0.15) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: none !important;
+}
+
+[data-theme="dark"] .user-form .form-control {
+  background: transparent !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+[data-theme="dark"] .user-form .form-control:focus {
+  background: transparent !important;
+  color: #ffffff !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+[data-theme="dark"] .user-form .form-control:active {
+  background: transparent !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
 /* Card maior para formulário de movimentação */
 .form-card.movimento-card {
   max-width: 800px;
@@ -977,7 +1623,7 @@ body {
   border: 2px solid var(--input-border);
   border-radius: 8px;
   background: var(--input-bg);
-  transition: all 0.3s ease;
+  transition: none;
   margin: 8px 0;
   width: 100%;
   box-sizing: border-box;
@@ -1008,7 +1654,7 @@ body {
   width: 20px;
   height: 20px;
   opacity: 0.7;
-  transition: all 0.3s ease;
+  transition: none;
   color: var(--text-secondary);
   display: block;
   fill: none;
@@ -1030,7 +1676,7 @@ body {
   outline: none;
   font-weight: 400;
   font-family: 'Josefin Sans', sans-serif;
-  transition: all 0.3s ease;
+  transition: none;
   min-width: 0;
   box-sizing: border-box;
 }
@@ -1079,7 +1725,7 @@ body {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: none;
   letter-spacing: 0.3px;
   flex-shrink: 0;
   min-width: 140px;
@@ -1237,11 +1883,39 @@ body {
   border: 1px solid var(--card-border);
   border-radius: 12px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  max-width: 500px;
+  max-width: 350px;
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
   animation: modalSlideIn 0.3s ease-out;
+}
+
+/* Tema Claro - Efeito Glassmorphism nos Modais */
+:root .modal-content {
+  background: var(--modal-glass-bg, rgba(255, 255, 255, 0.1)) !important;
+  backdrop-filter: var(--modal-glass-blur, blur(25px)) !important;
+  -webkit-backdrop-filter: var(--modal-glass-blur, blur(25px)) !important;
+  border: 1px solid var(--modal-glass-border, rgba(255, 255, 255, 0.2)) !important;
+  box-shadow: 
+    var(--modal-glass-shadow, 0 20px 40px rgba(0, 0, 0, 0.2)),
+    var(--modal-glass-inset-top, inset 0 1px 0 rgba(255, 255, 255, 0.3)),
+    var(--modal-glass-inset-bottom, inset 0 -1px 0 rgba(255, 255, 255, 0.1)),
+    var(--modal-glass-inset-left, inset 1px 0 0 rgba(255, 255, 255, 0.2)),
+    var(--modal-glass-inset-right, inset -1px 0 0 rgba(255, 255, 255, 0.2)) !important;
+}
+
+/* Tema Escuro - Efeito Glassmorphism nos Modais */
+[data-theme="dark"] .modal-content {
+  background: var(--dark-glass-bg, rgba(0, 0, 0, 0.4)) !important;
+  backdrop-filter: var(--dark-glass-blur, blur(25px)) !important;
+  -webkit-backdrop-filter: var(--dark-glass-blur, blur(25px)) !important;
+  border: 1px solid var(--dark-glass-border, rgba(255, 255, 255, 0.2)) !important;
+  box-shadow: 
+    var(--dark-glass-shadow, 0 20px 40px rgba(0, 0, 0, 0.7)),
+    var(--dark-glass-inset-top, inset 0 1px 0 rgba(255, 255, 255, 0.25)),
+    var(--dark-glass-inset-bottom, inset 0 -1px 0 rgba(255, 255, 255, 0.15)),
+    var(--dark-glass-inset-left, inset 1px 0 0 rgba(255, 255, 255, 0.2)),
+    var(--dark-glass-inset-right, inset -1px 0 0 rgba(255, 255, 255, 0.2)) !important;
 }
 
 @keyframes modalSlideIn {
@@ -1249,6 +1923,7 @@ body {
     opacity: 0;
     transform: translateY(-50px) scale(0.9);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -1277,7 +1952,7 @@ body {
   cursor: pointer;
   padding: 8px;
   border-radius: 6px;
-  transition: all 0.3s ease;
+  transition: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1318,20 +1993,30 @@ body {
 }
 
 .modal-company-info {
-  background: var(--input-bg);
-  border: 1px solid var(--input-border);
+  background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
   border-radius: 8px;
   padding: 15px;
   margin: 15px 0;
   text-align: left;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1) !important;
 }
 
 .modal-company-info strong {
   display: block;
-  color: var(--text-primary);
+  color: #000000 !important;
   font-size: 1.1rem;
   margin-bottom: 8px;
   font-family: 'Josefin Sans', sans-serif;
+}
+
+.modal-company-info {
+  color: #000000 !important;
 }
 
 .company-detail {
@@ -1410,6 +2095,266 @@ body {
   box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
   color: #ffffff;
 }
+
+/* Tema Claro - Efeito Glassmorphism nos Botões */
+:root .btn {
+  background: var(--btn-glass-bg, rgba(255, 255, 255, 0.1)) !important;
+  backdrop-filter: var(--btn-glass-blur, blur(15px)) !important;
+  -webkit-backdrop-filter: var(--btn-glass-blur, blur(15px)) !important;
+  border: 1px solid var(--btn-glass-border, rgba(255, 255, 255, 0.2)) !important;
+  color: #000000 !important; /* Texto preto para todos os botões no tema claro */
+  box-shadow: 
+    var(--btn-glass-shadow, 0 8px 25px rgba(0, 0, 0, 0.2)),
+    var(--btn-glass-inset-top, inset 0 1px 0 rgba(255, 255, 255, 0.3)),
+    var(--btn-glass-inset-bottom, inset 0 -1px 0 rgba(255, 255, 255, 0.1)),
+    var(--btn-glass-inset-left, inset 1px 0 0 rgba(255, 255, 255, 0.2)),
+    var(--btn-glass-inset-right, inset -1px 0 0 rgba(255, 255, 255, 0.2)) !important;
+}
+
+:root .btn:hover {
+  background: var(--btn-glass-bg, rgba(255, 255, 255, 0.15)) !important;
+  backdrop-filter: var(--btn-glass-blur, blur(15px)) !important;
+  -webkit-backdrop-filter: var(--btn-glass-blur, blur(15px)) !important;
+  border: 1px solid var(--btn-glass-border, rgba(255, 255, 255, 0.3)) !important;
+  color: #000000 !important; /* Texto preto mantido no hover */
+  box-shadow: 
+    var(--btn-glass-shadow, 0 12px 35px rgba(0, 0, 0, 0.3)),
+    var(--btn-glass-inset-top, inset 0 1px 0 rgba(255, 255, 255, 0.4)),
+    var(--btn-glass-inset-bottom, inset 0 -1px 0 rgba(255, 255, 255, 0.15)),
+    var(--btn-glass-inset-left, inset 1px 0 0 rgba(255, 255, 255, 0.25)),
+    var(--btn-glass-inset-right, inset -1px 0 0 rgba(255, 255, 255, 0.25)) !important;
+}
+
+
+
+
+
+/* Tema Claro - Classes Genéricas de Cores para Botões */
+:root .btn-green {
+  background: var(--btn-success-glass-bg, rgba(40, 167, 69, 0.6)) !important;
+  backdrop-filter: var(--btn-glass-blur, blur(15px)) !important;
+  -webkit-backdrop-filter: var(--btn-glass-blur, blur(15px)) !important;
+  border: 1px solid var(--btn-success-glass-border, rgba(40, 167, 69, 0.8)) !important;
+  color: #000000 !important;
+  box-shadow: 
+    var(--btn-success-glass-shadow, 0 8px 25px rgba(40, 167, 69, 0.7)),
+    var(--btn-success-glass-inset-top, inset 0 1px 0 rgba(40, 167, 69, 0.9)),
+    var(--btn-success-glass-inset-bottom, inset 0 -1px 0 rgba(40, 167, 69, 0.4)),
+    var(--btn-success-glass-inset-left, inset 1px 0 0 rgba(40, 167, 69, 0.7)),
+    var(--btn-success-glass-inset-right, inset -1px 0 0 rgba(40, 167, 69, 0.7)) !important;
+}
+
+:root .btn-green:hover {
+  background: rgba(40, 167, 69, 0.8) !important;
+  backdrop-filter: var(--btn-glass-blur, blur(15px)) !important;
+  -webkit-backdrop-filter: var(--btn-glass-blur, blur(15px)) !important;
+  border: 1px solid rgba(40, 167, 69, 1.0) !important;
+  color: #000000 !important;
+  box-shadow: 
+    0 15px 40px rgba(40, 167, 69, 0.9),
+    inset 0 1px 0 rgba(40, 167, 69, 1.0),
+    inset 0 -1px 0 rgba(40, 167, 69, 0.5),
+    inset 1px 0 0 rgba(40, 167, 69, 0.8),
+    inset -1px 0 0 rgba(40, 167, 69, 0.8) !important;
+}
+
+:root .btn-blue {
+  background: var(--btn-consultar-glass-bg, rgba(23, 162, 184, 0.6)) !important;
+  backdrop-filter: var(--btn-glass-blur, blur(15px)) !important;
+  -webkit-backdrop-filter: var(--btn-glass-blur, blur(15px)) !important;
+  border: 1px solid var(--btn-consultar-glass-border, rgba(23, 162, 184, 0.8)) !important;
+  color: #000000 !important;
+  box-shadow: 
+    var(--btn-consultar-glass-shadow, 0 8px 25px rgba(23, 162, 184, 0.7)),
+    var(--btn-consultar-glass-inset-top, inset 0 1px 0 rgba(23, 162, 184, 0.9)),
+    var(--btn-consultar-glass-inset-bottom, inset 0 -1px 0 rgba(23, 162, 184, 0.4)),
+    var(--btn-consultar-glass-inset-left, inset 1px 0 0 rgba(23, 162, 184, 0.7)),
+    var(--btn-consultar-glass-inset-right, inset -1px 0 0 rgba(23, 162, 184, 0.7)) !important;
+}
+
+:root .btn-blue:hover {
+  background: rgba(23, 162, 184, 0.8) !important;
+  backdrop-filter: var(--btn-glass-blur, blur(15px)) !important;
+  -webkit-backdrop-filter: var(--btn-glass-blur, blur(15px)) !important;
+  border: 1px solid rgba(23, 162, 184, 1.0) !important;
+  color: #000000 !important;
+  box-shadow: 
+    0 15px 40px rgba(23, 162, 184, 0.9),
+    inset 0 1px 0 rgba(23, 162, 184, 1.0),
+    inset 0 -1px 0 rgba(23, 162, 184, 0.5),
+    inset 1px 0 0 rgba(23, 162, 184, 0.8),
+    inset -1px 0 0 rgba(23, 162, 184, 0.8) !important;
+}
+
+:root .btn-yellow {
+  background: var(--btn-alterar-glass-bg, rgba(255, 193, 7, 0.6)) !important;
+  backdrop-filter: var(--btn-glass-blur, blur(15px)) !important;
+  -webkit-backdrop-filter: var(--btn-glass-blur, blur(15px)) !important;
+  border: 1px solid var(--btn-alterar-glass-border, rgba(255, 193, 7, 0.8)) !important;
+  color: #000000 !important;
+  box-shadow: 
+    var(--btn-alterar-glass-shadow, 0 8px 25px rgba(255, 193, 7, 0.7)),
+    var(--btn-alterar-glass-inset-top, inset 0 1px 0 rgba(255, 193, 7, 0.9)),
+    var(--btn-alterar-glass-inset-bottom, inset 0 -1px 0 rgba(255, 193, 7, 0.4)),
+    var(--btn-alterar-glass-inset-left, inset 1px 0 0 rgba(255, 193, 7, 0.7)),
+    var(--btn-alterar-glass-inset-right, inset -1px 0 0 rgba(255, 193, 7, 0.7)) !important;
+}
+
+:root .btn-yellow:hover {
+  background: rgba(255, 193, 7, 0.8) !important;
+  backdrop-filter: var(--btn-glass-blur, blur(15px)) !important;
+  -webkit-backdrop-filter: var(--btn-glass-blur, blur(15px)) !important;
+  border: 1px solid rgba(255, 193, 7, 1.0) !important;
+  color: #000000 !important;
+  box-shadow: 
+    0 15px 40px rgba(255, 193, 7, 0.9),
+    inset 0 1px 0 rgba(255, 193, 7, 1.0),
+    inset 0 -1px 0 rgba(255, 193, 7, 0.5),
+    inset 1px 0 0 rgba(255, 193, 7, 0.8),
+    inset -1px 0 0 rgba(255, 193, 7, 0.8) !important;
+}
+
+:root .btn-red {
+  background: var(--btn-danger-glass-bg, rgba(220, 53, 69, 0.6)) !important;
+  backdrop-filter: var(--btn-glass-blur, blur(15px)) !important;
+  -webkit-backdrop-filter: var(--btn-glass-blur, blur(15px)) !important;
+  border: 1px solid var(--btn-danger-glass-border, rgba(220, 53, 69, 0.8)) !important;
+  color: #000000 !important;
+  box-shadow: 
+    var(--btn-danger-glass-shadow, 0 8px 25px rgba(220, 53, 69, 0.7)),
+    var(--btn-danger-glass-inset-top, inset 0 1px 0 rgba(220, 53, 69, 0.9)),
+    var(--btn-danger-glass-inset-bottom, inset 0 -1px 0 rgba(220, 53, 69, 0.4)),
+    var(--btn-danger-glass-inset-left, inset 1px 0 0 rgba(220, 53, 69, 0.7)),
+    var(--btn-danger-glass-inset-right, inset -1px 0 0 rgba(220, 53, 69, 0.7)) !important;
+}
+
+:root .btn-red:hover {
+  background: rgba(220, 53, 69, 0.8) !important;
+  backdrop-filter: var(--btn-glass-blur, blur(15px)) !important;
+  -webkit-backdrop-filter: var(--btn-glass-blur, blur(15px)) !important;
+  border: 1px solid rgba(220, 53, 69, 1.0) !important;
+  color: #000000 !important;
+  box-shadow: 
+    0 15px 40px rgba(220, 53, 69, 0.9),
+    inset 0 1px 0 rgba(220, 53, 69, 1.0),
+    inset 0 -1px 0 rgba(220, 53, 69, 0.5),
+    inset 1px 0 0 rgba(220, 53, 69, 0.8),
+    inset -1px 0 0 rgba(220, 53, 69, 0.8) !important;
+}
+
+/* Tema Escuro - Classes Genéricas de Cores para Botões */
+[data-theme="dark"] .btn-green {
+  background: var(--btn-success-glass-bg, rgba(40, 167, 69, 0.6)) !important;
+  backdrop-filter: var(--btn-glass-blur, blur(15px)) !important;
+  -webkit-backdrop-filter: var(--btn-glass-blur, blur(15px)) !important;
+  border: 1px solid var(--btn-success-glass-border, rgba(40, 167, 69, 0.8)) !important;
+  color: #ffffff !important;
+  box-shadow: 
+    0 4px 12px rgba(40, 167, 69, 0.3),
+    inset 0 1px 0 rgba(40, 167, 69, 0.6),
+    inset 0 -1px 0 rgba(40, 167, 69, 0.2),
+    inset 1px 0 0 rgba(40, 167, 69, 0.4),
+    inset -1px 0 0 rgba(40, 167, 69, 0.4) !important;
+}
+
+[data-theme="dark"] .btn-green:hover {
+  background: rgba(40, 167, 69, 0.8) !important;
+  backdrop-filter: var(--btn-glass-blur, blur(15px)) !important;
+  -webkit-backdrop-filter: var(--btn-glass-blur, blur(15px)) !important;
+  border: 1px solid rgba(40, 167, 69, 1.0) !important;
+  color: #ffffff !important;
+  box-shadow: 
+    0 6px 18px rgba(40, 167, 69, 0.4),
+    inset 0 1px 0 rgba(40, 167, 69, 0.7),
+    inset 0 -1px 0 rgba(40, 167, 69, 0.3),
+    inset 1px 0 0 rgba(40, 167, 69, 0.5),
+    inset -1px 0 0 rgba(40, 167, 69, 0.5) !important;
+}
+
+[data-theme="dark"] .btn-blue {
+  background: var(--btn-consultar-glass-bg, rgba(23, 162, 184, 0.6)) !important;
+  backdrop-filter: var(--btn-glass-blur, blur(15px)) !important;
+  -webkit-backdrop-filter: var(--btn-glass-blur, blur(15px)) !important;
+  border: 1px solid var(--btn-consultar-glass-border, rgba(23, 162, 184, 0.8)) !important;
+  color: #ffffff !important;
+  box-shadow: 
+    0 4px 12px rgba(23, 162, 184, 0.3),
+    inset 0 1px 0 rgba(23, 162, 184, 0.6),
+    inset 0 -1px 0 rgba(23, 162, 184, 0.2),
+    inset 1px 0 0 rgba(23, 162, 184, 0.4),
+    inset -1px 0 0 rgba(23, 162, 184, 0.4) !important;
+}
+
+[data-theme="dark"] .btn-blue:hover {
+  background: rgba(23, 162, 184, 0.8) !important;
+  backdrop-filter: var(--btn-glass-blur, blur(15px)) !important;
+  -webkit-backdrop-filter: var(--btn-glass-blur, blur(15px)) !important;
+  border: 1px solid rgba(23, 162, 184, 1.0) !important;
+  color: #ffffff !important;
+  box-shadow: 
+    0 6px 18px rgba(23, 162, 184, 0.4),
+    inset 0 1px 0 rgba(23, 162, 184, 0.7),
+    inset 0 -1px 0 rgba(23, 162, 184, 0.3),
+    inset 1px 0 0 rgba(23, 162, 184, 0.5),
+    inset -1px 0 0 rgba(23, 162, 184, 0.5) !important;
+}
+
+[data-theme="dark"] .btn-yellow {
+  background: var(--btn-alterar-glass-bg, rgba(255, 193, 7, 0.6)) !important;
+  backdrop-filter: var(--btn-glass-blur, blur(15px)) !important;
+  -webkit-backdrop-filter: var(--btn-glass-blur, blur(15px)) !important;
+  border: 1px solid var(--btn-alterar-glass-border, rgba(255, 193, 7, 0.8)) !important;
+  color: #ffffff !important;
+  box-shadow: 
+    0 4px 12px rgba(255, 193, 7, 0.3),
+    inset 0 1px 0 rgba(255, 193, 7, 0.6),
+    inset 0 -1px 0 rgba(255, 193, 7, 0.2),
+    inset 1px 0 0 rgba(255, 193, 7, 0.4),
+    inset -1px 0 0 rgba(255, 193, 7, 0.4) !important;
+}
+
+[data-theme="dark"] .btn-yellow:hover {
+  background: rgba(255, 193, 7, 0.8) !important;
+  backdrop-filter: var(--btn-glass-blur, blur(15px)) !important;
+  -webkit-backdrop-filter: var(--btn-glass-blur, blur(15px)) !important;
+  border: 1px solid rgba(255, 193, 7, 1.0) !important;
+  color: #ffffff !important;
+  box-shadow: 
+    0 6px 18px rgba(255, 193, 7, 0.4),
+    inset 0 1px 0 rgba(255, 193, 7, 0.7),
+    inset 0 -1px 0 rgba(255, 193, 7, 0.3),
+    inset 1px 0 0 rgba(255, 193, 7, 0.5),
+    inset -1px 0 0 rgba(255, 193, 7, 0.5) !important;
+}
+
+[data-theme="dark"] .btn-red {
+  background: var(--btn-danger-glass-bg, rgba(220, 53, 69, 0.6)) !important;
+  backdrop-filter: var(--btn-glass-blur, blur(15px)) !important;
+  -webkit-backdrop-filter: var(--btn-glass-blur, blur(15px)) !important;
+  border: 1px solid var(--btn-danger-glass-border, rgba(220, 53, 69, 0.8)) !important;
+  color: #ffffff !important;
+  box-shadow: 
+    0 4px 12px rgba(220, 53, 69, 0.3),
+    inset 0 1px 0 rgba(220, 53, 69, 0.6),
+    inset 0 -1px 0 rgba(220, 53, 69, 0.2),
+    inset 1px 0 0 rgba(220, 53, 69, 0.4),
+    inset -1px 0 0 rgba(220, 53, 69, 0.4) !important;
+}
+
+[data-theme="dark"] .btn-red:hover {
+  background: rgba(220, 53, 69, 0.8) !important;
+  backdrop-filter: var(--btn-glass-blur, blur(15px)) !important;
+  -webkit-backdrop-filter: var(--btn-glass-blur, blur(15px)) !important;
+  border: 1px solid rgba(220, 53, 69, 1.0) !important;
+  color: #ffffff !important;
+  box-shadow: 
+    0 6px 18px rgba(220, 53, 69, 0.4),
+    inset 0 1px 0 rgba(220, 53, 69, 0.7),
+    inset 0 -1px 0 rgba(220, 53, 69, 0.3),
+    inset 1px 0 0 rgba(220, 53, 69, 0.5),
+    inset -1px 0 0 rgba(220, 53, 69, 0.5) !important;
+}
+
 
 /* Botões menores para nova categoria */
 .nova-categoria .form-actions {
@@ -1552,14 +2497,13 @@ body {
 
 /* Sobrescrever CSS do DataTables */
 div.dataTables_wrapper .table {
-  background: var(--card-bg) !important;
   color: var(--text-primary) !important;
   width: 100% !important;
   max-width: 100% !important;
 }
 
 div.dataTables_wrapper .table thead th {
-  background: var(--success-color) !important;
+  background: #1f5032ad !important;
   color: #ffffff !important;
   border: 1px solid rgba(255, 255, 255, 0.2) !important;
   border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
@@ -1571,6 +2515,7 @@ div.dataTables_wrapper .table thead th {
   white-space: nowrap !important;
   font-family: 'Josefin Sans', sans-serif !important;
   text-align: center !important;
+
 }
 
 div.dataTables_wrapper .table thead th:last-child {
@@ -1615,17 +2560,71 @@ div.dataTables_wrapper .table tbody td:last-child {
 }
 
 .table-panel {
-  background: var(--card-bg) !important;
   border-radius: 12px !important;
-  box-shadow: var(--card-shadow) !important;
   width: auto !important;
   min-width: 400px !important;
   max-width: 800px !important;
   overflow: hidden !important;
 }
 
+/* Tema Claro - Efeito Glassmorphism na Tabela */
+:root .table-panel {
+  background: var(--table-glass-bg, rgba(255, 255, 255, 0.15)) !important;
+  backdrop-filter: var(--table-glass-blur, blur(25px)) !important;
+  -webkit-backdrop-filter: var(--table-glass-blur, blur(25px)) !important;
+  border: 1px solid var(--table-glass-border, rgba(255, 255, 255, 0.3)) !important;
+  box-shadow:
+    var(--table-glass-shadow, 0 15px 35px rgba(0, 0, 0, 0.4)),
+    var(--table-glass-inset-top, inset 0 1px 0 rgba(255, 255, 255, 0.4)),
+    var(--table-glass-inset-bottom, inset 0 -1px 0 rgba(255, 255, 255, 0.2)),
+    var(--table-glass-inset-left, inset 1px 0 0 rgba(255, 255, 255, 0.3)),
+    var(--table-glass-inset-right, inset -1px 0 0 rgba(255, 255, 255, 0.3)) !important;
+}
+
+/* Tema Escuro - Efeito Glassmorphism Preto na Tabela */
+[data-theme="dark"] .table-panel {
+  background: var(--table-dark-glass-bg, rgba(0, 0, 0, 0.4)) !important;
+  backdrop-filter: var(--table-dark-glass-blur, blur(30px)) !important;
+  -webkit-backdrop-filter: var(--table-dark-glass-blur, blur(30px)) !important;
+  border: 1px solid var(--table-dark-glass-border, rgba(0, 0, 0, 0.096)) !important;
+  box-shadow:
+    var(--table-dark-glass-shadow, 0 20px 40px rgba(0, 0, 0, 0.7)),
+    var(--table-dark-glass-inset-top, inset 0 1px 0 rgba(255, 255, 255, 0.05)),
+    var(--table-dark-glass-inset-bottom, inset 0 -1px 0 rgba(0, 0, 0, 0.4)),
+    var(--table-dark-glass-inset-left, inset 1px 0 0 rgba(0, 0, 0, 0.5)),
+    var(--table-dark-glass-inset-right, inset -1px 0 0 rgba(0, 0, 0, 0.5)) !important;
+}
+
+/* Tema Claro - Efeito Glassmorphism no Rodapé da Tabela */
+:root .value {
+  background: var(--table-glass-bg, rgba(255, 255, 255, 0.08)) !important;
+  backdrop-filter: var(--table-glass-blur, blur(35px)) !important;
+  -webkit-backdrop-filter: var(--table-glass-blur, blur(35px)) !important;
+  border: 1px solid var(--table-glass-border, rgba(255, 255, 255, 0.4)) !important;
+  box-shadow:
+    var(--table-glass-shadow, 0 20px 50px rgba(0, 0, 0, 0.5)),
+    var(--table-glass-inset-top, inset 0 2px 0 rgba(255, 255, 255, 0.5)),
+    var(--table-glass-inset-bottom, inset 0 -2px 0 rgba(255, 255, 255, 0.3)),
+    var(--table-glass-inset-left, inset 2px 0 0 rgba(255, 255, 255, 0.4)),
+    var(--table-glass-inset-right, inset -2px 0 0 rgba(255, 255, 255, 0.4)) !important;
+}
+
+/* Tema Escuro - Efeito Glassmorphism Preto no Rodapé da Tabela */
+[data-theme="dark"] .value {
+  background: var(--table-dark-glass-bg, rgba(0, 0, 0, 0.2)) !important;
+  backdrop-filter: var(--table-dark-glass-blur, blur(40px)) !important;
+  -webkit-backdrop-filter: var(--table-dark-glass-blur, blur(40px)) !important;
+  border: 1px solid var(--table-dark-glass-border, rgba(0, 0, 0, 0.8)) !important;
+  box-shadow:
+    var(--table-dark-glass-shadow, 0 25px 60px rgba(0, 0, 0, 0.8)),
+    var(--table-dark-glass-inset-top, inset 0 2px 0 rgba(255, 255, 255, 0.08)),
+    var(--table-dark-glass-inset-bottom, inset 0 -2px 0 rgba(0, 0, 0, 0.5)),
+    var(--table-dark-glass-inset-left, inset 2px 0 0 rgba(0, 0, 0, 0.6)),
+    var(--table-dark-glass-inset-right, inset -2px 0 0 rgba(0, 0, 0, 0.6)) !important;
+}
+
 .table-header {
-  background: var(--success-color) !important;
+  background: #1f5032ad !important;
   color: #ffffff !important;
   padding: 10px 10px !important;
   font-weight: 600 !important;
@@ -1634,6 +2633,14 @@ div.dataTables_wrapper .table tbody td:last-child {
   letter-spacing: 0.5px !important;
   text-align: center !important;
   border-bottom: 1px solid var(--card-border) !important;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  margin-left: 3px !important;
+  /* Espaçamento interno para borda ficar por cima */
+  margin-right: 3px !important;
+  /* Espaçamento interno para borda ficar por cima */
+  margin-top: 3px !important;
+  /* Espaçamento interno para borda ficar por cima */
 }
 
 .table-body {
@@ -1659,6 +2666,34 @@ div.dataTables_wrapper .table tbody td:last-child {
 
 [data-theme="dark"] .alert-info {
   background: rgba(13, 202, 240, 0.05);
+}
+
+/* Tema Claro - Efeito Glassmorphism nos Alertas */
+:root .alert {
+  background: var(--alert-glass-bg, rgba(255, 255, 255, 0.08)) !important;
+  backdrop-filter: var(--alert-glass-blur, blur(20px)) !important;
+  -webkit-backdrop-filter: var(--alert-glass-blur, blur(20px)) !important;
+  border: 1px solid var(--alert-glass-border, rgba(255, 255, 255, 0.15)) !important;
+  box-shadow: 
+    var(--alert-glass-shadow, 0 15px 35px rgba(0, 0, 0, 0.2)),
+    var(--alert-glass-inset-top, inset 0 1px 0 rgba(255, 255, 255, 0.2)),
+    var(--alert-glass-inset-bottom, inset 0 -1px 0 rgba(255, 255, 255, 0.1)),
+    var(--alert-glass-inset-left, inset 1px 0 0 rgba(255, 255, 255, 0.15)),
+    var(--alert-glass-inset-right, inset -1px 0 0 rgba(255, 255, 255, 0.15)) !important;
+}
+
+/* Tema Escuro - Efeito Glassmorphism nos Alertas */
+[data-theme="dark"] .alert {
+  background: var(--dark-glass-bg, rgba(0, 0, 0, 0.3)) !important;
+  backdrop-filter: var(--dark-glass-blur, blur(20px)) !important;
+  -webkit-backdrop-filter: var(--dark-glass-blur, blur(20px)) !important;
+  border: 1px solid var(--dark-glass-border, rgba(255, 255, 255, 0.15)) !important;
+  box-shadow: 
+    var(--dark-glass-shadow, 0 15px 35px rgba(0, 0, 0, 0.6)),
+    var(--dark-glass-inset-top, inset 0 1px 0 rgba(255, 255, 255, 0.2)),
+    var(--dark-glass-inset-bottom, inset 0 -1px 0 rgba(255, 255, 255, 0.1)),
+    var(--dark-glass-inset-left, inset 1px 0 0 rgba(255, 255, 255, 0.15)),
+    var(--dark-glass-inset-right, inset -1px 0 0 rgba(255, 255, 255, 0.15)) !important;
 }
 
 /* Títulos e textos */
@@ -1687,9 +2722,9 @@ hr {
 /* Valor total */
 .value {
   padding: 20px;
-  background: var(--card-bg);
   border-radius: 8px;
-  margin-top: 20px;
+  margin-top: 0px;
+  text-align: center; 
 }
 
 .value label {
@@ -1701,14 +2736,14 @@ hr {
 /* Switch de tema para dashboard */
 .theme-switch-dashboard {
   position: fixed;
-  top: 20px;
-  right: 20px;
+  top: 26px;
+  right: 25px;
   z-index: 1003;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border-radius: 12px;
+  border-radius: 10px;
   padding: 8px;
-  transition: all 0.3s ease;
+  transition: none;
 }
 
 
@@ -1739,7 +2774,7 @@ hr {
   right: 0;
   bottom: 0;
   background-color: #000000;
-  transition: all 0.4s ease;
+  transition: none;
   border-radius: 20px;
   overflow: hidden;
 }
@@ -1757,11 +2792,11 @@ hr {
   background-color: #ffffff;
 }
 
-.switch input:checked + .slider {
+.switch input:checked+.slider {
   background-color: #007bff;
 }
 
-.switch input:checked + .slider:before {
+.switch input:checked+.slider:before {
   transform: translateX(1.2em);
   background-color: #fbbf24;
 }
@@ -1771,7 +2806,7 @@ hr {
   border-radius: 50%;
   position: absolute;
   width: 3px;
-  transition: all 0.4s;
+  transition: none;
   height: 3px;
 }
 
@@ -1790,7 +2825,7 @@ hr {
   top: 0.6em;
 }
 
-.switch input:checked ~ .slider .star {
+.switch input:checked~.slider .star {
   opacity: 0;
 }
 
@@ -1800,59 +2835,33 @@ hr {
   bottom: -1em;
   left: -0.8em;
   opacity: 0;
-  transition: all 0.4s;
+  transition: none;
 }
 
-.switch input:checked ~ .slider .cloud {
+.switch input:checked~.slider .cloud {
   opacity: 1;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-  .menu-toggle-btn {
-    top: 15px;
-    left: 15px;
-    width: 35px;
-    height: 35px;
-    gap: 6px;
-  }
+  /* Menu toggle responsivo movido para menu-toggle.css */
 
-  /* Em mobile, o botão mantém posição fixa */
-  .menu-toggle-btn.menu-collapsed,
-  .menu-toggle-btn.menu-expanded {
-    left: 15px;
-  }
-
-  /* Menu sempre funciona como sidebar */
-  .navbar-side {
-    transform: translateX(-100%);
-    width: 250px;
-  }
-
-  .navbar-side.active {
-    transform: translateX(0);
-  }
-
-  .navbar-side.collapsed {
-    transform: translateX(-100%);
-  }
-
-  .navbar-side.expanded {
-    transform: translateX(0);
-  }
+  /* Sidebar responsivo movido para menu-toggle.css */
 
   .navbar-cls-top {
-    left: 0;
+    left: 10px;
+    right: 10px;
     height: 70px;
   }
 
   /* Em telas menores, menu não afeta o topo */
-  .navbar-side.expanded ~ .navbar-cls-top {
-    left: 0;
-    width: 100%;
+  .navbar-side.expanded~.navbar-cls-top {
+    left: 10px;
+    right: 10px;
+    width: calc(100% - 20px);
   }
 
-  .navbar-side.expanded ~ .navbar-cls-top .navbar-header {
+  .navbar-side.expanded~.navbar-cls-top .navbar-header {
     justify-content: space-between;
     margin-left: 0;
   }
@@ -1908,16 +2917,10 @@ hr {
   #page-wrapper {
     margin-left: 0;
     padding-top: 70px;
-    transition: all 0.3s ease;
+    transition: none;
   }
 
-  #page-wrapper.expanded {
-    margin-left: 0;
-  }
-
-  #page-wrapper.collapsed {
-    margin-left: 0;
-  }
+  /* Page wrapper responsivo movido para menu-toggle.css */
 
   #page-inner {
     padding: 20px 15px;
@@ -1940,23 +2943,16 @@ hr {
   }
 
   .theme-switch-dashboard {
-    top: 10px;
     right: 10px;
   }
 
   /* Footer responsivo */
   .footer {
     margin-left: 0;
-    transition: all 0.3s ease;
+    transition: none;
   }
 
-  .footer.expanded {
-    margin-left: 0;
-  }
-
-  .footer.collapsed {
-    margin-left: 0;
-  }
+  /* Footer responsivo movido para menu-toggle.css */
 
   .footer-content {
     grid-template-columns: 3fr;
@@ -1970,6 +2966,17 @@ hr {
 }
 
 @media (max-width: 480px) {
+  .navbar-cls-top {
+    left: 10px;
+    right: 10px;
+  }
+
+  .navbar-side.expanded~.navbar-cls-top {
+    left: 10px;
+    right: 10px;
+    width: calc(100% - 20px);
+  }
+
   #page-inner {
     padding: 10px;
   }
@@ -2064,6 +3071,90 @@ hr {
   }
 }
 
+/* Tema Claro - Efeito Glassmorphism no Menu Lateral */
+:root .navbar-side {
+  background: var(--menu-glass-bg, rgba(255, 255, 255, 0.08)) !important;
+  backdrop-filter: var(--menu-glass-blur, blur(30px)) !important;
+  -webkit-backdrop-filter: var(--menu-glass-blur, blur(30px)) !important;
+  border: 1px solid var(--menu-glass-border, rgba(255, 255, 255, 0.3)) !important;
+  box-shadow:
+    var(--menu-glass-shadow, 0 25px 70px rgba(0, 0, 0, 0.4)),
+    var(--menu-glass-inset-top, inset 0 1px 0 rgba(255, 255, 255, 0.4)),
+    var(--menu-glass-inset-bottom, inset 0 -1px 0 rgba(255, 255, 255, 0.2)),
+    var(--menu-glass-inset-left, inset 1px 0 0 rgba(255, 255, 255, 0.3)),
+    var(--menu-glass-inset-right, inset -1px 0 0 rgba(255, 255, 255, 0.3)) !important;
+}
+
+/* Tema Escuro - Menu Lateral com glassmorphism preto e escuro */
+[data-theme="dark"] .navbar-side {
+  background: var(--dark-glass-bg, rgba(0, 0, 0, 0.3)) !important;
+  backdrop-filter: var(--dark-glass-blur, blur(20px)) !important;
+  -webkit-backdrop-filter: var(--dark-glass-blur, blur(20px)) !important;
+  border: 1px solid var(--dark-glass-border, rgba(0, 0, 0, 0.5)) !important;
+  box-shadow:
+    var(--dark-glass-shadow, 0 15px 35px rgba(0, 0, 0, 0.6)),
+    var(--dark-glass-inset-top, inset 0 1px 0 rgba(255, 255, 255, 0.1)),
+    var(--dark-glass-inset-bottom, inset 0 -1px 0 rgba(0, 0, 0, 0.3)),
+    var(--dark-glass-inset-left, inset 1px 0 0 rgba(0, 0, 0, 0.4)),
+    var(--dark-glass-inset-right, inset -1px 0 0 rgba(0, 0, 0, 0.4)) !important;
+}
+
+/* Tema Claro - Efeito Glassmorphism na Barra do Topo */
+:root .navbar-cls-top {
+  background: var(--menu-glass-bg, rgba(255, 255, 255, 0.08)) !important;
+  backdrop-filter: var(--menu-glass-blur, blur(30px)) !important;
+  -webkit-backdrop-filter: var(--menu-glass-blur, blur(30px)) !important;
+  border: 1px solid var(--menu-glass-border, rgba(255, 255, 255, 0.3)) !important;
+  box-shadow:
+    var(--menu-glass-shadow, 0 25px 70px rgba(0, 0, 0, 0.4)),
+    var(--menu-glass-inset-top, inset 0 1px 0 rgba(255, 255, 255, 0.4)),
+    var(--menu-glass-inset-bottom, inset 0 -1px 0 rgba(255, 255, 255, 0.2)),
+    var(--menu-glass-inset-left, inset 1px 0 0 rgba(255, 255, 255, 0.3)),
+    var(--menu-glass-inset-right, inset -1px 0 0 rgba(255, 255, 255, 0.3)) !important;
+}
+
+/* Tema Escuro - Barra do Topo com glassmorphism preto e escuro */
+[data-theme="dark"] .navbar-cls-top {
+  background: var(--dark-glass-bg, rgba(0, 0, 0, 0.3)) !important;
+  backdrop-filter: var(--dark-glass-blur, blur(20px)) !important;
+  -webkit-backdrop-filter: var(--dark-glass-blur, blur(20px)) !important;
+  border: 1px solid var(--dark-glass-border, rgba(0, 0, 0, 0.5)) !important;
+  box-shadow:
+    var(--dark-glass-shadow, 0 15px 35px rgba(0, 0, 0, 0.6)),
+    var(--dark-glass-inset-top, inset 0 1px 0 rgba(255, 255, 255, 0.1)),
+    var(--dark-glass-inset-bottom, inset 0 -1px 0 rgba(0, 0, 0, 0.3)),
+    var(--dark-glass-inset-left, inset 1px 0 0 rgba(0, 0, 0, 0.4)),
+    var(--dark-glass-inset-right, inset -1px 0 0 rgba(0, 0, 0, 0.4)) !important;
+}
+
+/* Tema Claro - Efeito Glassmorphism no Botão Toggle Verde */
+:root .menu-toggle-btn {
+  background: var(--toggle-glass-bg, rgba(13, 79, 60, 0.15)) !important;
+  backdrop-filter: var(--toggle-glass-blur, blur(20px)) !important;
+  -webkit-backdrop-filter: var(--toggle-glass-blur, blur(20px)) !important;
+  border: 1px solid var(--toggle-glass-border, rgba(13, 79, 60, 0.4)) !important;
+  box-shadow:
+    var(--toggle-glass-shadow, 0 15px 35px rgba(13, 79, 60, 0.3)),
+    var(--toggle-glass-inset-top, inset 0 1px 0 rgba(13, 79, 60, 0.5)),
+    var(--toggle-glass-inset-bottom, inset 0 -1px 0 rgba(13, 79, 60, 0.2)),
+    var(--toggle-glass-inset-left, inset 1px 0 0 rgba(13, 79, 60, 0.4)),
+    var(--toggle-glass-inset-right, inset -1px 0 0 rgba(13, 79, 60, 0.4)) !important;
+}
+
+/* Tema Escuro - Botão Toggle Verde Glassmorphism */
+[data-theme="dark"] .menu-toggle-btn {
+  background: var(--toggle-dark-glass-bg, rgba(12, 85, 39, 0.2)) !important;
+  backdrop-filter: var(--toggle-dark-glass-blur, blur(20px)) !important;
+  -webkit-backdrop-filter: var(--toggle-dark-glass-blur, blur(20px)) !important;
+  border: 1px solid var(--toggle-dark-glass-border, rgba(12, 85, 39, 0.6)) !important;
+  box-shadow:
+    var(--toggle-dark-glass-shadow, 0 15px 35px rgba(12, 85, 39, 0.4)),
+    var(--toggle-dark-glass-inset-top, inset 0 1px 0 rgba(12, 85, 39, 0.7)),
+    var(--toggle-dark-glass-inset-bottom, inset 0 -1px 0 rgba(12, 85, 39, 0.3)),
+    var(--toggle-dark-glass-inset-left, inset 1px 0 0 rgba(12, 85, 39, 0.6)),
+    var(--toggle-dark-glass-inset-right, inset -1px 0 0 rgba(12, 85, 39, 0.6)) !important;
+}
+
 /* Scrollbar personalizada */
 .navbar-side::-webkit-scrollbar {
   width: 6px;
@@ -2084,21 +3175,37 @@ hr {
 
 /* Footer */
 .footer {
-  background: var(--card-bg);
   border-top: 1px solid var(--card-border);
-  padding: 40px 0 20px;
+  padding: 30px 0 20px;
+  /* Reduzido */
   margin-top: auto;
-  transition: all 0.3s ease;
-  margin-left: 250px;
+  transition: none;
+  margin-left: 0 !important;
+  width: 100% !important;
 }
 
-.footer.expanded {
-  margin-left: 250px;
+/* Tema Claro - Efeito Glassmorphism no Footer */
+:root .footer {
+  background: var(--footer-glass-bg, rgba(255, 255, 255, 0.1)) !important;
+  backdrop-filter: var(--footer-glass-blur, blur(20px)) !important;
+  -webkit-backdrop-filter: var(--footer-glass-blur, blur(20px)) !important;
+  border-top: 1px solid var(--footer-glass-border, rgba(255, 255, 255, 0.2)) !important;
+  box-shadow:
+    var(--footer-glass-shadow, 0 10px 30px rgba(0, 0, 0, 0.3)),
+    var(--footer-glass-inset-top, inset 0 1px 0 rgba(255, 255, 255, 0.3)),
+    var(--footer-glass-inset-bottom, inset 0 -1px 0 rgba(255, 255, 255, 0.1)),
+    var(--footer-glass-inset-left, inset 1px 0 0 rgba(255, 255, 255, 0.2)),
+    var(--footer-glass-inset-right, inset -1px 0 0 rgba(255, 255, 255, 0.2)) !important;
 }
 
-.footer.collapsed {
-  margin-left: 0;
+/* Tema Escuro - Footer sem glassmorphism */
+[data-theme="dark"] .footer {
+  background: var(--footer-dark-bg) !important;
+  border-top: 1px solid var(--footer-dark-border) !important;
+  box-shadow: var(--footer-dark-shadow) !important;
 }
+
+/* Footer styles movidos para menu-toggle.css */
 
 .footer .container {
   max-width: 1200px;
@@ -2109,24 +3216,58 @@ hr {
 .footer-content {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 40px;
-  margin-bottom: 30px;
+  gap: 20px;
+  /* Reduzido de 40px para 20px */
+  margin-bottom: 15px;
+  /* Reduzido de 30px para 15px */
 }
 
 .footer-section h2 {
   color: var(--text-primary);
   font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  /* Reduzido de 20px para 10px */
   font-family: 'Josefin Sans', sans-serif;
 }
 
 .footer-section p {
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.4;
+  /* Reduzido de 1.6 para 1.4 */
   font-size: 1rem;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  /* Reduzido de 10px para 5px */
   font-family: 'Josefin Sans', sans-serif;
+}
+
+/* Tema Claro - Cores melhoradas para contraste no footer */
+:root .footer-section h2 {
+  color: #ffffff !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+  letter-spacing: 0.1em !important;
+  /* Espaçamento 2x maior */
+}
+
+:root .footer-section p {
+  color: rgba(255, 255, 255, 0.9) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+  letter-spacing: 0.05em !important;
+  /* Espaçamento 2x maior */
+}
+
+:root .footer-section a {
+  color: rgba(255, 255, 255, 0.95) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+  letter-spacing: 0.05em !important;
+  /* Espaçamento 2x maior */
+}
+
+:root .footer-section a:hover {
+  color: #ffffff !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4) !important;
+  letter-spacing: 0.1em !important;
+  /* Espaçamento 2x maior no hover */
 }
 
 .footer-section a {
@@ -2181,12 +3322,23 @@ hr {
 
 /* Telas muito pequenas - ocultar nome do usuário */
 @media (max-width: 600px) {
+  .navbar-cls-top {
+    left: 10px;
+    right: 10px;
+  }
+
+  .navbar-side.expanded~.navbar-cls-top {
+    left: 10px;
+    right: 10px;
+    width: calc(100% - 20px);
+  }
+
   .navbar-user-info {
     display: none;
   }
 
   .navbar-brand {
-    margin-left: 50px;
+    margin-left: -200px;
     margin-right: 50px;
   }
 
@@ -2198,6 +3350,17 @@ hr {
 
 /* Cards empilhados em telas muito pequenas */
 @media (max-width: 500px) {
+  .navbar-cls-top {
+    left: 10px;
+    right: 10px;
+  }
+
+  .navbar-side.expanded~.navbar-cls-top {
+    left: 10px;
+    right: 10px;
+    width: calc(100% - 20px);
+  }
+
   .cards-row {
     flex-direction: column;
     align-items: center;
@@ -2223,85 +3386,91 @@ hr {
     padding: 8px 6px;
     font-size: 0.8rem;
   }
-  
+
   .category-name {
     gap: 8px;
   }
-  
+
   .category-name svg {
     width: 18px;
     height: 18px;
   }
-  
+
   .category-name span {
     font-size: 0.85rem;
   }
-  
-  .account-info, .company-info {
+
+  .account-info,
+  .company-info {
     gap: 8px;
   }
-  
-  .account-info svg, .company-info svg {
+
+  .account-info svg,
+  .company-info svg {
     width: 18px;
     height: 18px;
   }
-  
-  .account-info span, .company-info span {
+
+  .account-info span,
+  .company-info span {
     font-size: 0.85rem;
   }
-  
-  .phone-info, .address-info {
+
+  .phone-info,
+  .address-info {
     gap: 6px;
   }
-  
-  .phone-info svg, .address-info svg {
+
+  .phone-info svg,
+  .address-info svg {
     width: 14px;
     height: 14px;
   }
-  
-  .phone-info span, .address-info span {
+
+  .phone-info span,
+  .address-info span {
     font-size: 0.8rem;
   }
-  
+
   /* Manter valores monetários sem quebra em telas pequenas */
   .table tbody td:nth-child(4),
   .table tbody td:nth-child(6) {
     white-space: nowrap !important;
     font-size: 0.8rem !important;
   }
-  
+
   /* Centralização responsiva */
   .page-header-container {
     padding: 0 10px;
     margin: 15px 0;
   }
-  
+
   .page-header-content h2 {
     font-size: 1.5rem;
     margin-bottom: 8px;
   }
-  
+
   .page-header-content h5 {
     font-size: 0.9rem;
   }
-  
+
   .category-cell .category-name {
     justify-content: center !important;
     gap: 8px;
   }
-  
+
   .company-cell .company-info,
   .phone-cell .phone-info,
   .address-cell .address-info {
     justify-content: center !important;
     gap: 8px;
   }
-  
+
   .bank-cell .account-info {
     justify-content: center !important;
     gap: 8px;
   }
-  
+
   .btn-xs {
     padding: 3px 6px;
     font-size: 0.7rem;
@@ -2311,18 +3480,18 @@ hr {
     color: #000000 !important;
     border: 1px solid #ffc107 !important;
   }
-  
+
   .btn-xs:hover {
     background: #e0a800 !important;
     border-color: #d39e00 !important;
     color: #000000 !important;
   }
-  
+
   .btn-xs svg {
     width: 10px;
     height: 10px;
   }
-  
+
   .action-cell {
     width: auto !important;
     max-width: 80px !important;
@@ -2339,216 +3508,216 @@ hr {
     width: 95% !important;
     margin: 5px auto !important;
   }
-  
+
   .table-panel {
     min-width: 300px !important;
     max-width: 100% !important;
   }
-  
+
   .table {
     min-width: 300px !important;
   }
-  
+
   /* Formulário responsivo em telas pequenas */
   .form-container {
     width: 95% !important;
     max-width: 400px !important;
   }
-  
+
   .form-container.movimento-container {
     max-width: 95% !important;
   }
-  
+
   .form-card {
     padding: 20px;
     max-width: 100% !important;
   }
-  
+
   .form-card.movimento-card {
     max-width: 100% !important;
     padding: 25px;
   }
-  
+
   .user-form .form-group {
     margin-bottom: 20px;
   }
-  
+
   .user-form .btn {
     padding: 10px 20px;
     font-size: 0.9rem;
     min-width: 120px;
   }
-  
+
   .user-form .form-actions {
     gap: 15px;
   }
-  
+
   /* Formulário de duas colunas responsivo */
   .user-form .form-row {
     flex-direction: column;
     gap: 0;
     margin-bottom: 20px;
   }
-  
+
   .user-form .form-col {
     margin-bottom: 0;
     width: 100%;
   }
-  
+
   .user-form .form-col .form-group {
     margin-bottom: 20px;
   }
-  
+
   /* Nova categoria responsiva */
   .nova-categoria .form-actions {
     gap: 8px;
     padding: 0 5px;
   }
-  
+
   .nova-categoria .user-form .btn {
     min-width: 90px;
     max-width: 120px;
     padding: 6px 12px;
     font-size: 0.8rem;
   }
-  
+
   /* Meus dados responsiva */
   .meus-dados .form-actions {
     gap: 8px;
     padding: 0 5px;
   }
-  
+
   .meus-dados .user-form .btn {
     min-width: 90px;
     max-width: 120px;
     padding: 6px 12px;
     font-size: 0.8rem;
   }
-  
+
   /* Nova empresa responsiva */
   .nova-empresa .form-actions {
     gap: 8px;
     padding: 0 5px;
   }
-  
+
   .nova-empresa .user-form .btn {
     min-width: 90px;
     max-width: 120px;
     padding: 6px 12px;
     font-size: 0.8rem;
   }
-  
+
   /* Nova conta responsiva */
   .nova-conta .form-actions {
     gap: 8px;
     padding: 0 5px;
   }
-  
+
   .nova-conta .user-form .btn {
     min-width: 90px;
     max-width: 120px;
     padding: 6px 12px;
     font-size: 0.8rem;
   }
-  
+
   /* Realizar movimento responsiva */
   .realizar-movimento .form-actions {
     gap: 8px;
     padding: 0 5px;
   }
-  
+
   .realizar-movimento .user-form .btn {
     min-width: 90px;
     max-width: 120px;
     padding: 6px 12px;
     font-size: 0.8rem;
   }
-  
+
   /* Consultar movimento responsiva */
   .consultar-movimento .form-actions {
     gap: 8px;
     padding: 0 5px;
   }
-  
+
   .consultar-movimento .user-form .btn {
     min-width: 90px;
     max-width: 120px;
     padding: 6px 12px;
     font-size: 0.8rem;
   }
-  
+
   /* Alterar empresas responsiva */
   .alterar-empresas .form-actions {
     gap: 8px;
     padding: 0 5px;
   }
-  
+
   .alterar-empresas .user-form .btn {
     min-width: 90px;
     max-width: 120px;
     padding: 6px 12px;
     font-size: 0.8rem;
   }
-  
+
   /* Alterar contas responsiva */
   .alterar-contas .form-actions {
     gap: 8px;
     padding: 0 5px;
   }
-  
+
   .alterar-contas .user-form .btn {
     min-width: 90px;
     max-width: 120px;
     padding: 6px 12px;
     font-size: 0.8rem;
   }
-  
+
   /* Alterar categoria responsiva */
   .alterar-categoria .form-actions {
     gap: 8px;
     padding: 0 5px;
   }
-  
+
   .alterar-categoria .user-form .btn {
     min-width: 90px;
     max-width: 120px;
     padding: 6px 12px;
     font-size: 0.8rem;
   }
-  
+
   /* Modal responsiva */
   .custom-modal {
     padding: 10px;
   }
-  
+
   .modal-content {
     max-width: 95%;
     max-height: 95vh;
   }
-  
+
   .modal-header {
     padding: 15px 20px 10px 20px;
   }
-  
+
   .modal-header h3 {
     font-size: 1.1rem;
   }
-  
+
   .modal-body {
     padding: 20px;
   }
-  
+
   .modal-icon svg {
     width: 50px;
     height: 50px;
   }
-  
+
   .modal-footer {
     padding: 15px 20px 20px 20px;
     flex-direction: column;
     gap: 10px;
   }
-  
+
   .modal-footer .btn {
     width: 100%;
     justify-content: center;

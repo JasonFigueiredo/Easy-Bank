@@ -39,12 +39,8 @@ include_once '_head.php';
     </div>
 
     <div id="wrapper">
-        <!-- Botão toggle do menu -->
-        <button id="menu-toggle" class="menu-toggle-btn">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
+        <!-- Menu Toggle Component -->
+        <?php include_once '_menu-toggle.php'; ?>
 
         <?php
         include_once '_topo.php';
@@ -77,9 +73,7 @@ include_once '_head.php';
                                 <label for="telefone">Telefone</label>
                                 <div class="input-group">
                                     <div class="input-group-addon">
-                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M22 16.92V19.92C22 20.52 21.52 21 20.92 21C10.93 21 3 13.07 3 3.08C3 2.48 3.48 2 4.08 2H7.08C7.68 2 8.16 2.48 8.16 3.08C8.16 4.08 8.35 5.05 8.72 5.92C8.83 6.18 8.77 6.47 8.58 6.66L7.09 8.15C8.51 10.59 10.94 13.02 13.38 14.44L14.87 12.95C15.06 12.76 15.35 12.7 15.61 12.81C16.48 13.18 17.45 13.37 18.45 13.37C19.05 13.37 19.53 13.85 19.53 14.45L19.52 17.45C19.52 18.05 19.04 18.53 18.44 18.53H17.44" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
+                                        <i class="fi fi-rr-phone-call" style="font-size: 18px;"></i>
                                     </div>
                                     <input class="form-control" placeholder="(XX) XXXXX-XXXX" name="telefone" type="text" id="telefone" maxlength="15" oninput="aplicarMascaraTelefone(this)" />
                                 </div>
@@ -89,29 +83,19 @@ include_once '_head.php';
                                 <label for="endereco">Endereço da empresa</label>
                                 <div class="input-group">
                                     <div class="input-group-addon">
-                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M21 10C21 17L12 23L3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10C17 11.1046 17.8954 12 19 12C20.1046 12 21 11.1046 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                            <circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
+                                        <i class="fi fi-rr-marker" style="font-size: 18px;"></i>
                                     </div>
                                     <input class="form-control" placeholder="Digite o endereço da empresa" name="endereco" maxlength="60" />
                                 </div>
                             </div>
 
                             <div class="form-actions">
-                                <button class="btn btn-success" name="gravarempresa" onclick="return CadastrarEmpresa()">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3H16L21 8V19C21 20.1046 20.1046 21 19 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                        <polyline points="17,21 17,13 7,13 7,21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                        <polyline points="7,3 7,8 15,8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
+                                <button class="btn btn-success btn-green" name="gravarempresa" onclick="return CadastrarEmpresa()">
+                                    <i class="fi fi-rr-disk" style="font-size: 16px; padding-right: 8px;"></i>
                                     Salvar Empresa
                                 </button>
-                                <a href="consultar_empresa.php" class="btn btn-info">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                        <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
+                                <a href="consultar_empresa.php" class="btn btn-info btn-blue">
+                                    <i class="fi fi-rr-search" style="font-size: 16px; padding-right: 8px;"></i>
                                     Empresas Cadastradas
                                 </a>
                             </div>

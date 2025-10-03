@@ -62,12 +62,8 @@ include_once '_head.php';
     </div>
 
     <div id="wrapper">
-        <!-- Botão toggle do menu -->
-        <button id="menu-toggle" class="menu-toggle-btn">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
+        <!-- Menu Toggle Component -->
+        <?php include_once '_menu-toggle.php'; ?>
 
         <?php
         include_once '_topo.php';
@@ -139,21 +135,12 @@ include_once '_head.php';
                             </div>
                             
                             <div class="form-actions">
-                                <button type="submit" class="btn btn-success" onclick="return CriarConta()" name="btn_salvar">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3H16L21 8V19C21 20.1046 20.1046 21 19 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <polyline points="17,21 17,13 7,13 7,21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <polyline points="7,3 7,8 15,8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
+                                <button type="submit" class="btn btn-success btn-green" onclick="return CriarConta()" name="btn_salvar">
+                                    <i class="fi fi-rr-disk" style="font-size: 16px; padding-right: 8px;"></i>
                                     Salvar Alterações
                                 </button>
-                                <button type="button" data-target="#modalExcluir" class="btn btn-danger">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <polyline points="3,6 5,6 21,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M19 6V20C19 21.1046 18.1046 22 17 22H7C5.89543 22 5 21.1046 5 20V6M8 6V4C8 2.89543 8.89543 2 10 2H14C15.1046 2 16 2.89543 16 4V6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <line x1="10" y1="11" x2="10" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <line x1="14" y1="11" x2="14" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
+                                <button type="button" data-target="#modalExcluir" class="btn btn-danger btn-red">
+                                    <i class="fi fi-rr-trash" style="font-size: 16px; padding-right: 8px;"></i>
                                     Excluir Conta
                                 </button>
                             </div>
@@ -168,10 +155,7 @@ include_once '_head.php';
                         <div class="modal-header">
                             <h3>Confirmação de Exclusão</h3>
                             <button type="button" class="modal-close" onclick="closeModal()">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
+                                <i class="fi fi-rr-cross" style="font-size: 16px;"></i>
                             </button>
                         </div>
                         <div class="modal-body">
@@ -194,21 +178,13 @@ include_once '_head.php';
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" onclick="closeModal()">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
+                                <i class="fi fi-rr-cross" style="font-size: 16px; padding-right: 8px;"></i>
                                 Cancelar
                             </button>
                             <form action="alterar_contas.php" method="post" style="display: inline;">
                                 <input type="hidden" name="cod" value="<?= $dados[0]["id_conta"] ?>">
-                                <button name="btn_excluir" type="submit" class="btn btn-danger">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <polyline points="3,6 5,6 21,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M19 6V20C19 21.1046 18.1046 22 17 22H7C5.89543 22 5 21.1046 5 20V6M8 6V4C8 2.89543 8.89543 2 10 2H14C15.1046 2 16 2.89543 16 4V6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <line x1="10" y1="11" x2="10" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <line x1="14" y1="11" x2="14" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
+                                <button name="btn_excluir" type="submit" class="btn btn-danger btn-red">
+                                    <i class="fi fi-rr-trash" style="font-size: 16px; padding-right: 8px;"></i>
                                     Confirmar Exclusão
                                 </button>
                             </form>

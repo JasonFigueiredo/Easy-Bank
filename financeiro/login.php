@@ -53,10 +53,7 @@ include_once '_head.php';
                 <div class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: var(--text-secondary);">
-                                <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                            <i class="fi fi-rr-envelope" style="font-size: 18px; color: var(--text-secondary);"></i>
                         </span>
                         <input id="email" maxlength="45" name="email" type="email" class="form-control" placeholder="Seu e-mail" value="<?= $email ?>" required />
                     </div>
@@ -65,17 +62,15 @@ include_once '_head.php';
                 <div class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: var(--text-secondary);">
-                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
-                                <circle cx="12" cy="16" r="1" fill="currentColor"/>
-                                <path d="M7 11V7C7 5.67392 7.52678 4.40215 8.46447 3.46447C9.40215 2.52678 10.6739 2 12 2C13.3261 2 14.5979 2.52678 15.5355 3.46447C16.4732 4.40215 17 5.67392 17 7V11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                            <i class="fi fi-rr-lock" style="font-size: 18px; color: var(--text-secondary);"></i>
                         </span>
                         <input id="senha" maxlength="12" name="senha" type="password" class="form-control" placeholder="Sua senha" value="<?= $senha ?>" required />
                     </div>
                 </div>
                 
-                <button onclick="return ValidarLogin()" class="btn btn-primary" name="btn_entrar">Entrar</button>
+                <button onclick="return ValidarLogin()" class="btn btn-primary btn-center" name="btn_entrar">
+                    Entrar
+                </button>
                 
                 <div class="login-links">
                     <p>Esqueceu a sua senha? <a href="redefinir_senha.php">Redefinir senha</a></p>
